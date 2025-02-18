@@ -78,7 +78,7 @@ export default function WhyUs() {
       <div className="w-full md:hidden">
         <Accordion type="single" collapsible className="w-full">
           {WhyUsContent.map((item, idx) => (
-            <AccordionItem value={`item-${idx}`}>
+            <AccordionItem key={idx} value={`item-${idx}`}>
               <AccordionTrigger>{item.title}</AccordionTrigger>
               <AccordionContent className="border border-lime-500 rounded p-2">
                 <p>{item.content}</p>
