@@ -1,9 +1,11 @@
 import Hero from "@/sections/hero";
+import WhyUs from "@/sections/whyus";
 
 export default function Home() {
   return (
-    <div className="bg-blue-100 h-full">
+    <div className="flex flex-col items-center">
       <Hero />
+      <WhyUs />
     </div>
   );
 }

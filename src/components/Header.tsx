@@ -14,7 +14,7 @@ const navigation = [
 
 export default function Header() {
   return (
-    <div className="border">
+    <div>
       <header className="absolute inset-x-0 top-0 z-50">
         <nav
           aria-label="Global"
@@ -32,7 +32,7 @@ export default function Header() {
               />
             </a>
           </div>
-          <div className="hidden lg:flex lg:gap-x-12 me-20 border rounded-full px-8 shadow-md bg-white/30 backdrop-blur-md p-2">
+          <div className="hidden lg:flex lg:gap-x-12 me-20 rounded-full px-8 shadow-lg bg-white/30 backdrop-blur-md p-2">
             {navigation.map((item) => (
               <a
                 key={item.name}
@@ -47,7 +47,7 @@ export default function Header() {
             <SheetTrigger asChild>
               <Menu className="md:hidden" color="white" />
             </SheetTrigger>
-            <SheetContent className="w-[150px] bg-green-100">
+            <SheetContent className="w-[220px] bg-green-100">
               <div className="flex items-center justify-between">
                 <a href="#" className="-m-1.5 p-1.5">
                   <Image

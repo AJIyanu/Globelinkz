@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <div className="relative bg-green-200 bg-[url(/hero-bg2.jpg)] bg-cover">
+    <div className="relative w-full bg-green-200 bg-[url(/hero-bg2.jpg)] bg-cover">
       {/* <div className="absolute inset-0 bg-green-200 opacity-50"></div> */}
       <div className="relative z-10">
         <Header />
