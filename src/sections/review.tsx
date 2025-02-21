@@ -10,21 +10,21 @@ const staffData = [
     role: "Quantitative Data Analyst",
     quote:
       "Your website is the gateway to your business, and I'm here to make it unforgettable. I see myself as the technical artisan, turning your vision into seamless code and interactive design that captivates your audience",
-    imageUrl: "ajiyan.jpg",
+    imageUrl: "peace.jpg",
   },
   {
     name: "Simon Peace",
     role: "Digital Marketer/Branding",
     quote:
-      "Your website is the gateway to your business, and I'm here to make it unforgettable. I see myself as the technical artisan, turning your vision into seamless code and interactive design that captivates your audience",
+      "Marketing isn’t just about ads—it’s about connection. I blend data-driven insights with creative execution to craft campaigns that don’t just capture attention but drive real results. Every campaign is a masterpiece in the making—you bring the vision, and I bring the strategy, precision, and expertise to turn it into measurable success.",
     imageUrl: "peace.jpg",
   },
   {
     name: "Funke",
     role: "Data Analyst",
     quote:
-      "Your website is the gateway to your business, and I'm here to make it unforgettable. I see myself as the technical artisan, turning your vision into seamless code and interactive design that captivates your audience",
-    imageUrl: "ajiyanu.jpg",
+      "Every dataset tells a story—I help you uncover its meaning. With precision and expertise, I turn complex information into easy-to-understand visuals and reports, empowering you to make data-driven decisions with confidence. ",
+    imageUrl: "funke.png",
   },
   {
     name: "Temidayo",

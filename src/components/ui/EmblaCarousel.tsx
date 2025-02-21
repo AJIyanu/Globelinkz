@@ -53,8 +53,12 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
             <div className="embla__slide" key={idx}>
               <div className="border-indigo-500 border-2 rounded-xl shadow-xl p-3 flex flex-col md:flex-row items-center">
                 <div
-                  className={`aspect-square rounded-full bg-[center_top_-1.5rem] border-2 border-indigo-300 bg-[url(/${staff.imageUrl})] w-[220px] md:w-[55%]`}
-                ></div>
+                  className="aspect-square rounded-full border-2 border-indigo-300 w-[220px] md:w-[55%]"
+                  style={{
+                    backgroundImage: `url(staff/${staff.imageUrl})`,
+                    backgroundPosition: "center top -1.5rem",
+                  }}
+                />
                 <div className="ps-3 w-full text-center md:w-[45%] md:text-left">
                   <h2 className="text-2xl md:text-3xl font-bold text-gray-800">
                     {staff.name}
