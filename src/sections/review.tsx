@@ -16,7 +16,7 @@ const staffData = [
     name: "Simon Peace",
     role: "Digital Marketer/Branding",
     quote:
-      "Marketing isn’t just about ads—it’s about connection. I blend data-driven insights with creative execution to craft campaigns that don’t just capture attention but drive real results. Every campaign is a masterpiece in the making—you bring the vision, and I bring the strategy, precision, and expertise to turn it into measurable success.",
+      "Marketing isn’t just about ads—it’s about connection. I blend data-driven insights with creative execution to craft campaigns that don’t just capture attention but drive real results. Every campaign is a masterpiece in the making—you bring the vision, and I bring the strategy, precision, and expertise to turn it into measurable success.CD",
     imageUrl: "peace.jpg",
   },
   {
