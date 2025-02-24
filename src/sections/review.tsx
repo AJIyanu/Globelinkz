@@ -87,7 +87,7 @@ const reviewData = [
 ];
 export default function Reviews() {
   return (
-    <div className="w-[80%] flex flex-col-reverse md:flex-row">
+    <div className="w-[80%] flex flex-col-reverse md:flex-row my-12">
       <div className="md:w-[49%] pe-3">
         <h1 className="text-2xl md:text-4xl font-bold text-gray-700">
           What we think about you!
@@ -107,7 +107,6 @@ export default function Reviews() {
         <Separator className="h-[1px] my-4 bg-gray-800 md:w-[80%] md:ms-auto" />
         <ReviewCarousel slides={reviewData} options={REVOPTIONS} />
       </div>
-      <div className="h-[200px] bg-indigo" />
     </div>
   );
 }

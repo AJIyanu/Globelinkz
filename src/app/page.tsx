@@ -1,6 +1,7 @@
 import Hero from "@/sections/hero";
 import WhyUs from "@/sections/whyus";
 import Reviews from "@/sections/review";
+import OurCompetence from "@/sections/services";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <Hero />
       <WhyUs />
       <Reviews />
+      <OurCompetence />
     </div>
   );
 }
