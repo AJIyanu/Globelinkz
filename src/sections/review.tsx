@@ -1,8 +1,15 @@
 import { Separator } from "@radix-ui/react-separator";
 import EmblaCarousel from "@/components/ui/EmblaCarousel";
+import ReviewCarousel from "@/components/ui/ReviewCarousel";
 import { EmblaOptionsType } from "embla-carousel";
 
 const OPTIONS: EmblaOptionsType = { align: "start", loop: true, duration: 50 };
+const REVOPTIONS: EmblaOptionsType = {
+  align: "end",
+  loop: true,
+  duration: 50,
+  axis: "y",
+};
 
 const staffData = [
   {
@@ -10,7 +17,7 @@ const staffData = [
     role: "Quantitative Data Analyst",
     quote:
       "Your website is the gateway to your business, and I'm here to make it unforgettable. I see myself as the technical artisan, turning your vision into seamless code and interactive design that captivates your audience",
-    imageUrl: "peace.jpg",
+    imageUrl: "Elijah.jpeg",
   },
   {
     name: "Simon Peace",
@@ -42,10 +49,46 @@ const staffData = [
   },
 ];
 
+const reviewData = [
+  {
+    name: "Elon Musk",
+    rating: 4,
+    role: "CEO of SpaceX",
+    msg: "I have worked with Peace and Funke on several projects, and I must say, their technical expertise and dedication are truly impressive. They are not just developers; they are problem solvers who turn complex ideas into elegant solutions. I highly recommend them for any tech-related needs.",
+
+    reviewerImg:
+      "https://hips.hearstapps.com/hmg-prod/images/elon-musk-gettyimages-2147789844-web-675b2c17301ea.jpg?crop=0.6666666666666666xw:1xh;center,top&resize=640:*",
+    medium: "Fiverr",
+    date: "28th February, 2023",
+    mediumImg: "https://img.icons8.com/ios-filled/50/fiverr--v2.png",
+  },
+  {
+    name: "Mark Zuckerberg",
+    rating: 5,
+    role: "CEO of Meta",
+    msg: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    reviewerImg:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Mark_Zuckerberg_F8_2019_Keynote_%2832830578717%29_%28cropped%29.jpg/1200px-Mark_Zuckerberg_F8_2019_Keynote_%2832830578717%29_%28cropped%29.jpg",
+    medium: "Upwork",
+    date: "15th March, 2023",
+    mediumImg: "https://img.icons8.com/ios-filled/50/upwork.png",
+  },
+  {
+    name: "Aliko Dangote",
+    rating: 4,
+    role: "CEO of Dangote Group",
+    msg: "I have Worked with Globelinkz for 2 years and I can say that they are the best in the industry. They are very professional and always deliver on time. I would recommend them to anyone looking for a web development company.",
+    reviewerImg:
+      "https://imageio.forbes.com/specials-images/imageserve/5c33a1554bbe6f7020fb2fd2/0x0.jpg?format=jpg&crop=1909,1909,x865,y206,safe&height=416&width=416&fit=bounds",
+    medium: "Upwork",
+    date: "25th March, 2023",
+    mediumImg: "https://img.icons8.com/ios-filled/50/upwork.png",
+  },
+];
 export default function Reviews() {
   return (
     <div className="w-[80%] flex flex-col-reverse md:flex-row">
-      <div className="md:w-[50%] pe-3">
+      <div className="md:w-[49%] pe-3">
         <h1 className="text-2xl md:text-4xl font-bold text-gray-700">
           What we think about you!
         </h1>
@@ -57,7 +100,14 @@ export default function Reviews() {
         className="w-[1px] bg-gray-500 rounded my-4"
         decorative
       />
-      <div>What People say about us</div>
+      <div className="md:w-[49%] pe-3 ms-2">
+        <h1 className="text-2xl md:text-4xl font-bold text-gray-700 md:text-right">
+          What our clients says about us!
+        </h1>
+        <Separator className="h-[1px] my-4 bg-gray-800 md:w-[80%] md:ms-auto" />
+        <ReviewCarousel slides={reviewData} options={REVOPTIONS} />
+      </div>
+      <div className="h-[200px] bg-indigo" />
     </div>
   );
 }
