@@ -20,7 +20,13 @@ export default function OurCompetence() {
   const [lineWidth, setLineWidth] = useState("10%");
 
   useEffect(() => {
-    let typingSpeed = isDeleting ? 100 : 150;
+    let typingSpeed;
+
+    if (isDeleting) {
+      typingSpeed = 100;
+    } else {
+      typingSpeed = 150;
+    }
     const currentWord = words[index];
 
     if (!isDeleting && text === currentWord) {
@@ -39,7 +45,7 @@ export default function OurCompetence() {
     }, typingSpeed);
 
     return () => clearTimeout(timeout);
-  }, [text, isDeleting, index]);
+  }, [text, isDeleting, index, words]);
 
   useEffect(() => {
     let add = true;
