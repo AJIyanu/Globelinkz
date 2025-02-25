@@ -298,7 +298,8 @@ body {
 .embla__container_review {
   display: flex;
   touch-action: pan-x pinch-zoom;
-  margin-top: calc(var(--slide-spacing) * -1);
+  /* margin-top: calc(var(--slide-spacing) * -1); */
+  margin-top: 10px;
   height: calc(var(--slide-spacing) + var(--slide-height));
   flex-direction: column;
 }

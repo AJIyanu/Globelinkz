@@ -54,7 +54,7 @@ const reviewData = [
     name: "Elon Musk",
     rating: 4,
     role: "CEO of SpaceX",
-    msg: "I have worked with Peace and Funke on several projects, and I must say, their technical expertise and dedication are truly impressive. They are not just developers; they are problem solvers who turn complex ideas into elegant solutions. I highly recommend them for any tech-related needs.",
+    msg: "I have worked with Peace and Funke on several projects, and I must say, their technical expertise and dedication are truly impressive.",
 
     reviewerImg:
       "https://hips.hearstapps.com/hmg-prod/images/elon-musk-gettyimages-2147789844-web-675b2c17301ea.jpg?crop=0.6666666666666666xw:1xh;center,top&resize=640:*",
@@ -66,7 +66,7 @@ const reviewData = [
     name: "Mark Zuckerberg",
     rating: 5,
     role: "CEO of Meta",
-    msg: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    msg: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     reviewerImg:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Mark_Zuckerberg_F8_2019_Keynote_%2832830578717%29_%28cropped%29.jpg/1200px-Mark_Zuckerberg_F8_2019_Keynote_%2832830578717%29_%28cropped%29.jpg",
     medium: "Upwork",
