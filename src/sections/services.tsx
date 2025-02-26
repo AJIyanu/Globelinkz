@@ -69,7 +69,7 @@ export default function OurCompetence() {
 
   return (
     <div>
-      <div className="flex text-3xl font-bold mt-[50px] md:ms-[40%] ms-[-110%] md:text-5xl">
+      <div className="flex text-3xl font-bold mt-[50px] md:ms-[40%] ms-[20%] md:text-5xl">
         <span>Our&nbsp;</span>
         <span className="relative inline-block">
           <motion.span
@@ -179,6 +179,115 @@ export default function OurCompetence() {
             logos, marketing materials, and brand guidelines that communicate
             your unique value proposition.
           </p>
+        </motion.div>
+      </div>
+      <div className="grid grid-cols-2 gap-3 px-5 mb-5 lg:hidden">
+        <motion.div
+          className="bg-indigo-300 px-2 inset-shadow-sm inset-shadow-indigo-500 flex flex-col items-center overflow-hidden aspect-square"
+          initial={{ scale: 0 }}
+          whileInView={{
+            scale: [1, 0.9, 0.9, 1, 1],
+            rotate: [0, 0, 180, 180, 0],
+            borderRadius: ["0%", "0%", "50%", "50%", "10%"],
+          }}
+          transition={{
+            duration: 2,
+            ease: "easeInOut",
+            times: [0, 0.2, 0.5, 0.8, 1],
+            // repeat: Infinity,
+            repeatDelay: 1,
+          }}
+        >
+          <Image
+            src="/digitMarket.gif"
+            width={150}
+            height={150}
+            alt="data analysis"
+            className="mix-blend-multiply"
+          />
+          <h1 className="text-sm font-bold text-center mt-auto mb-3">
+            Digital Marketing
+          </h1>
+        </motion.div>
+        <motion.div
+          className=" bg-[#3EE8C4] px-2 inset-shadow-sm inset-shadow-indigo-500 flex flex-col items-center overflow-hidden aspect-square"
+          initial={{ scale: 0 }}
+          whileInView={{
+            scale: [1, 0.9, 0.9, 1, 1],
+            rotate: [0, 0, 180, 180, 0],
+            borderRadius: ["0%", "0%", "50%", "50%", "10%"],
+          }}
+          transition={{
+            duration: 2,
+            ease: "easeInOut",
+            times: [0, 0.2, 0.5, 0.8, 1],
+            // repeat: Infinity,
+            repeatDelay: 1,
+          }}
+        >
+          <Image
+            src="/glz.gif"
+            width={100}
+            height={100}
+            alt="data analysis"
+            className="mix-blend-multiply"
+          />
+          <h1 className="text-sm font-bold text-center mt-auto mb-3">
+            Branding
+          </h1>
+        </motion.div>
+        <motion.div
+          className="bg-[#3EE8C4] px-2 inset-shadow-sm inset-shadow-indigo-500 flex flex-col items-center overflow-hidden aspect-square"
+          initial={{ scale: 0 }}
+          whileInView={{
+            scale: [1, 0.9, 0.9, 1, 1],
+            rotate: [0, 0, 180, 180, 0],
+            borderRadius: ["0%", "0%", "50%", "50%", "10%"],
+          }}
+          transition={{
+            duration: 2,
+            ease: "easeInOut",
+            times: [0, 0.2, 0.5, 0.8, 1],
+            // repeat: Infinity,
+            repeatDelay: 1,
+          }}
+        >
+          <Image
+            src="/data_analyst.gif"
+            width={100}
+            height={100}
+            alt="data analysis"
+          />
+          <h1 className="text-sm font-bold text-center mt-auto mb-3">
+            Data Analysis{" "}
+          </h1>
+        </motion.div>
+        <motion.div
+          className="bg-indigo-300 px-2 inset-shadow-sm inset-shadow-indigo-500 flex flex-col items-center overflow-hidden aspect-square"
+          initial={{ scale: 0 }}
+          whileInView={{
+            scale: [1, 0.9, 0.9, 1, 1],
+            rotate: [0, 0, 180, 180, 0],
+            borderRadius: ["0%", "0%", "50%", "50%", "10%"],
+          }}
+          transition={{
+            duration: 2,
+            ease: "easeInOut",
+            times: [0, 0.2, 0.5, 0.8, 1],
+            // repeat: Infinity,
+            repeatDelay: 1,
+          }}
+        >
+          <Image
+            src="/webdev.gif"
+            width={100}
+            height={100}
+            alt="data analysis"
+            className="mix-blend-multiply"
+          />
+          <h1 className="text-sm font-bold text-center mt-auto mb-3">
+            Web Development
+          </h1>
         </motion.div>
       </div>
     </div>
