@@ -2,8 +2,8 @@ import Image from "next/image";
 
 export default function CallToAction() {
   return (
-    <div className="w-[80%] flex flex-col bg-indigo-200 p-9 items-center">
-      <p className="text-center mx-10 text-2xl italic">
+    <div className="md:w-[80%] flex flex-col bg-indigo-200 p-5 md:p-9 items-center">
+      <p className="text-center mx-10 text-2xl italic hidden md:block">
         In today’s fast-paced digital landscape, every moment counts—delay could
         mean competitors capitalizing on opportunities that should be yours. At
         Globlinkz, we’re forging a strategic partnership that transforms
@@ -11,10 +11,14 @@ export default function CallToAction() {
         Reach out today to secure your competitive edge and propel your business
         to new heights.
       </p>
+      <p className="text-center mx-2 text-2xl italic md:hidden">
+        Your growth is our priority. Reach out today and let’s make digital
+        excellence a reality.
+      </p>
       <div className="mt-10 flex items-center gap-x-12 flex-col md:flex-row">
         <a
           href="#"
-          className="rounded-md bg-green-600 flex gap-2 items-center px-4 py-3 text-white text-xl hover:bg-green-700 mb-2 md:mb-0"
+          className="rounded-md bg-green-600 flex gap-2 items-center px-4 py-3 text-white text-sm md:text-xl hover:bg-green-700 mb-2 md:mb-0"
         >
           Start a Conversation
           <Image
