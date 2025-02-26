@@ -3,6 +3,7 @@ import WhyUs from "@/sections/whyus";
 import Reviews from "@/sections/review";
 import OurCompetence from "@/sections/services";
 import CallToAction from "@/sections/cta";
+import Footer from "@/sections/footer";
 
 export default function Home() {
   return (
@@ -14,7 +15,7 @@ export default function Home() {
       <CallToAction />
       <div className="hidden">about us</div>
       <div className="hidden">blog post</div>
-      <div className="hidden">footer</div>
+      <Footer />
     </div>
   );
 }

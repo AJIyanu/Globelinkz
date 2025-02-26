@@ -3,14 +3,7 @@
 import Image from "next/image";
 import { Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-
-const navigation = [
-  { name: "Home", href: "#" },
-  { name: "Blog", href: "#" },
-  { name: "Portfolio", href: "#" },
-  { name: "Services", href: "#" },
-  { name: "About us", href: "#" },
-];
+import { navigation } from "@/lib/utils";
 
 export default function Header() {
   return (

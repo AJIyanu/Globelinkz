@@ -3,17 +3,20 @@ import Image from "next/image";
 export default function CallToAction() {
   return (
     <div className="md:w-[80%] flex flex-col bg-indigo-200 p-5 md:p-9 items-center">
-      <p className="text-center mx-10 text-2xl italic hidden md:block">
+      <p className="text-center mx-2 text-2xl italic md:hidden">
+        Your growth is our priority. Reach out today and let’s make digital
+        excellence a reality.
+      </p>
+      <h2 className="text-center text-5xl font-bold hidden md:block">
+        Your Growth is Our Priority
+      </h2>
+      <p className="text-center mx-10 text-lg mt-2 italic hidden md:block">
         In today’s fast-paced digital landscape, every moment counts—delay could
         mean competitors capitalizing on opportunities that should be yours. At
         Globlinkz, we’re forging a strategic partnership that transforms
         challenges into digital excellence, because your growth is our priority.
         Reach out today to secure your competitive edge and propel your business
         to new heights.
-      </p>
-      <p className="text-center mx-2 text-2xl italic md:hidden">
-        Your growth is our priority. Reach out today and let’s make digital
-        excellence a reality.
       </p>
       <div className="mt-10 flex items-center gap-x-12 flex-col md:flex-row">
         <a

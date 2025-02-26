@@ -53,12 +53,10 @@ export default function OurCompetence() {
       if (add) {
         const randomWidth = `${10 + Math.random() * 40}%`;
         setLineWidth(randomWidth);
-        console.log(randomWidth);
         add = !add;
       } else {
         const randomWidth = `${60 - Math.random() * 40}%`;
         setLineWidth(randomWidth);
-        console.log(randomWidth);
         add = !add;
       }
     };

@@ -17,3 +17,16 @@ export function splitStringRegx(inputString: string): string[] {
 
   return chars;
 }
+
+interface NavigationItem {
+  name: string;
+  href: string;
+}
+
+export const navigation: NavigationItem[] = [
+  { name: "Home", href: "#" },
+  { name: "Blog", href: "#" },
+  { name: "Portfolio", href: "#" },
+  { name: "Services", href: "#" },
+  { name: "About us", href: "#" },
+];
