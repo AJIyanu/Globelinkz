@@ -100,8 +100,8 @@ const reviewData = [
 export default function Reviews() {
   const plugin = useRef(Autoplay({ delay: 6000, stopOnInteraction: true }));
   return (
-    <div className="w-[80%] flex flex-col-reverse md:flex-row my-12">
-      <div className="md:w-[49%] pe-3">
+    <div className="w-[80%] flex flex-col-reverse xl:flex-row my-12">
+      <div className="xl:w-[49%] pe-3">
         <h1 className="text-2xl md:text-4xl font-bold text-gray-700">
           What we think about you!
         </h1>
@@ -113,7 +113,7 @@ export default function Reviews() {
         className="w-[1px] bg-gray-500 rounded my-4"
         decorative
       />
-      <div className="md:w-[49%] h-auto pe-3 ms-2">
+      <div className="xl:w-[49%] h-auto pe-3 ms-2">
         <h1 className="text-2xl md:text-4xl font-bold text-gray-700 md:text-right">
           What our clients says about us!
         </h1>

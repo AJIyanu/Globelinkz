@@ -66,8 +66,8 @@ export default function OurCompetence() {
   }, []);
 
   return (
-    <div>
-      <div className="flex text-3xl font-bold mt-[50px] ms-[20%] md:text-5xl">
+    <div className="w-[80%] lg:w-full">
+      <div className="flex text-3xl font-bold mt-[50px] ms-[25%] lg:ms-[30%] xl:ms-[40%] md:text-5xl">
         <span>Our&nbsp;</span>
         <span className="relative inline-block">
           <motion.span
@@ -96,7 +96,7 @@ export default function OurCompetence() {
         transition={{ duration: 1.5, ease: "easeInOut" }}
         style={{ width: "5%" }}
       />
-      <div className="w-full h-[800px] bg-gradient-to-t from-indigo-700 to-white lg:flex justify-around hidden">
+      <div className="w-full h-[650px] px-8 bg-gradient-to-t from-indigo-700 to-white lg:flex justify-around hidden">
         <motion.div
           initial={{ scale: 1 }}
           whileHover={{ scale: 1.05 }}
@@ -109,10 +109,10 @@ export default function OurCompetence() {
             alt="data analysis"
             className=""
           />
-          <h1 className="text-5xl font-bold">DATA</h1>
-          <h1 className="text-5xl font-bold">ANALYSIS</h1>
+          <h1 className="mt-auto text-3xl font-bold">DATA</h1>
+          <h1 className="text-3xl font-bold">ANALYSIS</h1>
           <Separator className="w-[85%] mx-auto bg-black my-2" />
-          <p className="text-center mx-3">
+          <p className="text-center mx-3 mb-9">
             We transform raw data into actionable intelligence, revealing
             trends, patterns, and opportunities to optimize your business
             performance.
@@ -129,10 +129,10 @@ export default function OurCompetence() {
             alt="data analysis"
             className="mix-blend-multiply"
           />
-          <h1 className="text-5xl font-bold">WEB</h1>
-          <h1 className="text-5xl font-bold">DEVELOPMENT</h1>
+          <h1 className="mt-auto text-3xl font-bold">WEB</h1>
+          <h1 className="text-3xl font-bold">DEVELOPMENT</h1>
           <Separator className="w-[85%] mx-auto bg-black my-2" />
-          <p className="text-center mx-3">
+          <p className="mb-9 text-center mx-3">
             We create custom websites tailored to your specific needs, ensuring
             a seamless user experience, responsive design, and robust
             functionality.
@@ -149,10 +149,10 @@ export default function OurCompetence() {
             alt="data analysis"
             className="mix-blend-multiply"
           />
-          <h1 className="text-5xl font-bold">DIGITAL</h1>
-          <h1 className="text-5xl font-bold">MARKETING</h1>
+          <h1 className="mt-auto text-3xl font-bold">DIGITAL</h1>
+          <h1 className="text-3xl font-bold">MARKETING</h1>
           <Separator className="w-[85%] mx-auto bg-black my-2" />
-          <p className="text-center mx-5">
+          <p className="mb-9 text-center mx-5">
             We develop and execute data-driven strategies across various
             channels, including SEO, PPC, social media, and email marketing, to
             maximize your online visibility and generate leads.
@@ -169,19 +169,19 @@ export default function OurCompetence() {
             alt="data analysis"
             className="mix-blend-multiply"
           />
-          <h1 className="text-5xl font-bold">BRANDING/</h1>
-          <h1 className="text-5xl font-bold">GRAPHICS</h1>
+          <h1 className="mt-auto text-3xl font-bold">BRANDING/</h1>
+          <h1 className="text-3xl font-bold">GRAPHICS</h1>
           <Separator className="w-[85%] mx-auto bg-black my-2" />
-          <p className="text-center mx-5">
+          <p className="mb-9 text-center mx-5">
             Our branding and graphic design services create visually stunning
             logos, marketing materials, and brand guidelines that communicate
             your unique value proposition.
           </p>
         </motion.div>
       </div>
-      <div className="grid grid-cols-2 gap-3 px-5 mb-5 lg:hidden">
+      <div className="grid grid-cols-2 gap-3 px-5 mb-5 lg:hidden w-full">
         <motion.div
-          className="bg-indigo-300 px-2 inset-shadow-sm inset-shadow-indigo-500 flex flex-col items-center overflow-hidden aspect-square"
+          className="bg-indigo-300 px-2 flex flex-col items-center overflow-hidden aspect-square"
           initial={{ scale: 0 }}
           whileInView={{
             scale: [1, 0.9, 0.9, 1, 1],
@@ -198,12 +198,12 @@ export default function OurCompetence() {
         >
           <Image
             src="/digitMarket.gif"
-            width={150}
-            height={150}
+            width={350}
+            height={350}
             alt="data analysis"
             className="mix-blend-multiply"
           />
-          <h1 className="text-sm font-bold text-center mt-auto mb-3">
+          <h1 className="text-sm md:text-2xl font-bold text-center mt-auto mb-3">
             Digital Marketing
           </h1>
         </motion.div>
@@ -225,12 +225,12 @@ export default function OurCompetence() {
         >
           <Image
             src="/glz.gif"
-            width={100}
-            height={100}
+            width={350}
+            height={350}
             alt="data analysis"
             className="mix-blend-multiply"
           />
-          <h1 className="text-sm font-bold text-center mt-auto mb-3">
+          <h1 className="text-sm md:text-2xl font-bold text-center mt-auto mb-3">
             Branding
           </h1>
         </motion.div>
@@ -252,12 +252,12 @@ export default function OurCompetence() {
         >
           <Image
             src="/data_analyst.gif"
-            width={100}
-            height={100}
+            width={350}
+            height={350}
             alt="data analysis"
           />
-          <h1 className="text-sm font-bold text-center mt-auto mb-3">
-            Data Analysis{" "}
+          <h1 className="text-sm md:text-2xl font-bold text-center mt-auto mb-3">
+            Data Analysis
           </h1>
         </motion.div>
         <motion.div
@@ -278,12 +278,12 @@ export default function OurCompetence() {
         >
           <Image
             src="/webdev.gif"
-            width={100}
-            height={100}
+            width={270}
+            height={270}
             alt="data analysis"
             className="mix-blend-multiply"
           />
-          <h1 className="text-sm font-bold text-center mt-auto mb-3">
+          <h1 className="text-sm md:text-2xl font-bold text-center mt-auto mb-3">
             Web Development
           </h1>
         </motion.div>

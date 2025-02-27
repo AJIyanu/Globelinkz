@@ -1,3 +1,4 @@
+import { createClient } from "contentful";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
@@ -30,3 +31,13 @@ export const navigation: NavigationItem[] = [
   { name: "Services", href: "#" },
   { name: "About us", href: "#" },
 ];
+
+export async function getBlogPosts() {
+  const client = createClient({
+    space: process.env.CONTENTFUL_SPACE_ID,
+    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+  });
+
+  const response = await client.getEntries({ content_type: "resources" });
+  return response.items;
+}

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function CallToAction() {
   return (
-    <div className="md:w-[80%] flex flex-col bg-indigo-200 p-5 md:p-9 items-center lg:bg-transparent lg:text-white">
+    <div className="md:w-full flex flex-col bg-indigo-200 p-5 md:p-9 items-center lg:bg-transparent lg:text-white">
       <p className="text-center mx-2 text-2xl italic md:hidden">
         Your growth is our priority. Reach out today and let’s make digital
         excellence a reality.
