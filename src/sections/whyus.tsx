@@ -75,7 +75,7 @@ export default function WhyUs() {
           for
         </p>
       </div>
-      <div className="w-full md:hidden">
+      <div className="w-full lg:hidden">
         <Accordion type="single" collapsible className="w-full">
           {WhyUsContent.map((item, idx) => (
             <AccordionItem key={idx} value={`item-${idx}`}>
@@ -90,7 +90,7 @@ export default function WhyUs() {
           ))}
         </Accordion>
       </div>
-      <div className="hidden md:grid gap-9 md:grid-cols-3 mt-6">
+      <div className="hidden lg:grid gap-9 lg:grid-cols-2 xl:grid-cols-3 mt-6">
         {WhyUsContent.map((item, idx) => (
           <Card
             key={idx}

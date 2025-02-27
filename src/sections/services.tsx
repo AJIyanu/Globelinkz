@@ -67,7 +67,7 @@ export default function OurCompetence() {
 
   return (
     <div>
-      <div className="flex text-3xl font-bold mt-[50px] md:ms-[40%] ms-[20%] md:text-5xl">
+      <div className="flex text-3xl font-bold mt-[50px] ms-[20%] md:text-5xl">
         <span>Our&nbsp;</span>
         <span className="relative inline-block">
           <motion.span
@@ -96,7 +96,7 @@ export default function OurCompetence() {
         transition={{ duration: 1.5, ease: "easeInOut" }}
         style={{ width: "5%" }}
       />
-      <div className="w-full h-[800px] bg-gradient-to-t from-indigo-700 to-white md:flex justify-around hidden">
+      <div className="w-full h-[800px] bg-gradient-to-t from-indigo-700 to-white lg:flex justify-around hidden">
         <motion.div
           initial={{ scale: 1 }}
           whileHover={{ scale: 1.05 }}

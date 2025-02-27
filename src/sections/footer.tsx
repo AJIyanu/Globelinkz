@@ -2,9 +2,8 @@ import { navigation } from "@/lib/utils";
 import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
 
 export default function Footer() {
-  console.log(navigation);
   return (
-    <div className="bg-gray-800 gap-10 p-10 text-white w-full flex flex-col items-center justify-center">
+    <div className="bg-gray-800 gap-10 p-10 text-white w-full flex flex-col items-center justify-center lg:bg-transparent">
       <div className="flex gap-7">
         {navigation.map((item, idx) => (
           <a href={item.href} key={idx} className="text-white">

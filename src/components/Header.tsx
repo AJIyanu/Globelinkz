@@ -38,9 +38,9 @@ export default function Header() {
           </div>
           <Sheet>
             <SheetTrigger asChild>
-              <Menu className="md:hidden" color="white" />
+              <Menu className="xl:hidden" color="white" />
             </SheetTrigger>
-            <SheetContent className="w-[220px] bg-green-100">
+            <SheetContent className="w-[70%] bg-green-100">
               <div className="flex items-center justify-between">
                 <a href="#" className="-m-1.5 p-1.5">
                   <Image
