@@ -55,11 +55,10 @@ const richTextOptions = {
   },
 }
 
-export default async function ArticlePage({
-  params,
-}: {
-  params: { slug: string }
+export default async function ArticlePage(props: {
+  params: Promise<{ slug: string }>
 }) {
+  const params = await props.params
   const { slug } = params
   const article = await fetchArticleBySlug(slug)
 
@@ -135,11 +134,10 @@ export default async function ArticlePage({
   )
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string }
+export async function generateMetadata(props: {
+  params: Promise<{ slug: string }>
 }) {
+  const params = await props.params
   const { slug } = params
   const article = await fetchArticleBySlug(slug)
 
