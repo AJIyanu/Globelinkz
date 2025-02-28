@@ -1,39 +1,39 @@
 import Image from "next/image";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { BLOCKS, INLINES, MARKS } from "@contentful/rich-text-types";
+import { BLOCKS, INLINES, MARKS, Node } from "@contentful/rich-text-types";
 import { format } from "date-fns";
 import { getBlogPostBySlug } from "../../../../types/contentful";
 
 // Configure rich text options
 const richTextOptions = {
   renderNode: {
-    [BLOCKS.PARAGRAPH]: (node: any, children: React.ReactNode) => (
+    [BLOCKS.PARAGRAPH]: (node: Node, children: React.ReactNode) => (
       <p className="mb-4 text-gray-800">{children}</p>
     ),
-    [BLOCKS.HEADING_1]: (node: any, children: React.ReactNode) => (
+    [BLOCKS.HEADING_1]: (node: Node, children: React.ReactNode) => (
       <h1 className="text-3xl font-bold mb-4">{children}</h1>
     ),
-    [BLOCKS.HEADING_2]: (node: any, children: React.ReactNode) => (
+    [BLOCKS.HEADING_2]: (node: Node, children: React.ReactNode) => (
       <h2 className="text-2xl font-bold mb-3">{children}</h2>
     ),
-    [BLOCKS.HEADING_3]: (node: any, children: React.ReactNode) => (
+    [BLOCKS.HEADING_3]: (node: Node, children: React.ReactNode) => (
       <h3 className="text-xl font-bold mb-2">{children}</h3>
     ),
-    [BLOCKS.UL_LIST]: (node: any, children: React.ReactNode) => (
+    [BLOCKS.UL_LIST]: (node: Node, children: React.ReactNode) => (
       <ul className="list-disc ml-6 mb-4">{children}</ul>
     ),
-    [BLOCKS.OL_LIST]: (node: any, children: React.ReactNode) => (
+    [BLOCKS.OL_LIST]: (node: Node, children: React.ReactNode) => (
       <ol className="list-decimal ml-6 mb-4">{children}</ol>
     ),
-    [BLOCKS.LIST_ITEM]: (node: any, children: React.ReactNode) => (
+    [BLOCKS.LIST_ITEM]: (node: Node, children: React.ReactNode) => (
       <li className="mb-1">{children}</li>
     ),
-    [BLOCKS.QUOTE]: (node: any, children: React.ReactNode) => (
+    [BLOCKS.QUOTE]: (node: Node, children: React.ReactNode) => (
       <blockquote className="border-l-4 border-gray-300 pl-4 italic my-4">
         {children}
       </blockquote>
     ),
-    [INLINES.HYPERLINK]: (node: any, children: React.ReactNode) => (
+    [INLINES.HYPERLINK]: (node: Node, children: React.ReactNode) => (
       <a
         href={node.data.uri}
         className="text-blue-600 hover:underline"
@@ -59,8 +59,8 @@ export default async function ArticlePage({
 }: {
   params: { slug: string };
 }) {
-  const article = await getBlogPostBySlug(params.slug);
-
+  const { slug } = await params;
+  const article = await getBlogPostBySlug(slug);
   if (!article) {
     return (
       <div className="max-w-3xl mx-auto py-8 px-4">
@@ -137,7 +137,8 @@ export async function generateMetadata({
 }: {
   params: { slug: string };
 }) {
-  const article = await getBlogPostBySlug(params.slug);
+  const { slug } = await params;
+  const article = await getBlogPostBySlug(slug);
 
   if (!article) {
     return {
