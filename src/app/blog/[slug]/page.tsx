@@ -4,6 +4,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { BLOCKS, INLINES, MARKS, Node } from '@contentful/rich-text-types'
 import { format } from 'date-fns'
 import { getBlogPostBySlug } from '../../../../types/contentful'
+import { Document } from '@contentful/rich-text-types'
 
 const richTextOptions = {
   renderNode: {
@@ -131,7 +132,7 @@ export default async function ArticlePage({
 
       {/* Article Content */}
       <div className="prose max-w-none">
-        {documentToReactComponents(content, richTextOptions)}
+        {documentToReactComponents(content as Document, richTextOptions)}
       </div>
     </article>
   )
