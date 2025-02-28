@@ -1,49 +1,49 @@
-"use client";
+'use client'
 
-import React, { useCallback } from "react";
-import { EmblaOptionsType, EmblaCarouselType } from "embla-carousel";
-import { DotButton, useDotButton } from "./EmblaCarouselDotButton";
-import Autoplay from "embla-carousel-autoplay";
-import ClassNames from "embla-carousel-class-names";
-import useEmblaCarousel from "embla-carousel-react";
+import React, { useCallback } from 'react'
+import { EmblaOptionsType, EmblaCarouselType } from 'embla-carousel'
+import { DotButton, useDotButton } from './EmblaCarouselDotButton'
+import Autoplay from 'embla-carousel-autoplay'
+import ClassNames from 'embla-carousel-class-names'
+import useEmblaCarousel from 'embla-carousel-react'
 // import Image from "next/image";
-import { Separator } from "@radix-ui/react-separator";
+import { Separator } from '@radix-ui/react-separator'
 
 interface StaffMember {
-  name: string;
-  role: string;
-  quote: string;
-  imageUrl: string;
+  name: string
+  role: string
+  quote: string
+  imageUrl: string
 }
 
 type PropType = {
-  slides: StaffMember[];
-  options?: EmblaOptionsType;
-};
+  slides: StaffMember[]
+  options?: EmblaOptionsType
+}
 
 const EmblaCarousel: React.FC<PropType> = (props) => {
-  const { slides, options } = props;
+  const { slides, options } = props
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [
     Autoplay({ delay: 8000 }),
     ClassNames(),
-  ]);
+  ])
 
   const onNavButtonClick = useCallback((emblaApi: EmblaCarouselType) => {
-    const autoplay = emblaApi?.plugins()?.autoplay;
-    if (!autoplay) return;
+    const autoplay = emblaApi?.plugins()?.autoplay
+    if (!autoplay) return
 
     const resetOrStop =
       autoplay.options.stopOnInteraction === false
         ? autoplay.reset
-        : autoplay.stop;
+        : autoplay.stop
 
-    resetOrStop();
-  }, []);
+    resetOrStop()
+  }, [])
 
   const { selectedIndex, scrollSnaps, onDotButtonClick } = useDotButton(
     emblaApi,
     onNavButtonClick
-  );
+  )
 
   return (
     <section className="embla">
@@ -56,7 +56,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                   className="aspect-square rounded-full border-2 border-indigo-300 w-[220px] md:w-[55%]"
                   style={{
                     backgroundImage: `url(staff/${staff.imageUrl})`,
-                    backgroundPosition: "center top -1.5rem",
+                    backgroundPosition: 'center top -1.5rem',
                   }}
                 />
                 <div className="ps-3 w-full text-center md:w-[45%] md:text-left">
@@ -83,15 +83,15 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
             <DotButton
               key={index}
               onClick={() => onDotButtonClick(index)}
-              className={"border-2 border-indigo-300 aspect-square w-[20px] rounded-full me-4".concat(
-                index === selectedIndex ? " border-indigo-900 border-4" : ""
+              className={'border-2 border-indigo-300 aspect-square w-[20px] rounded-full me-4'.concat(
+                index === selectedIndex ? ' border-indigo-900 border-4' : ''
               )}
             />
           ))}
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default EmblaCarousel;
+export default EmblaCarousel

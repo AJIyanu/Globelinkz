@@ -1,39 +1,33 @@
-"use client";
+'use client'
 
-import Image from "next/image";
-import { Separator } from "@/components/ui/separator";
-import * as motion from "motion/react-client";
-import { useState, useEffect } from "react";
+import Image from 'next/image'
+import { Separator } from '@/components/ui/separator'
+import * as motion from 'motion/react-client'
+import { useState, useEffect } from 'react'
 
 export default function OurCompetence() {
-  const words = [
-    "Services",
-    "Competence",
-    "Expertise",
-    "Capabilities",
-    "Strengths",
-  ];
+  const words = useMemo(() => ['service1', 'service2', 'service3'], [])
 
-  const [index, setIndex] = useState(0);
-  const [text, setText] = useState("");
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [lineWidth, setLineWidth] = useState("10%");
+  const [index, setIndex] = useState(0)
+  const [text, setText] = useState('')
+  const [isDeleting, setIsDeleting] = useState(false)
+  const [lineWidth, setLineWidth] = useState('10%')
 
   useEffect(() => {
-    let typingSpeed;
+    let typingSpeed
 
     if (isDeleting) {
-      typingSpeed = 100;
+      typingSpeed = 100
     } else {
-      typingSpeed = 150;
+      typingSpeed = 150
     }
-    const currentWord = words[index];
+    const currentWord = words[index]
 
     if (!isDeleting && text === currentWord) {
-      setTimeout(() => setIsDeleting(true), 3000);
-    } else if (isDeleting && text === "") {
-      setIsDeleting(false);
-      setIndex((prev) => (prev + 1) % words.length);
+      setTimeout(() => setIsDeleting(true), 3000)
+    } else if (isDeleting && text === '') {
+      setIsDeleting(false)
+      setIndex((prev) => (prev + 1) % words.length)
     }
 
     const timeout = setTimeout(() => {
@@ -41,29 +35,29 @@ export default function OurCompetence() {
         isDeleting
           ? currentWord.substring(0, prev.length - 1)
           : currentWord.substring(0, prev.length + 1)
-      );
-    }, typingSpeed);
+      )
+    }, typingSpeed)
 
-    return () => clearTimeout(timeout);
-  }, [text, isDeleting, index, words]);
+    return () => clearTimeout(timeout)
+  }, [text, isDeleting, index, words])
 
   useEffect(() => {
-    let add = true;
+    let add = true
     const updateLineWidth = () => {
       if (add) {
-        const randomWidth = `${10 + Math.random() * 40}%`;
-        setLineWidth(randomWidth);
-        add = !add;
+        const randomWidth = `${10 + Math.random() * 40}%`
+        setLineWidth(randomWidth)
+        add = !add
       } else {
-        const randomWidth = `${60 - Math.random() * 40}%`;
-        setLineWidth(randomWidth);
-        add = !add;
+        const randomWidth = `${60 - Math.random() * 40}%`
+        setLineWidth(randomWidth)
+        add = !add
       }
-    };
+    }
 
-    const interval = setInterval(updateLineWidth, 2000); // Change width every 2s
-    return () => clearInterval(interval);
-  }, []);
+    const interval = setInterval(updateLineWidth, 2000) // Change width every 2s
+    return () => clearInterval(interval)
+  }, [])
 
   return (
     <div className="w-[80%] lg:w-full">
@@ -93,8 +87,8 @@ export default function OurCompetence() {
       <motion.div
         className="h-[1.5px] bg-black mx-auto mb-[50px] mt-2"
         animate={{ width: lineWidth }}
-        transition={{ duration: 1.5, ease: "easeInOut" }}
-        style={{ width: "5%" }}
+        transition={{ duration: 1.5, ease: 'easeInOut' }}
+        style={{ width: '5%' }}
       />
       <div className="w-full h-[650px] px-8 bg-gradient-to-t from-indigo-700 to-white lg:flex justify-around hidden">
         <motion.div
@@ -186,11 +180,11 @@ export default function OurCompetence() {
           whileInView={{
             scale: [1, 0.9, 0.9, 1, 1],
             rotate: [0, 0, 180, 180, 0],
-            borderRadius: ["0%", "0%", "50%", "50%", "10%"],
+            borderRadius: ['0%', '0%', '50%', '50%', '10%'],
           }}
           transition={{
             duration: 2,
-            ease: "easeInOut",
+            ease: 'easeInOut',
             times: [0, 0.2, 0.5, 0.8, 1],
             // repeat: Infinity,
             repeatDelay: 1,
@@ -213,11 +207,11 @@ export default function OurCompetence() {
           whileInView={{
             scale: [1, 0.9, 0.9, 1, 1],
             rotate: [0, 0, 180, 180, 0],
-            borderRadius: ["0%", "0%", "50%", "50%", "10%"],
+            borderRadius: ['0%', '0%', '50%', '50%', '10%'],
           }}
           transition={{
             duration: 2,
-            ease: "easeInOut",
+            ease: 'easeInOut',
             times: [0, 0.2, 0.5, 0.8, 1],
             // repeat: Infinity,
             repeatDelay: 1,
@@ -240,11 +234,11 @@ export default function OurCompetence() {
           whileInView={{
             scale: [1, 0.9, 0.9, 1, 1],
             rotate: [0, 0, 180, 180, 0],
-            borderRadius: ["0%", "0%", "50%", "50%", "10%"],
+            borderRadius: ['0%', '0%', '50%', '50%', '10%'],
           }}
           transition={{
             duration: 2,
-            ease: "easeInOut",
+            ease: 'easeInOut',
             times: [0, 0.2, 0.5, 0.8, 1],
             // repeat: Infinity,
             repeatDelay: 1,
@@ -266,11 +260,11 @@ export default function OurCompetence() {
           whileInView={{
             scale: [1, 0.9, 0.9, 1, 1],
             rotate: [0, 0, 180, 180, 0],
-            borderRadius: ["0%", "0%", "50%", "50%", "10%"],
+            borderRadius: ['0%', '0%', '50%', '50%', '10%'],
           }}
           transition={{
             duration: 2,
-            ease: "easeInOut",
+            ease: 'easeInOut',
             times: [0, 0.2, 0.5, 0.8, 1],
             // repeat: Infinity,
             repeatDelay: 1,
@@ -289,5 +283,5 @@ export default function OurCompetence() {
         </motion.div>
       </div>
     </div>
-  );
+  )
 }

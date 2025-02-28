@@ -1,7 +1,7 @@
-import { getBlogPosts } from "@/lib/utils";
-import Link from "next/link";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { Separator } from "@/components/ui/separator";
+import { getBlogPosts } from '@/lib/utils'
+import Link from 'next/link'
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar'
+import { Separator } from '@/components/ui/separator'
 import {
   Card,
   CardContent,
@@ -9,21 +9,21 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
+} from '@/components/ui/card'
 
-export const revalidate = 3600;
+export const revalidate = 3600
 
 const formatDate = (dateString: string): string => {
-  const date = new Date(dateString);
-  return date.toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-};
+  const date = new Date(dateString)
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  })
+}
 
 export default async function BlogPage() {
-  const posts = await getBlogPosts();
+  const posts = await getBlogPosts()
 
   return (
     <div>
@@ -43,21 +43,21 @@ export default async function BlogPage() {
                 style={{
                   backgroundImage: post.fields.thumbnail?.fields?.file?.url
                     ? `url(https:${post.fields.thumbnail.fields.file.url})`
-                    : "url(/hero-bg.jpg)",
+                    : 'url(/hero-bg.jpg)',
                 }}
               />
               <CardHeader>
                 <CardDescription>
                   {post.fields.category && post.fields.category.length > 0
-                    ? post.fields.category.join(", ")
-                    : "Uncategorized"}
+                    ? post.fields.category.join(', ')
+                    : 'Uncategorized'}
                 </CardDescription>
                 <CardTitle className="text-2xl">
-                  {post.fields.blogTitle || "Untitled"}
+                  {post.fields.blogTitle || 'Untitled'}
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p>{post.fields.articlePreview || "No preview available"}</p>
+                <p>{post.fields.articlePreview || 'No preview available'}</p>
               </CardContent>
               <Separator className="my-2 bg-gray-800 mx-auto w-[95%]" />
               <CardFooter>
@@ -75,5 +75,5 @@ export default async function BlogPage() {
         ))}
       </div>
     </div>
-  );
+  )
 }

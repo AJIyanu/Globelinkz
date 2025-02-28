@@ -1,8 +1,9 @@
-import Image from "next/image";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { BLOCKS, INLINES, MARKS, Node } from "@contentful/rich-text-types";
-import { format } from "date-fns";
-import { getBlogPostBySlug } from "../../../../types/contentful";
+import React from 'react'
+import Image from 'next/image'
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+import { BLOCKS, INLINES, MARKS, Node } from '@contentful/rich-text-types'
+import { format } from 'date-fns'
+import { getBlogPostBySlug } from '../../../../types/contentful'
 
 const richTextOptions = {
   renderNode: {
@@ -51,15 +52,15 @@ const richTextOptions = {
       <code className="px-1 py-0.5 bg-gray-100 rounded">{text}</code>
     ),
   },
-};
+}
 
 export default async function ArticlePage({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ slug: string }>
 }) {
-  const { slug } = await params;
-  const article = await getBlogPostBySlug(slug);
+  const { slug } = await params
+  const article = await getBlogPostBySlug(slug)
 
   if (!article) {
     return (
@@ -70,22 +71,22 @@ export default async function ArticlePage({
         >
           <strong className="font-bold">Article not found:</strong>
           <span className="block sm:inline">
-            {" "}
+            {' '}
             The requested article could not be found.
           </span>
         </div>
       </div>
-    );
+    )
   }
 
   // Extract data from the Contentful response format
-  const title = article.fields.blogTitle;
+  const title = article.fields.blogTitle
   const createdAt = article.sys.createdAt
-    ? format(new Date(article.sys.createdAt), "MMMM dd, yyyy")
-    : "";
-  const categories = article.fields.category || [];
-  const thumbnail = article.fields.thumbnail?.fields.file;
-  const content = article.fields.article;
+    ? format(new Date(article.sys.createdAt), 'MMMM dd, yyyy')
+    : ''
+  const categories = article.fields.category || []
+  const thumbnail = article.fields.thumbnail?.fields.file
+  const content = article.fields.article
 
   return (
     <article className="max-w-3xl mx-auto py-8 px-4">
@@ -129,29 +130,29 @@ export default async function ArticlePage({
         {documentToReactComponents(content, richTextOptions)}
       </div>
     </article>
-  );
+  )
 }
 
 // ✅ Fix generateMetadata
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ slug: string }>; // ✅ Awaiting params
+  params: Promise<{ slug: string }> // ✅ Awaiting params
 }) {
-  const { slug } = await params; // ✅ Awaiting params before using slug
-  const article = await getBlogPostBySlug(slug);
+  const { slug } = await params // ✅ Awaiting params before using slug
+  const article = await getBlogPostBySlug(slug)
 
   if (!article) {
-    return { title: "Article Not Found" };
+    return { title: 'Article Not Found' }
   }
 
   return {
     title: article.fields.blogTitle,
-    description: article.fields.articlePreview || "",
+    description: article.fields.articlePreview || '',
     openGraph: {
       images: article.fields.thumbnail?.fields.file
         ? [`https:${article.fields.thumbnail.fields.file.url}`]
         : [],
     },
-  };
+  }
 }

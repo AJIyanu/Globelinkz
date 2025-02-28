@@ -1,5 +1,5 @@
-import { navigation } from "@/lib/utils";
-import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
+import { navigation } from '@/lib/utils'
+import { Facebook, Instagram, Twitter, Youtube } from 'lucide-react'
 
 export default function Footer() {
   return (
@@ -27,10 +27,10 @@ export default function Footer() {
       </div>
       <div>
         <p>
-          © 2025 Globelinkz{" "}
+          © 2025 Globelinkz{' '}
           <span className="hidden sm:inline">Full Digital Service Agency</span>
         </p>
       </div>
     </div>
-  );
+  )
 }

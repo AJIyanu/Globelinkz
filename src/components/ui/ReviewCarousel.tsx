@@ -1,56 +1,56 @@
-"use client";
+'use client'
 
-import React, { useCallback } from "react";
-import { BadgeCheck } from "lucide-react";
-import { EmblaOptionsType, EmblaCarouselType } from "embla-carousel";
-import { DotButton, useDotButton } from "./EmblaCarouselDotButton";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import Autoplay from "embla-carousel-autoplay";
-import ClassNames from "embla-carousel-class-names";
-import useEmblaCarousel from "embla-carousel-react";
-import { Star } from "lucide-react";
+import React, { useCallback } from 'react'
+import { BadgeCheck } from 'lucide-react'
+import { EmblaOptionsType, EmblaCarouselType } from 'embla-carousel'
+import { DotButton, useDotButton } from './EmblaCarouselDotButton'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import Autoplay from 'embla-carousel-autoplay'
+import ClassNames from 'embla-carousel-class-names'
+import useEmblaCarousel from 'embla-carousel-react'
+import { Star } from 'lucide-react'
 // import Image from "next/image";
-import { Separator } from "@radix-ui/react-separator";
+import { Separator } from '@radix-ui/react-separator'
 
 interface ReveiwProp {
-  name: string;
-  rating: number;
-  msg: string;
-  reviewerImg: string;
-  role: string;
-  medium: string;
-  date: string;
-  mediumImg: string;
+  name: string
+  rating: number
+  msg: string
+  reviewerImg: string
+  role: string
+  medium: string
+  date: string
+  mediumImg: string
 }
 
 type PropType = {
-  slides: ReveiwProp[];
-  options?: EmblaOptionsType;
-};
+  slides: ReveiwProp[]
+  options?: EmblaOptionsType
+}
 
 const ReviewCarousel: React.FC<PropType> = (props) => {
-  const { slides, options } = props;
+  const { slides, options } = props
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [
     Autoplay({ delay: 8000 }),
     ClassNames(),
-  ]);
+  ])
 
   const onNavButtonClick = useCallback((emblaApi: EmblaCarouselType) => {
-    const autoplay = emblaApi?.plugins()?.autoplay;
-    if (!autoplay) return;
+    const autoplay = emblaApi?.plugins()?.autoplay
+    if (!autoplay) return
 
     const resetOrStop =
       autoplay.options.stopOnInteraction === false
         ? autoplay.reset
-        : autoplay.stop;
+        : autoplay.stop
 
-    resetOrStop();
-  }, []);
+    resetOrStop()
+  }, [])
 
   const { selectedIndex, scrollSnaps, onDotButtonClick } = useDotButton(
     emblaApi,
     onNavButtonClick
-  );
+  )
 
   return (
     <section className="embla_review">
@@ -72,7 +72,7 @@ const ReviewCarousel: React.FC<PropType> = (props) => {
                   </div>
                   <div>
                     <h2 className="text-xl font-semibold">
-                      {review.name} -{" "}
+                      {review.name} -{' '}
                       <span className="text-gray-700 font-normal text-sm">
                         {review.role}
                       </span>
@@ -84,8 +84,8 @@ const ReviewCarousel: React.FC<PropType> = (props) => {
                           size={17}
                           className={
                             index < review.rating
-                              ? "fill-yellow-400 text-yellow-400"
-                              : "text-gray-300"
+                              ? 'fill-yellow-400 text-yellow-400'
+                              : 'text-gray-300'
                           }
                         />
                       ))}
@@ -124,15 +124,15 @@ const ReviewCarousel: React.FC<PropType> = (props) => {
             <DotButton
               key={index}
               onClick={() => onDotButtonClick(index)}
-              className={"border-2 border-indigo-300 aspect-square w-[20px] rounded-full me-4".concat(
-                index === selectedIndex ? " border-indigo-900 border-4" : ""
+              className={'border-2 border-indigo-300 aspect-square w-[20px] rounded-full me-4'.concat(
+                index === selectedIndex ? ' border-indigo-900 border-4' : ''
               )}
             />
           ))}
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default ReviewCarousel;
+export default ReviewCarousel

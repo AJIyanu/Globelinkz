@@ -1,9 +1,10 @@
-import Hero from "@/sections/hero";
-import WhyUs from "@/sections/whyus";
-import Reviews from "@/sections/review";
-import OurCompetence from "@/sections/services";
-import CallToAction from "@/sections/cta";
-import Footer from "@/sections/footer";
+import Hero from '@/sections/hero'
+import WhyUs from '@/sections/whyus'
+import Reviews from '@/sections/review'
+import OurCompetence from '@/sections/services'
+import CallToAction from '@/sections/cta'
+import Footer from '@/sections/footer'
+import React from 'react'
 
 export default function Home() {
   return (
@@ -25,5 +26,5 @@ export default function Home() {
         </div>
       </div>
     </div>
-  );
+  )
 }

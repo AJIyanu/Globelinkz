@@ -1,104 +1,104 @@
-"use client";
+'use client'
 
-import { Separator } from "@radix-ui/react-separator";
-import EmblaCarousel from "@/components/ui/EmblaCarousel";
-import Autoplay from "embla-carousel-autoplay";
-import { BadgeCheck, Star } from "lucide-react";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { useRef } from "react";
+import { Separator } from '@radix-ui/react-separator'
+import EmblaCarousel from '@/components/ui/EmblaCarousel'
+import Autoplay from 'embla-carousel-autoplay'
+import { BadgeCheck, Star } from 'lucide-react'
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar'
+import { useRef } from 'react'
 // import ReviewCarousel from "@/components/ui/ReviewCarousel";
-import { EmblaOptionsType } from "embla-carousel";
+import { EmblaOptionsType } from 'embla-carousel'
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   // CarouselNext,
   // CarouselPrevious,
-} from "@/components/ui/carousel";
+} from '@/components/ui/carousel'
 
-const OPTIONS: EmblaOptionsType = { align: "start", loop: true, duration: 50 };
+const OPTIONS: EmblaOptionsType = { align: 'start', loop: true, duration: 50 }
 const REVOPTIONS: EmblaOptionsType = {
-  align: "end",
+  align: 'end',
   loop: true,
   duration: 50,
-};
+}
 
 const staffData = [
   {
-    name: "Elijah",
-    role: "Quantitative Data Analyst",
+    name: 'Elijah',
+    role: 'Quantitative Data Analyst',
     quote:
       "Your website is the gateway to your business, and I'm here to make it unforgettable. I see myself as the technical artisan, turning your vision into seamless code and interactive design that captivates your audience",
-    imageUrl: "Elijah.jpeg",
+    imageUrl: 'Elijah.jpeg',
   },
   {
-    name: "Simon Peace",
-    role: "Digital Marketer/Branding",
+    name: 'Simon Peace',
+    role: 'Digital Marketer/Branding',
     quote:
-      "Marketing isn’t just about ads—it’s about connection. I blend data-driven insights with creative execution to craft campaigns that don’t just capture attention but drive real results. Every campaign is a masterpiece in the making—you bring the vision, and I bring the strategy, precision, and expertise to turn it into measurable success.CD",
-    imageUrl: "peace.jpg",
+      'Marketing isn’t just about ads—it’s about connection. I blend data-driven insights with creative execution to craft campaigns that don’t just capture attention but drive real results. Every campaign is a masterpiece in the making—you bring the vision, and I bring the strategy, precision, and expertise to turn it into measurable success.CD',
+    imageUrl: 'peace.jpg',
   },
   {
-    name: "Funke",
-    role: "Data Analyst",
+    name: 'Funke',
+    role: 'Data Analyst',
     quote:
-      "Every dataset tells a story—I help you uncover its meaning. With precision and expertise, I turn complex information into easy-to-understand visuals and reports, empowering you to make data-driven decisions with confidence. ",
-    imageUrl: "funke.png",
+      'Every dataset tells a story—I help you uncover its meaning. With precision and expertise, I turn complex information into easy-to-understand visuals and reports, empowering you to make data-driven decisions with confidence. ',
+    imageUrl: 'funke.png',
   },
   {
-    name: "Temidayo",
-    role: "Administrative Staff",
-    quote:
-      "Your website is the gateway to your business, and I'm here to make it unforgettable. I see myself as the technical artisan, turning your vision into seamless code and interactive design that captivates your audience",
-    imageUrl: "ajiyanu.jpg",
-  },
-  {
-    name: "Joseph Aderemi",
-    role: "Web Developer",
+    name: 'Temidayo',
+    role: 'Administrative Staff',
     quote:
       "Your website is the gateway to your business, and I'm here to make it unforgettable. I see myself as the technical artisan, turning your vision into seamless code and interactive design that captivates your audience",
-    imageUrl: "ajiyanu.jpg",
+    imageUrl: 'ajiyanu.jpg',
   },
-];
+  {
+    name: 'Joseph Aderemi',
+    role: 'Web Developer',
+    quote:
+      "Your website is the gateway to your business, and I'm here to make it unforgettable. I see myself as the technical artisan, turning your vision into seamless code and interactive design that captivates your audience",
+    imageUrl: 'ajiyanu.jpg',
+  },
+]
 
 const reviewData = [
   {
-    name: "Elon Musk",
+    name: 'Elon Musk',
     rating: 4,
-    role: "CEO of SpaceX",
-    msg: "I have worked with Peace and Funke on several projects, and I must say, their technical expertise and dedication are truly impressive.",
+    role: 'CEO of SpaceX',
+    msg: 'I have worked with Peace and Funke on several projects, and I must say, their technical expertise and dedication are truly impressive.',
 
     reviewerImg:
-      "https://hips.hearstapps.com/hmg-prod/images/elon-musk-gettyimages-2147789844-web-675b2c17301ea.jpg?crop=0.6666666666666666xw:1xh;center,top&resize=640:*",
-    medium: "Fiverr",
-    date: "28th February, 2023",
-    mediumImg: "https://img.icons8.com/ios-filled/50/fiverr--v2.png",
+      'https://hips.hearstapps.com/hmg-prod/images/elon-musk-gettyimages-2147789844-web-675b2c17301ea.jpg?crop=0.6666666666666666xw:1xh;center,top&resize=640:*',
+    medium: 'Fiverr',
+    date: '28th February, 2023',
+    mediumImg: 'https://img.icons8.com/ios-filled/50/fiverr--v2.png',
   },
   {
-    name: "Mark Zuckerberg",
+    name: 'Mark Zuckerberg',
     rating: 5,
-    role: "CEO of Meta",
+    role: 'CEO of Meta',
     msg: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     reviewerImg:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Mark_Zuckerberg_F8_2019_Keynote_%2832830578717%29_%28cropped%29.jpg/1200px-Mark_Zuckerberg_F8_2019_Keynote_%2832830578717%29_%28cropped%29.jpg",
-    medium: "Upwork",
-    date: "15th March, 2023",
-    mediumImg: "https://img.icons8.com/ios-filled/50/upwork.png",
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Mark_Zuckerberg_F8_2019_Keynote_%2832830578717%29_%28cropped%29.jpg/1200px-Mark_Zuckerberg_F8_2019_Keynote_%2832830578717%29_%28cropped%29.jpg',
+    medium: 'Upwork',
+    date: '15th March, 2023',
+    mediumImg: 'https://img.icons8.com/ios-filled/50/upwork.png',
   },
   {
-    name: "Aliko Dangote",
+    name: 'Aliko Dangote',
     rating: 4,
-    role: "CEO of Dangote Group",
-    msg: "I have Worked with Globelinkz for 2 years and I can say that they are the best in the industry. They are very professional and always deliver on time. I would recommend them to anyone looking for a web development company.",
+    role: 'CEO of Dangote Group',
+    msg: 'I have Worked with Globelinkz for 2 years and I can say that they are the best in the industry. They are very professional and always deliver on time. I would recommend them to anyone looking for a web development company.',
     reviewerImg:
-      "https://imageio.forbes.com/specials-images/imageserve/5c33a1554bbe6f7020fb2fd2/0x0.jpg?format=jpg&crop=1909,1909,x865,y206,safe&height=416&width=416&fit=bounds",
-    medium: "Upwork",
-    date: "25th March, 2023",
-    mediumImg: "https://img.icons8.com/ios-filled/50/upwork.png",
+      'https://imageio.forbes.com/specials-images/imageserve/5c33a1554bbe6f7020fb2fd2/0x0.jpg?format=jpg&crop=1909,1909,x865,y206,safe&height=416&width=416&fit=bounds',
+    medium: 'Upwork',
+    date: '25th March, 2023',
+    mediumImg: 'https://img.icons8.com/ios-filled/50/upwork.png',
   },
-];
+]
 export default function Reviews() {
-  const plugin = useRef(Autoplay({ delay: 6000, stopOnInteraction: true }));
+  const plugin = useRef(Autoplay({ delay: 6000, stopOnInteraction: true }))
   return (
     <div className="w-[80%] flex flex-col-reverse xl:flex-row my-12">
       <div className="xl:w-[49%] pe-3">
@@ -147,7 +147,7 @@ export default function Reviews() {
                     </div>
                     <div>
                       <h2 className="text-xl font-semibold">
-                        {review.name} -{" "}
+                        {review.name} -{' '}
                         <span className="text-gray-700 font-normal text-sm">
                           {review.role}
                         </span>
@@ -159,8 +159,8 @@ export default function Reviews() {
                             size={17}
                             className={
                               index < review.rating
-                                ? "fill-yellow-400 text-yellow-400"
-                                : "text-gray-300"
+                                ? 'fill-yellow-400 text-yellow-400'
+                                : 'text-gray-300'
                             }
                           />
                         ))}
@@ -195,5 +195,5 @@ export default function Reviews() {
         {/* <ReviewCarousel slides={reviewData} options={REVOPTIONS} /> */}
       </div>
     </div>
-  );
+  )
 }

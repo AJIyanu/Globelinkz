@@ -59,7 +59,7 @@ export async function getBlogPosts(): Promise<BlogPost[]> {
 }
 
 export async function getBlogPostBySlug(
-  slug: string
+  slug: string,
 ): Promise<BlogPost | null> {
   try {
     const response = await contentfulClient.getEntries({

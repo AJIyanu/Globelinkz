@@ -1,9 +1,9 @@
-"use client";
+'use client'
 
-import Image from "next/image";
-import { Menu } from "lucide-react";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { navigation } from "@/lib/utils";
+import Image from 'next/image'
+import { Menu } from 'lucide-react'
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
+import { navigation } from '@/lib/utils'
 
 export default function Header() {
   return (
@@ -71,5 +71,5 @@ export default function Header() {
         </nav>
       </header>
     </div>
-  );
+  )
 }

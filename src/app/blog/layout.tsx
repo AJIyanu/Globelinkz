@@ -1,11 +1,11 @@
-import Header from "@/components/Header";
-import CallToAction from "@/sections/cta";
-import Footer from "@/sections/footer";
+import Header from '@/components/Header'
+import CallToAction from '@/sections/cta'
+import Footer from '@/sections/footer'
 
 export default function BlogLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
     <div className="flex flex-col items-center">
@@ -31,5 +31,5 @@ export default function BlogLayout({
         </div>
       </div>
     </div>
-  );
+  )
 }

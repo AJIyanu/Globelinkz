@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from 'next/image'
 
 export default function CallToAction() {
   return (
@@ -39,5 +39,5 @@ export default function CallToAction() {
         </a>
       </div>
     </div>
-  );
+  )
 }
