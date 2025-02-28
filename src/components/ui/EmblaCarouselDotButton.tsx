@@ -16,7 +16,7 @@ type UseDotButtonType = {
 
 export const useDotButton = (
   emblaApi: EmblaCarouselType | undefined,
-  onButtonClick?: (emblaApi: EmblaCarouselType) => void
+  onButtonClick?: (emblaApi: EmblaCarouselType) => void,
 ): UseDotButtonType => {
   const [selectedIndex, setSelectedIndex] = useState(0)
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([])
@@ -27,7 +27,7 @@ export const useDotButton = (
       emblaApi.scrollTo(index)
       if (onButtonClick) onButtonClick(emblaApi)
     },
-    [emblaApi, onButtonClick]
+    [emblaApi, onButtonClick],
   )
 
   const onInit = useCallback((emblaApi: EmblaCarouselType) => {

@@ -34,7 +34,7 @@ export default function OurCompetence() {
       setText((prev) =>
         isDeleting
           ? currentWord.substring(0, prev.length - 1)
-          : currentWord.substring(0, prev.length + 1)
+          : currentWord.substring(0, prev.length + 1),
       )
     }, typingSpeed)
 
