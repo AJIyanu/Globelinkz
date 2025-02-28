@@ -1,7 +1,5 @@
 import { getBlogPosts } from "@/lib/utils";
-import Header from "@/components/Header";
-import CallToAction from "@/sections/cta";
-import Footer from "@/sections/footer";
+import Link from "next/link";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
 import {
@@ -13,46 +11,68 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
+export const revalidate = 3600;
+
+const formatDate = (dateString: string): string => {
+  const date = new Date(dateString);
+  return date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+};
+
 export default async function BlogPage() {
   const posts = await getBlogPosts();
-  console.log(JSON.stringify(posts));
-  return (
-    <div className="flex flex-col items-center">
-      <div className="bg-indigo-300 w-full h-[80px] lg:h-[100px]">
-        <Header />
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-2 p-6 justify-around w-full lg:w-[80%] border-l border-r border-gray-300 bg-indigo-100">
-        <Card className="overflow-hidden">
-          <div className="relative w-full aspect-[4/3] bg-[url(/hero-bg.jpg)] bg-cover bg-center" />
-          <CardHeader>
-            <CardDescription>Article Category</CardDescription>
-            <CardTitle className="text-2xl">Article Title</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p>Article Preview</p>
-          </CardContent>
-          <Separator className="my-2 bg-gray-800 mx-auto w-[95%]" />
-          <CardFooter>
-            <Avatar>
-              <AvatarImage src="/staff/peace.jpg" />
-              <AvatarFallback>AN</AvatarFallback>
-            </Avatar>
-            <div className="ms-5">
-              <h4>Name of Author</h4>
-              <p>Date of Publication</p>
-            </div>
-          </CardFooter>
-        </Card>
-      </div>
-      <div className="relative bg-black">
-        <div className="absolute inset-0 hidden lg:block bg-[url(/footer.jpg)] bg-cover bg-center">
-          <div className="absolute inset-0 bg-black bg-opacity-70"></div>
-        </div>
 
-        <div className="relative z-10 flex flex-col items-center">
-          <CallToAction />
-          <Footer />
-        </div>
+  return (
+    <div>
+      <div className="text-4xl lg:text-5xl font-bold p-6">
+        Resources for you
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-2 p-6">
+        {posts.map((post) => (
+          <Link
+            href={`/blog/${post.fields.slug}`}
+            key={post.sys.id}
+            className="h-full"
+          >
+            <Card key={post.sys.id} className="overflow-hidden h-full">
+              <div
+                className="relative w-full aspect-[4/3] bg-cover bg-center"
+                style={{
+                  backgroundImage: post.fields.thumbnail?.fields?.file?.url
+                    ? `url(https:${post.fields.thumbnail.fields.file.url})`
+                    : "url(/hero-bg.jpg)",
+                }}
+              />
+              <CardHeader>
+                <CardDescription>
+                  {post.fields.category && post.fields.category.length > 0
+                    ? post.fields.category.join(", ")
+                    : "Uncategorized"}
+                </CardDescription>
+                <CardTitle className="text-2xl">
+                  {post.fields.blogTitle || "Untitled"}
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p>{post.fields.articlePreview || "No preview available"}</p>
+              </CardContent>
+              <Separator className="my-2 bg-gray-800 mx-auto w-[95%]" />
+              <CardFooter>
+                <Avatar>
+                  <AvatarImage src="/staff/peace.jpg" alt="Author" />
+                  <AvatarFallback>AN</AvatarFallback>
+                </Avatar>
+                <div className="ms-5">
+                  <h4>Admin</h4>
+                  <p>{formatDate(post.sys.updatedAt)}</p>
+                </div>
+              </CardFooter>
+            </Card>
+          </Link>
+        ))}
       </div>
     </div>
   );
