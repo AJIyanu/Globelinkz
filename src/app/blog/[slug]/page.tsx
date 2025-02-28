@@ -1,6 +1,6 @@
 // app/blog/[slug]/page.tsx
 import React from 'react'
-import Image from 'next/image'
+// import Image from 'next/image'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { BLOCKS, INLINES, MARKS, Node } from '@contentful/rich-text-types'
 import { format } from 'date-fns'
@@ -43,7 +43,7 @@ const richTextOptions = {
       >
         {children}
       </a>
-    )
+    ),
   },
   renderMark: {
     [MARKS.BOLD]: (text: React.ReactNode) => <strong>{text}</strong>,
@@ -51,12 +51,12 @@ const richTextOptions = {
     [MARKS.UNDERLINE]: (text: React.ReactNode) => <u>{text}</u>,
     [MARKS.CODE]: (text: React.ReactNode) => (
       <code className="px-1 py-0.5 bg-gray-100 rounded">{text}</code>
-    )
-  }
+    ),
+  },
 }
 
 export default async function ArticlePage({
-  params
+  params,
 }: {
   params: { slug: string }
 }) {
@@ -81,7 +81,7 @@ export default async function ArticlePage({
   }
 
   // Destructure fields from the article
-  const { blogTitle, category, thumbnail, article: content } = article.fields
+  const { blogTitle, category, article: content } = article.fields
   const createdAt = article.sys.createdAt
     ? format(new Date(article.sys.createdAt), 'MMMM dd, yyyy')
     : ''
@@ -136,7 +136,7 @@ export default async function ArticlePage({
 }
 
 export async function generateMetadata({
-  params
+  params,
 }: {
   params: { slug: string }
 }) {
@@ -149,7 +149,7 @@ export async function generateMetadata({
 
   return {
     title: article.fields.blogTitle,
-    description: article.fields.articlePreview || ''
+    description: article.fields.articlePreview || '',
     // openGraph: {
     //   images: article.fields.thumbnail?.fields?.file
     //     ? [`https:${article.fields.thumbnail.fields.file.url}`]

@@ -1,4 +1,3 @@
-import { createClient } from 'contentful'
 import { clsx, type ClassValue } from 'clsx'
 import { twMerge } from 'tailwind-merge'
 
@@ -29,5 +28,5 @@ export const navigation: NavigationItem[] = [
   { name: 'Blog', href: '/blog' },
   { name: 'Portfolio', href: '#' },
   { name: 'Services', href: '#' },
-  { name: 'About us', href: '#' }
+  { name: 'About us', href: '#' },
 ]
