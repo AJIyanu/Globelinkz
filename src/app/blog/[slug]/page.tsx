@@ -4,7 +4,6 @@ import { BLOCKS, INLINES, MARKS, Node } from "@contentful/rich-text-types";
 import { format } from "date-fns";
 import { getBlogPostBySlug } from "../../../../types/contentful";
 
-// Configure rich text options
 const richTextOptions = {
   renderNode: {
     [BLOCKS.PARAGRAPH]: (node: Node, children: React.ReactNode) => (
@@ -57,10 +56,11 @@ const richTextOptions = {
 export default async function ArticlePage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const { slug } = params;
+  const { slug } = await params;
   const article = await getBlogPostBySlug(slug);
+
   if (!article) {
     return (
       <div className="max-w-3xl mx-auto py-8 px-4">
@@ -132,18 +132,17 @@ export default async function ArticlePage({
   );
 }
 
+// ✅ Fix generateMetadata
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>; // ✅ Awaiting params
 }) {
-  const { slug } = params;
+  const { slug } = await params; // ✅ Awaiting params before using slug
   const article = await getBlogPostBySlug(slug);
 
   if (!article) {
-    return {
-      title: "Article Not Found",
-    };
+    return { title: "Article Not Found" };
   }
 
   return {
