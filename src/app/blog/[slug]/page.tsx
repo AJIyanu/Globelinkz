@@ -86,7 +86,7 @@ export default async function ArticlePage({
     ? format(new Date(article.sys.createdAt), 'MMMM dd, yyyy')
     : ''
   const categories = article.fields.category || []
-  const thumbnail = article.fields.thumbnail?.fields.file
+  const thumbnail = article.fields.thumbnail?.fields?.file
   const content = article.fields.article
 
   return (
