@@ -42,7 +42,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
 
   const { selectedIndex, scrollSnaps, onDotButtonClick } = useDotButton(
     emblaApi,
-    onNavButtonClick,
+    onNavButtonClick
   )
 
   return (
@@ -84,7 +84,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
               key={index}
               onClick={() => onDotButtonClick(index)}
               className={'border-2 border-indigo-300 aspect-square w-[20px] rounded-full me-4'.concat(
-                index === selectedIndex ? ' border-indigo-900 border-4' : '',
+                index === selectedIndex ? ' border-indigo-900 border-4' : ''
               )}
             />
           ))}
