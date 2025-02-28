@@ -95,7 +95,11 @@ export default async function ArticlePage({
         <div className="mb-6 relative w-full h-96">
           <Image
             src={`https:${thumbnail.url}`}
-            alt={article.fields.thumbnail?.fields.description || title}
+            alt={
+              typeof article.fields.thumbnail?.fields.description === 'string'
+                ? article.fields.thumbnail.fields.description
+                : title
+            }
             fill
             className="object-cover rounded-lg"
             priority
