@@ -29,15 +29,5 @@ export const navigation: NavigationItem[] = [
   { name: 'Blog', href: '/blog' },
   { name: 'Portfolio', href: '#' },
   { name: 'Services', href: '#' },
-  { name: 'About us', href: '#' },
+  { name: 'About us', href: '#' }
 ]
-
-export async function getBlogPosts() {
-  const client = createClient({
-    space: process.env.CONTENTFUL_SPACE_ID,
-    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-  })
-
-  const response = await client.getEntries({ content_type: 'resources' })
-  return response.items
-}

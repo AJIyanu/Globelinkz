@@ -1,10 +1,10 @@
+// app/blog/[slug]/page.tsx
 import React from 'react'
 import Image from 'next/image'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { BLOCKS, INLINES, MARKS, Node } from '@contentful/rich-text-types'
 import { format } from 'date-fns'
-import { getBlogPostBySlug } from '../../../../types/contentful'
-import { Document } from '@contentful/rich-text-types'
+import { fetchArticleBySlug } from '../../../../types/contentful'
 
 const richTextOptions = {
   renderNode: {
@@ -43,7 +43,7 @@ const richTextOptions = {
       >
         {children}
       </a>
-    ),
+    )
   },
   renderMark: {
     [MARKS.BOLD]: (text: React.ReactNode) => <strong>{text}</strong>,
@@ -51,17 +51,17 @@ const richTextOptions = {
     [MARKS.UNDERLINE]: (text: React.ReactNode) => <u>{text}</u>,
     [MARKS.CODE]: (text: React.ReactNode) => (
       <code className="px-1 py-0.5 bg-gray-100 rounded">{text}</code>
-    ),
-  },
+    )
+  }
 }
 
 export default async function ArticlePage({
-  params,
+  params
 }: {
-  params: Promise<{ slug: string }>
+  params: { slug: string }
 }) {
-  const { slug } = await params
-  const article = await getBlogPostBySlug(slug)
+  const { slug } = params
+  const article = await fetchArticleBySlug(slug)
 
   if (!article) {
     return (
@@ -80,49 +80,46 @@ export default async function ArticlePage({
     )
   }
 
-  // Extract data from the Contentful response format
-  const title = article.fields.blogTitle
+  // Destructure fields from the article
+  const { blogTitle, category, thumbnail, article: content } = article.fields
   const createdAt = article.sys.createdAt
     ? format(new Date(article.sys.createdAt), 'MMMM dd, yyyy')
     : ''
-  const categories = article.fields.category || []
-  const thumbnail = article.fields.thumbnail?.fields?.file
-  const content = article.fields.article
 
   return (
     <article className="max-w-3xl mx-auto py-8 px-4">
       {/* Featured Image */}
-      {thumbnail && (
+      {/* {thumbnail?.fields?.file && (
         <div className="mb-6 relative w-full h-96">
           <Image
-            src={`https:${thumbnail.url}`}
+            src={`https:${thumbnail.fields.file.url}`}
             alt={
-              typeof article.fields.thumbnail?.fields.description === 'string'
-                ? article.fields.thumbnail.fields.description
-                : title
+              typeof thumbnail.fields.description === 'string'
+                ? thumbnail.fields.description
+                : blogTitle
             }
             fill
             className="object-cover rounded-lg"
             priority
           />
         </div>
-      )}
+      )} */}
 
       {/* Article Title */}
-      <h1 className="text-4xl font-bold text-gray-900 mb-4">{title}</h1>
+      <h1 className="text-4xl font-bold text-gray-900 mb-4">{blogTitle}</h1>
 
       {/* Publication Info and Categories */}
       <div className="flex items-center mb-8">
         <div>
           <p className="text-sm text-gray-600">Published on {createdAt}</p>
-          {categories.length > 0 && (
+          {Array.isArray(category) && category.length > 0 && (
             <div className="flex flex-wrap gap-2 mt-2">
-              {categories.map((category: string) => (
+              {category.map((cat: string) => (
                 <span
-                  key={category}
+                  key={cat}
                   className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded"
                 >
-                  {category}
+                  {cat}
                 </span>
               ))}
             </div>
@@ -132,20 +129,19 @@ export default async function ArticlePage({
 
       {/* Article Content */}
       <div className="prose max-w-none">
-        {documentToReactComponents(content as Document, richTextOptions)}
+        {documentToReactComponents(content, richTextOptions)}
       </div>
     </article>
   )
 }
 
-// ✅ Fix generateMetadata
 export async function generateMetadata({
-  params,
+  params
 }: {
-  params: Promise<{ slug: string }> // ✅ Awaiting params
+  params: { slug: string }
 }) {
-  const { slug } = await params // ✅ Awaiting params before using slug
-  const article = await getBlogPostBySlug(slug)
+  const { slug } = params
+  const article = await fetchArticleBySlug(slug)
 
   if (!article) {
     return { title: 'Article Not Found' }
@@ -153,11 +149,11 @@ export async function generateMetadata({
 
   return {
     title: article.fields.blogTitle,
-    description: article.fields.articlePreview || '',
-    openGraph: {
-      images: article.fields.thumbnail?.fields.file
-        ? [`https:${article.fields.thumbnail.fields.file.url}`]
-        : [],
-    },
+    description: article.fields.articlePreview || ''
+    // openGraph: {
+    //   images: article.fields.thumbnail?.fields?.file
+    //     ? [`https:${article.fields.thumbnail.fields.file.url}`]
+    //     : []
+    // }
   }
 }

@@ -1,83 +1,122 @@
-import { createClient } from 'contentful'
+import type {
+  ChainModifiers,
+  Entry,
+  EntryFieldTypes,
+  EntrySkeletonType,
+  LocaleCode
+} from 'contentful'
 
-// import { Asset } from 'contentful'
+import { createClient, EntryCollection } from 'contentful'
 
-export interface BlogPost {
+type AssetFile = {
+  url: string
+  details: {
+    size: number
+    image?: {
+      width: number
+      height: number
+    }
+  }
+  fileName: string
+  contentType: string
+}
+
+export type Asset = {
   metadata: {
-    tags: string[]
-    concepts: string[]
+    tags: any[]
+    concepts?: any[]
   }
   sys: {
     id: string
-    type: string
+    type: 'Asset'
     createdAt: string
     updatedAt: string
-    revision: number
+    locale: string
   }
   fields: {
-    blogTitle: string
-    category: string[]
-    slug: string
-    thumbnail?: {
-      fields?: {
-        file?: {
-          url?: string
-        }
-        description?: string
-      }
-    }
-    articlePreview: string
-    article: {
-      data: {}
-      content: {
-        data: {}
-        content: {
-          data: {}
-          marks: any[]
-          value: string
-          nodeType: string
-        }[]
-        nodeType: string
-      }[]
-      nodeType: string
-    }
+    title: string
+    description?: string
+    file: AssetFile
   }
 }
 
-// Create Contentful client
-const contentfulClient = createClient({
-  space: process.env.CONTENTFUL_SPACE_ID || '',
-  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN || '',
+export interface TypeResourcesFields {
+  blogTitle: EntryFieldTypes.Symbol
+  category: EntryFieldTypes.Array<
+    EntryFieldTypes.Symbol<
+      | 'Data Analysis'
+      | 'Digital Marketing'
+      | 'Web Application'
+      | 'Web Development'
+    >
+  >
+  slug: EntryFieldTypes.Symbol
+  thumbnail: EntryFieldTypes.AssetLink
+  articlePreview?: EntryFieldTypes.Text
+  articleHeroImage?: EntryFieldTypes.AssetLink
+  article: EntryFieldTypes.RichText
+  articleVideo?: EntryFieldTypes.AssetLink
+}
+
+export type TypeResourcesSkeleton = EntrySkeletonType<
+  TypeResourcesFields,
+  'resources'
+>
+export type TypeResources<
+  Modifiers extends ChainModifiers,
+  Locales extends LocaleCode = LocaleCode
+> = Entry<TypeResourcesSkeleton, Modifiers, Locales>
+export type TypeResourcesWithoutLinkResolutionResponse =
+  TypeResources<'WITHOUT_LINK_RESOLUTION'>
+export type TypeResourcesWithoutUnresolvableLinksResponse =
+  TypeResources<'WITHOUT_UNRESOLVABLE_LINKS'>
+export type TypeResourcesWithAllLocalesResponse<
+  Locales extends LocaleCode = LocaleCode
+> = TypeResources<'WITH_ALL_LOCALES', Locales>
+export type TypeResourcesWithAllLocalesAndWithoutLinkResolutionResponse<
+  Locales extends LocaleCode = LocaleCode
+> = TypeResources<'WITHOUT_LINK_RESOLUTION' | 'WITH_ALL_LOCALES', Locales>
+export type TypeResourcesWithAllLocalesAndWithoutUnresolvableLinksResponse<
+  Locales extends LocaleCode = LocaleCode
+> = TypeResources<'WITHOUT_UNRESOLVABLE_LINKS' | 'WITH_ALL_LOCALES', Locales>
+
+const client = createClient({
+  space: process.env.CONTENTFUL_SPACE_ID!,
+  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN!
 })
 
-// Helper function to fetch all blog posts
-export async function getBlogPosts(): Promise<BlogPost[]> {
+// Fetch all articles
+export async function fetchArticles(): Promise<
+  TypeResources<'WITHOUT_LINK_RESOLUTION'>[]
+> {
   try {
-    const response = await contentfulClient.getEntries({
-      content_type: 'resources',
-      order: ['-sys.updatedAt'],
-    })
-
-    return response.items as unknown as BlogPost[]
+    const response: EntryCollection<TypeResourcesSkeleton> =
+      await client.getEntries<TypeResourcesSkeleton>({
+        content_type: 'resources'
+      })
+    return response.items as TypeResources<'WITHOUT_LINK_RESOLUTION'>[]
   } catch (error) {
-    console.error('Error fetching blog posts:', error)
+    console.error('Error fetching articles:', error)
     return []
   }
 }
 
-export async function getBlogPostBySlug(
-  slug: string,
-): Promise<BlogPost | null> {
+// Fetch a specific article by slug
+export async function fetchArticleBySlug(
+  slug: string
+): Promise<TypeResources<'WITHOUT_LINK_RESOLUTION'> | null> {
   try {
-    const response = await contentfulClient.getEntries({
-      content_type: 'resources',
-      'fields.slug': slug,
-      limit: 1,
-    })
-
-    return (response.items[0] as unknown as BlogPost) || null
+    const response: EntryCollection<TypeResourcesSkeleton> =
+      await client.getEntries<TypeResourcesSkeleton>({
+        content_type: 'resources',
+        'fields.slug': slug,
+        limit: 1
+      })
+    return response.items.length > 0
+      ? (response.items[0] as TypeResources<'WITHOUT_LINK_RESOLUTION'>)
+      : null
   } catch (error) {
-    console.error('Error fetching blog post by slug:', error)
+    console.error(`Error fetching article with slug ${slug}:`, error)
     return null
   }
 }

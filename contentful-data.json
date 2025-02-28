@@ -1,0 +1,988 @@
+{
+  "contentTypes": [
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "9p8z02h57apx"
+          }
+        },
+        "id": "resources",
+        "type": "ContentType",
+        "createdAt": "2025-02-27T15:26:27.446Z",
+        "updatedAt": "2025-02-28T07:13:39.268Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 13,
+        "publishedAt": "2025-02-28T07:13:39.268Z",
+        "firstPublishedAt": "2025-02-27T15:26:28.064Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "31NI8LEujCsEpL3guSkCoI"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "31NI8LEujCsEpL3guSkCoI"
+          }
+        },
+        "publishedCounter": 7,
+        "version": 14,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "31NI8LEujCsEpL3guSkCoI"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/9p8z02h57apx/environments/master/content_types/resources"
+      },
+      "displayField": "blogTitle",
+      "name": "Resources",
+      "description": "The content here is written by Globelinkz staff and is meant to be articles that answer the questions in people's minds.",
+      "fields": [
+        {
+          "id": "blogTitle",
+          "name": "Blog Title",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "unique": true
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "category",
+          "name": "Category",
+          "type": "Array",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "items": {
+            "type": "Symbol",
+            "validations": [
+              {
+                "in": [
+                  "Data Analysis",
+                  "Digital Marketing",
+                  "Web Application",
+                  "Web Development"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "slug",
+          "name": "slug",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "unique": true
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "thumbnail",
+          "name": "Thumbnail",
+          "type": "Link",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "linkMimetypeGroup": [
+                "image"
+              ],
+              "message": "Only Images are allowed here"
+            },
+            {
+              "assetFileSize": {
+                "min": 0,
+                "max": 614400
+              },
+              "message": "File is larger than the specified size"
+            }
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Asset"
+        },
+        {
+          "id": "articlePreview",
+          "name": "Article Preview",
+          "type": "Text",
+          "localized": true,
+          "required": false,
+          "validations": [
+            {
+              "size": {
+                "min": null,
+                "max": 400
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "articleHeroImage",
+          "name": "Article Hero Image",
+          "type": "Link",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "linkMimetypeGroup": [
+                "image"
+              ]
+            },
+            {
+              "assetFileSize": {
+                "min": null,
+                "max": 3145728
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Asset"
+        },
+        {
+          "id": "article",
+          "name": "Article",
+          "type": "RichText",
+          "localized": true,
+          "required": true,
+          "validations": [
+            {
+              "enabledMarks": [
+                "bold",
+                "italic",
+                "underline",
+                "code",
+                "superscript",
+                "subscript",
+                "strikethrough"
+              ],
+              "message": "Only bold, italic, underline, code, superscript, subscript, and strikethrough marks are allowed"
+            },
+            {
+              "enabledNodeTypes": [
+                "heading-4",
+                "heading-5",
+                "heading-6",
+                "ordered-list",
+                "unordered-list",
+                "hr",
+                "blockquote",
+                "embedded-entry-block",
+                "embedded-asset-block",
+                "table",
+                "asset-hyperlink",
+                "embedded-entry-inline",
+                "entry-hyperlink",
+                "hyperlink"
+              ],
+              "message": "Only heading 4, heading 5, heading 6, ordered list, unordered list, horizontal rule, quote, block entry, asset, table, link to asset, inline entry, link to entry, and link to Url nodes are allowed"
+            },
+            {
+              "nodes": {
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "articleVideo",
+          "name": "Article Video",
+          "type": "Link",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "linkMimetypeGroup": [
+                "video"
+              ]
+            },
+            {
+              "assetFileSize": {
+                "min": null,
+                "max": 10485760
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Asset"
+        }
+      ]
+    }
+  ],
+  "tags": [
+  ],
+  "editorInterfaces": [
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "9p8z02h57apx",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 14,
+        "createdAt": "2025-02-27T15:26:28.207Z",
+        "createdBy": {
+          "sys": {
+            "id": "31NI8LEujCsEpL3guSkCoI",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2025-02-28T07:13:40.539Z",
+        "updatedBy": {
+          "sys": {
+            "id": "31NI8LEujCsEpL3guSkCoI",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "resources",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "blogTitle",
+          "settings": {
+            "helpText": "Your Article Title"
+          },
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "category",
+          "widgetId": "listInput",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "slug",
+          "settings": {
+            "trackingFieldId": "blogTitle"
+          },
+          "widgetId": "slugEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "thumbnail",
+          "settings": {
+            "helpText": "This will show in your article preview",
+            "showLinkEntityAction": true,
+            "showCreateEntityAction": true
+          },
+          "widgetId": "assetLinkEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "articlePreview",
+          "widgetId": "multipleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "articleHeroImage",
+          "settings": {
+            "helpText": "This will display on top of your article",
+            "showLinkEntityAction": true,
+            "showCreateEntityAction": true
+          },
+          "widgetId": "assetLinkEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "article",
+          "settings": {
+            "helpText": "Data Analysis Articles"
+          },
+          "widgetId": "richTextEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "articleVideo",
+          "widgetId": "assetLinkEditor",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "9p8z02h57apx"
+          }
+        },
+        "id": "2hrQRtPeXKJeblVlPUHuPc",
+        "type": "Entry",
+        "createdAt": "2025-02-27T15:26:54.160Z",
+        "updatedAt": "2025-02-27T20:14:08.872Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 20,
+        "publishedAt": "2025-02-27T20:14:08.872Z",
+        "firstPublishedAt": "2025-02-27T15:32:13.055Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "31NI8LEujCsEpL3guSkCoI"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "31NI8LEujCsEpL3guSkCoI"
+          }
+        },
+        "publishedCounter": 4,
+        "version": 21,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "31NI8LEujCsEpL3guSkCoI"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "resources"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/9p8z02h57apx/environments/master/entries/2hrQRtPeXKJeblVlPUHuPc"
+      },
+      "fields": {
+        "blogTitle": {
+          "en-US": "New Data Analysis"
+        },
+        "category": {
+          "en-US": [
+            "Data Analysis"
+          ]
+        },
+        "slug": {
+          "en-US": "data-analysis"
+        },
+        "thumbnail": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "3QBEDagOrR5B5KPB0fw9y7"
+            }
+          }
+        },
+        "articlePreview": {
+          "en-US": "This is a preview of my article and it is short"
+        },
+        "article": {
+          "en-US": {
+            "data": {
+            },
+            "content": [
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "This is a Data Analysis Content for test in the globelinkz website",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              }
+            ],
+            "nodeType": "document"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "9p8z02h57apx"
+          }
+        },
+        "id": "3raCpmWxnO3drv72ONq4fu",
+        "type": "Entry",
+        "createdAt": "2025-02-28T04:10:52.733Z",
+        "updatedAt": "2025-02-28T07:13:53.043Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 9,
+        "publishedAt": "2025-02-28T07:13:53.043Z",
+        "firstPublishedAt": "2025-02-28T04:26:47.903Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "31NI8LEujCsEpL3guSkCoI"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "31NI8LEujCsEpL3guSkCoI"
+          }
+        },
+        "publishedCounter": 2,
+        "version": 10,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "31NI8LEujCsEpL3guSkCoI"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "resources"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/9p8z02h57apx/environments/master/entries/3raCpmWxnO3drv72ONq4fu"
+      },
+      "fields": {
+        "blogTitle": {
+          "en-US": "How Data Analysis Reveals Customer Behavior Patterns to Drive Business Growth"
+        },
+        "category": {
+          "en-US": [
+            "Data Analysis"
+          ]
+        },
+        "slug": {
+          "en-US": "how-data-analysis-reveals-customer-behavior-patterns-to-drive-business"
+        },
+        "thumbnail": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "3IJrrHedtaZJltsGdSUJsJ"
+            }
+          }
+        },
+        "articlePreview": {
+          "en-US": "Unlock the hidden insights behind your customers’ reactions. Discover how data analysis can uncover unexpected patterns that may reshape your business strategy—and keep you on the edge of your seat!"
+        },
+        "articleHeroImage": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "3IJrrHedtaZJltsGdSUJsJ"
+            }
+          }
+        },
+        "article": {
+          "en-US": {
+            "data": {
+            },
+            "content": [
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "In today’s fast-paced market, understanding how customers interact with your products is more critical than ever. ",
+                    "nodeType": "text"
+                  },
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "value": "Data analysis",
+                    "nodeType": "text"
+                  },
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": " offers companies the unique ability to sift through large volumes of information and reveal underlying trends that would otherwise remain hidden. From tracking click-through rates to monitoring purchasing behavior, companies can now anticipate customer needs and adapt their offerings in real time.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              },
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "One of the key advantages of data analysis is its ability to detect patterns in customer behavior. Imagine being able to see which product features spark the most interest or pinpoint when a customer is most likely to make a purchase. With the right tools and techniques, data analysis transforms raw numbers into clear, actionable insights. This empowers companies to optimize marketing strategies, improve product design, and ultimately enhance the overall customer experience.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              },
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "Furthermore, integrating data analysis into your business strategy means you're not just reacting to customer behavior—you’re predicting it. Advanced analytical methods, such as machine learning and predictive modeling, help companies forecast future trends, ensuring that your business stays one step ahead of the competition. Whether it’s adjusting inventory levels or tailoring personalized marketing campaigns, the actionable intelligence derived from data analysis can be the game-changer your company needs.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              },
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "value": "How GLoblinkz Can Help:",
+                    "nodeType": "text"
+                  },
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "\nAt GLoblinkz, we specialize in uncovering these elusive patterns through comprehensive data analysis. Our expert team transforms complex data into clear insights that help your business grow and stay ahead in today’s competitive landscape.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              },
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "Ready to transform your customer insights? Start a WhatsApp conversation with us now and let’s unlock your business potential together!",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              }
+            ],
+            "nodeType": "document"
+          }
+        }
+      }
+    }
+  ],
+  "assets": [
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "9p8z02h57apx"
+          }
+        },
+        "id": "3QBEDagOrR5B5KPB0fw9y7",
+        "type": "Asset",
+        "createdAt": "2025-02-27T16:11:11.970Z",
+        "updatedAt": "2025-02-27T16:12:46.660Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 5,
+        "publishedAt": "2025-02-27T16:12:46.660Z",
+        "firstPublishedAt": "2025-02-27T16:12:46.660Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "31NI8LEujCsEpL3guSkCoI"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "31NI8LEujCsEpL3guSkCoI"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 6,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "31NI8LEujCsEpL3guSkCoI"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/9p8z02h57apx/environments/master/assets/3QBEDagOrR5B5KPB0fw9y7"
+      },
+      "fields": {
+        "title": {
+          "en-US": "Data Image"
+        },
+        "description": {
+          "en-US": "image for data"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/9p8z02h57apx/3QBEDagOrR5B5KPB0fw9y7/77bf0e42e555bbcdf3bb6d36bd0e5f7c/globelinkz-full.png",
+            "details": {
+              "size": 245185,
+              "image": {
+                "width": 899,
+                "height": 1073
+              }
+            },
+            "fileName": "globelinkz-full.png",
+            "contentType": "image/png"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "9p8z02h57apx"
+          }
+        },
+        "id": "3IJrrHedtaZJltsGdSUJsJ",
+        "type": "Asset",
+        "createdAt": "2025-02-28T04:22:04.745Z",
+        "updatedAt": "2025-02-28T04:26:34.260Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 14,
+        "publishedAt": "2025-02-28T04:26:34.260Z",
+        "firstPublishedAt": "2025-02-28T04:23:51.355Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "31NI8LEujCsEpL3guSkCoI"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "31NI8LEujCsEpL3guSkCoI"
+          }
+        },
+        "publishedCounter": 2,
+        "version": 15,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "31NI8LEujCsEpL3guSkCoI"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/9p8z02h57apx/environments/master/assets/3IJrrHedtaZJltsGdSUJsJ"
+      },
+      "fields": {
+        "title": {
+          "en-US": "Scramble Tiles Discover "
+        },
+        "description": {
+          "en-US": "This image is to project the idea uncover"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/9p8z02h57apx/3IJrrHedtaZJltsGdSUJsJ/b1770de2a009ee22cfdfcd38344faf95/pexels-markus-winkler-1430818-19802197__Small_.jpg",
+            "details": {
+              "size": 136569,
+              "image": {
+                "width": 720,
+                "height": 480
+              }
+            },
+            "fileName": "pexels-markus-winkler-1430818-19802197 (Small).jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    }
+  ],
+  "locales": [
+    {
+      "name": "English (United States)",
+      "code": "en-US",
+      "fallbackCode": null,
+      "default": true,
+      "contentManagementApi": true,
+      "contentDeliveryApi": true,
+      "optional": false,
+      "sys": {
+        "type": "Locale",
+        "id": "6YZEnpShBKzNIjUwzXNTKJ",
+        "version": 1,
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "9p8z02h57apx"
+          }
+        },
+        "environment": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Environment",
+            "id": "master",
+            "uuid": "bb364585-08e1-4a02-b288-d2c93ba67ee1"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "31NI8LEujCsEpL3guSkCoI"
+          }
+        },
+        "createdAt": "2025-02-27T15:17:35Z",
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "31NI8LEujCsEpL3guSkCoI"
+          }
+        },
+        "updatedAt": "2025-02-27T15:17:35Z"
+      }
+    }
+  ],
+  "webhooks": [
+  ],
+  "roles": [
+    {
+      "name": "Editor",
+      "description": "Allows editing, publishing and archiving of content",
+      "policies": [
+        {
+          "effect": "allow",
+          "actions": "all",
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Entry"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "effect": "allow",
+          "actions": "all",
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Asset"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "permissions": {
+        "ContentModel": [
+          "read"
+        ],
+        "Settings": [
+        ],
+        "ContentDelivery": [
+        ],
+        "Environments": [
+        ],
+        "EnvironmentAliases": [
+        ],
+        "Tags": [
+        ]
+      },
+      "sys": {
+        "type": "Role",
+        "id": "6Zksqb4ZfuFCUqWauwUYND",
+        "version": 0,
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "9p8z02h57apx"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "31NI8LEujCsEpL3guSkCoI"
+          }
+        },
+        "createdAt": "2025-02-27T15:17:35Z",
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "31NI8LEujCsEpL3guSkCoI"
+          }
+        },
+        "updatedAt": "2025-02-27T15:17:35Z"
+      }
+    }
+  ]
+}
