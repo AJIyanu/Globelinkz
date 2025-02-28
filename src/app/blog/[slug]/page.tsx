@@ -59,7 +59,7 @@ export default async function ArticlePage({
 }: {
   params: { slug: string };
 }) {
-  const { slug } = await params;
+  const { slug } = params;
   const article = await getBlogPostBySlug(slug);
   if (!article) {
     return (
@@ -137,7 +137,7 @@ export async function generateMetadata({
 }: {
   params: { slug: string };
 }) {
-  const { slug } = await params;
+  const { slug } = params;
   const article = await getBlogPostBySlug(slug);
 
   if (!article) {
