@@ -72,8 +72,7 @@
           "type": "Array",
           "localized": false,
           "required": true,
-          "validations": [
-          ],
+          "validations": [],
           "disabled": false,
           "omitted": false,
           "items": {
@@ -112,9 +111,7 @@
           "required": true,
           "validations": [
             {
-              "linkMimetypeGroup": [
-                "image"
-              ],
+              "linkMimetypeGroup": ["image"],
               "message": "Only Images are allowed here"
             },
             {
@@ -154,9 +151,7 @@
           "required": false,
           "validations": [
             {
-              "linkMimetypeGroup": [
-                "image"
-              ]
+              "linkMimetypeGroup": ["image"]
             },
             {
               "assetFileSize": {
@@ -208,8 +203,7 @@
               "message": "Only heading 4, heading 5, heading 6, ordered list, unordered list, horizontal rule, quote, block entry, asset, table, link to asset, inline entry, link to entry, and link to Url nodes are allowed"
             },
             {
-              "nodes": {
-              }
+              "nodes": {}
             }
           ],
           "disabled": false,
@@ -223,9 +217,7 @@
           "required": false,
           "validations": [
             {
-              "linkMimetypeGroup": [
-                "video"
-              ]
+              "linkMimetypeGroup": ["video"]
             },
             {
               "assetFileSize": {
@@ -241,8 +233,7 @@
       ]
     }
   ],
-  "tags": [
-  ],
+  "tags": [],
   "editorInterfaces": [
     {
       "sys": {
@@ -353,10 +344,8 @@
   "entries": [
     {
       "metadata": {
-        "tags": [
-        ],
-        "concepts": [
-        ]
+        "tags": [],
+        "concepts": []
       },
       "sys": {
         "space": {
@@ -408,8 +397,7 @@
             "en-US": "published"
           }
         },
-        "automationTags": [
-        ],
+        "automationTags": [],
         "contentType": {
           "sys": {
             "type": "Link",
@@ -424,9 +412,7 @@
           "en-US": "New Data Analysis"
         },
         "category": {
-          "en-US": [
-            "Data Analysis"
-          ]
+          "en-US": ["Data Analysis"]
         },
         "slug": {
           "en-US": "data-analysis"
@@ -445,18 +431,14 @@
         },
         "article": {
           "en-US": {
-            "data": {
-            },
+            "data": {},
             "content": [
               {
-                "data": {
-                },
+                "data": {},
                 "content": [
                   {
-                    "data": {
-                    },
-                    "marks": [
-                    ],
+                    "data": {},
+                    "marks": [],
                     "value": "This is a Data Analysis Content for test in the globelinkz website",
                     "nodeType": "text"
                   }
@@ -471,10 +453,8 @@
     },
     {
       "metadata": {
-        "tags": [
-        ],
-        "concepts": [
-        ]
+        "tags": [],
+        "concepts": []
       },
       "sys": {
         "space": {
@@ -526,8 +506,7 @@
             "en-US": "published"
           }
         },
-        "automationTags": [
-        ],
+        "automationTags": [],
         "contentType": {
           "sys": {
             "type": "Link",
@@ -542,9 +521,7 @@
           "en-US": "How Data Analysis Reveals Customer Behavior Patterns to Drive Business Growth"
         },
         "category": {
-          "en-US": [
-            "Data Analysis"
-          ]
+          "en-US": ["Data Analysis"]
         },
         "slug": {
           "en-US": "how-data-analysis-reveals-customer-behavior-patterns-to-drive-business"
@@ -572,24 +549,19 @@
         },
         "article": {
           "en-US": {
-            "data": {
-            },
+            "data": {},
             "content": [
               {
-                "data": {
-                },
+                "data": {},
                 "content": [
                   {
-                    "data": {
-                    },
-                    "marks": [
-                    ],
+                    "data": {},
+                    "marks": [],
                     "value": "In today’s fast-paced market, understanding how customers interact with your products is more critical than ever. ",
                     "nodeType": "text"
                   },
                   {
-                    "data": {
-                    },
+                    "data": {},
                     "marks": [
                       {
                         "type": "bold"
@@ -599,10 +571,8 @@
                     "nodeType": "text"
                   },
                   {
-                    "data": {
-                    },
-                    "marks": [
-                    ],
+                    "data": {},
+                    "marks": [],
                     "value": " offers companies the unique ability to sift through large volumes of information and reveal underlying trends that would otherwise remain hidden. From tracking click-through rates to monitoring purchasing behavior, companies can now anticipate customer needs and adapt their offerings in real time.",
                     "nodeType": "text"
                   }
@@ -610,14 +580,11 @@
                 "nodeType": "paragraph"
               },
               {
-                "data": {
-                },
+                "data": {},
                 "content": [
                   {
-                    "data": {
-                    },
-                    "marks": [
-                    ],
+                    "data": {},
+                    "marks": [],
                     "value": "One of the key advantages of data analysis is its ability to detect patterns in customer behavior. Imagine being able to see which product features spark the most interest or pinpoint when a customer is most likely to make a purchase. With the right tools and techniques, data analysis transforms raw numbers into clear, actionable insights. This empowers companies to optimize marketing strategies, improve product design, and ultimately enhance the overall customer experience.",
                     "nodeType": "text"
                   }
@@ -625,14 +592,11 @@
                 "nodeType": "paragraph"
               },
               {
-                "data": {
-                },
+                "data": {},
                 "content": [
                   {
-                    "data": {
-                    },
-                    "marks": [
-                    ],
+                    "data": {},
+                    "marks": [],
                     "value": "Furthermore, integrating data analysis into your business strategy means you're not just reacting to customer behavior—you’re predicting it. Advanced analytical methods, such as machine learning and predictive modeling, help companies forecast future trends, ensuring that your business stays one step ahead of the competition. Whether it’s adjusting inventory levels or tailoring personalized marketing campaigns, the actionable intelligence derived from data analysis can be the game-changer your company needs.",
                     "nodeType": "text"
                   }
@@ -640,12 +604,10 @@
                 "nodeType": "paragraph"
               },
               {
-                "data": {
-                },
+                "data": {},
                 "content": [
                   {
-                    "data": {
-                    },
+                    "data": {},
                     "marks": [
                       {
                         "type": "bold"
@@ -655,10 +617,8 @@
                     "nodeType": "text"
                   },
                   {
-                    "data": {
-                    },
-                    "marks": [
-                    ],
+                    "data": {},
+                    "marks": [],
                     "value": "\nAt GLoblinkz, we specialize in uncovering these elusive patterns through comprehensive data analysis. Our expert team transforms complex data into clear insights that help your business grow and stay ahead in today’s competitive landscape.",
                     "nodeType": "text"
                   }
@@ -666,14 +626,11 @@
                 "nodeType": "paragraph"
               },
               {
-                "data": {
-                },
+                "data": {},
                 "content": [
                   {
-                    "data": {
-                    },
-                    "marks": [
-                    ],
+                    "data": {},
+                    "marks": [],
                     "value": "Ready to transform your customer insights? Start a WhatsApp conversation with us now and let’s unlock your business potential together!",
                     "nodeType": "text"
                   }
@@ -690,10 +647,8 @@
   "assets": [
     {
       "metadata": {
-        "tags": [
-        ],
-        "concepts": [
-        ]
+        "tags": [],
+        "concepts": []
       },
       "sys": {
         "space": {
@@ -772,10 +727,8 @@
     },
     {
       "metadata": {
-        "tags": [
-        ],
-        "concepts": [
-        ]
+        "tags": [],
+        "concepts": []
       },
       "sys": {
         "space": {
@@ -900,8 +853,7 @@
       }
     }
   ],
-  "webhooks": [
-  ],
+  "webhooks": [],
   "roles": [
     {
       "name": "Editor",
@@ -941,19 +893,12 @@
         }
       ],
       "permissions": {
-        "ContentModel": [
-          "read"
-        ],
-        "Settings": [
-        ],
-        "ContentDelivery": [
-        ],
-        "Environments": [
-        ],
-        "EnvironmentAliases": [
-        ],
-        "Tags": [
-        ]
+        "ContentModel": ["read"],
+        "Settings": [],
+        "ContentDelivery": [],
+        "Environments": [],
+        "EnvironmentAliases": [],
+        "Tags": []
       },
       "sys": {
         "type": "Role",
