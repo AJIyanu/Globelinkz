@@ -1,5 +1,5 @@
-// app/blog/page.tsx
-import { fetchArticles } from '../../../types/contentful'
+import { Client } from '@/lib/utils'
+import { gql } from 'graphql-request'
 import Link from 'next/link'
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar'
 import { Separator } from '@/components/ui/separator'
@@ -11,43 +11,80 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
+import { format, parseISO } from 'date-fns'
 
 export const revalidate = 3600
 
+const query = gql`
+  {
+    resourcesCollection {
+      items {
+        slug
+        thumbnail {
+          url
+        }
+        _id
+        sys {
+          publishedAt
+        }
+        category
+        blogTitle
+        articlePreview
+      }
+    }
+  }
+`
+interface ContentfulResource {
+  _id: string
+  sys: {
+    updatedAt: string
+    publishedAt: string
+  }
+  slug: string
+  thumbnail: {
+    url: string
+  }
+  category: string[]
+  blogTitle: string
+  articlePreview: string
+}
+
+interface ResourcesQueryResponse {
+  resourcesCollection: {
+    items: ContentfulResource[]
+  }
+}
+
 export default async function BlogPage() {
-  const posts = await fetchArticles()
+  const posts = await Client.request<ResourcesQueryResponse>(query)
+  // console.log(JSON.stringify(posts))
 
   return (
     <div>
       <div className="text-4xl lg:text-5xl font-bold p-6">
         Resources for you
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-2 p-6">
-        {posts.map((post) => {
-          const { slug, blogTitle, category, articlePreview } = post.fields
-          // const thumbnailUrl =
-          //   thumbnail && 'fields' in thumbnail && thumbnail.fields?.file?.url
-          //     ? `url(https:${thumbnail.fields.file.url})`
-          //     : 'url(/hero-bg.jpg)'
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 p-6">
+        {posts.resourcesCollection.items.map((post) => {
           return (
-            <Link href={`/blog/${slug}`} key={post.sys.id} className="h-full">
+            <Link href={`/blog/${post.slug}`} key={post._id} className="h-full">
               <Card className="overflow-hidden h-full">
                 <div
                   className="relative w-full aspect-[4/3] bg-cover bg-center"
-                  style={{ backgroundImage: '/hero-bg.jpg' }}
+                  style={{ backgroundImage: `url(${post.thumbnail.url})` }}
                 />
                 <CardHeader>
                   <CardDescription>
-                    {Array.isArray(category) && category.length > 0
-                      ? category.join(', ')
+                    {Array.isArray(post.category) && post.category.length > 0
+                      ? post.category.join(', ')
                       : 'Uncategorized'}
                   </CardDescription>
                   <CardTitle className="text-2xl">
-                    {blogTitle || 'Untitled'}
+                    {post.blogTitle || 'Untitled'}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p>{articlePreview || 'No preview available'}</p>
+                  <p>{post.articlePreview || 'No preview available'}</p>
                 </CardContent>
                 <Separator className="my-2 bg-gray-800 mx-auto w-[95%]" />
                 <CardFooter>
@@ -57,7 +94,9 @@ export default async function BlogPage() {
                   </Avatar>
                   <div className="ms-5">
                     <h4>Admin</h4>
-                    <p>{new Date(post.sys.updatedAt).toLocaleDateString()}</p>
+                    <p>
+                      {format(parseISO(post.sys.publishedAt), 'MMM d, yyyy')}
+                    </p>
                   </div>
                 </CardFooter>
               </Card>

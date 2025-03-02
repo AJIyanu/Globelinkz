@@ -1,5 +1,6 @@
 import { clsx, type ClassValue } from 'clsx'
 import { twMerge } from 'tailwind-merge'
+import { GraphQLClient } from 'graphql-request'
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
@@ -30,3 +31,10 @@ export const navigation: NavigationItem[] = [
   { name: 'Services', href: '#' },
   { name: 'About us', href: '#' },
 ]
+
+const endpoint = `${process.env.GRAPHCMS_ENDPOINT}${process.env.CONTENTFUL_SPACE_ID}/environments/${process.env.CONTENTFUL_ENVIRONMENT}`
+const headers = {
+  Authorization: `Bearer ${process.env.CONTENTFUL_ACCESS_TOKEN}`,
+}
+
+export const Client = new GraphQLClient(endpoint, { headers })

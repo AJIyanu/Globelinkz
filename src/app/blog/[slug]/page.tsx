@@ -1,23 +1,66 @@
-// app/blog/[slug]/page.tsx
 import React from 'react'
-// import Image from 'next/image'
+import Image from 'next/image'
+// import ReactPlayer from 'react-player'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
-import { BLOCKS, INLINES, MARKS, Node } from '@contentful/rich-text-types'
-import { format } from 'date-fns'
-import { fetchArticleBySlug } from '../../../../types/contentful'
+import {
+  BLOCKS,
+  Document,
+  INLINES,
+  MARKS,
+  Node,
+} from '@contentful/rich-text-types'
+import { format, parseISO } from 'date-fns'
+import { Client } from '@/lib/utils'
+// import { EntryFieldTypes } from 'contentful'
+import { gql } from 'graphql-request'
+
+interface ResourceItem {
+  sys: {
+    publishedAt: string
+  }
+  article: { json: Document }
+  blogTitle: string
+  articleHeroImage: null | {
+    url?: string
+  }
+  articleVideo: null | {
+    url?: string
+  }
+  category: string[]
+}
+
+interface ResourcesQueryResponse {
+  resourcesCollection: {
+    items: ResourceItem[]
+  }
+}
+
+interface ResourceMetadata {
+  blogTitle: string
+  articleHeroImage: null | {
+    url: string
+  }
+  articlePreview: string
+}
+
+interface ResourcesMetadataResponse {
+  resourcesCollection: {
+    items: ResourceMetadata[]
+  }
+}
 
 const richTextOptions = {
   renderNode: {
     [BLOCKS.PARAGRAPH]: (node: Node, children: React.ReactNode) => (
       <p className="mb-4 text-gray-800">{children}</p>
     ),
-    [BLOCKS.HEADING_1]: (node: Node, children: React.ReactNode) => (
+    [BLOCKS.HEADING_4]: (node: Node, children: React.ReactNode) => (
       <h1 className="text-3xl font-bold mb-4">{children}</h1>
     ),
-    [BLOCKS.HEADING_2]: (node: Node, children: React.ReactNode) => (
+    [BLOCKS.HEADING_5]: (node: Node, children: React.ReactNode) => (
       <h2 className="text-2xl font-bold mb-3">{children}</h2>
     ),
-    [BLOCKS.HEADING_3]: (node: Node, children: React.ReactNode) => (
+    [BLOCKS.HEADING_6]: (node: Node, children: React.ReactNode) => (
       <h3 className="text-xl font-bold mb-2">{children}</h3>
     ),
     [BLOCKS.UL_LIST]: (node: Node, children: React.ReactNode) => (
@@ -60,7 +103,32 @@ export default async function ArticlePage(props: {
 }) {
   const params = await props.params
   const { slug } = params
-  const article = await fetchArticleBySlug(slug)
+  const query = gql`
+    {
+      resourcesCollection(where: { slug:
+      
+      "${slug}" }) {
+        items {
+          blogTitle
+          article {
+            json
+          }
+          articleHeroImage {
+            url
+          }
+          articleVideo {
+            url
+          }
+          sys {
+            publishedAt
+          }
+          category
+        }
+      }
+    }
+  `
+  const article = await Client.request<ResourcesQueryResponse>(query)
+  // console.log(JSON.stringify(article))
 
   if (!article) {
     return (
@@ -79,35 +147,28 @@ export default async function ArticlePage(props: {
     )
   }
 
-  // Destructure fields from the article
-  const { blogTitle, category, article: content } = article.fields
-  const createdAt = article.sys.createdAt
-    ? format(new Date(article.sys.createdAt), 'MMMM dd, yyyy')
+  const { blogTitle, category, articleHeroImage, articleVideo, sys } =
+    article.resourcesCollection.items[0]
+  const createdAt = sys.publishedAt
+    ? format(parseISO(sys.publishedAt), 'MMMM dd, yyyy')
     : ''
 
   return (
     <article className="max-w-3xl mx-auto py-8 px-4">
-      {/* Featured Image */}
-      {/* {thumbnail?.fields?.file && (
+      {articleHeroImage && (
         <div className="mb-6 relative w-full h-96">
           <Image
-            src={`https:${thumbnail.fields.file.url}`}
-            alt={
-              typeof thumbnail.fields.description === 'string'
-                ? thumbnail.fields.description
-                : blogTitle
-            }
+            src={`${articleHeroImage.url}`}
+            alt={blogTitle}
             fill
             className="object-cover rounded-lg"
             priority
           />
         </div>
-      )} */}
+      )}
 
-      {/* Article Title */}
       <h1 className="text-4xl font-bold text-gray-900 mb-4">{blogTitle}</h1>
 
-      {/* Publication Info and Categories */}
       <div className="flex items-center mb-8">
         <div>
           <p className="text-sm text-gray-600">Published on {createdAt}</p>
@@ -128,8 +189,19 @@ export default async function ArticlePage(props: {
 
       {/* Article Content */}
       <div className="prose max-w-none">
-        {documentToReactComponents(content, richTextOptions)}
+        {documentToReactComponents(
+          article.resourcesCollection.items[0].article.json,
+          richTextOptions
+        )}
       </div>
+      {articleVideo && (
+        <video
+          src={articleVideo.url}
+          controls={true}
+          width="100%"
+          height="auto"
+        />
+      )}
     </article>
   )
 }
@@ -139,19 +211,32 @@ export async function generateMetadata(props: {
 }) {
   const params = await props.params
   const { slug } = params
-  const article = await fetchArticleBySlug(slug)
+  const query = gql`
+    {
+      resourcesCollection(where: { slug: "${slug}" }) {
+        items {
+          blogTitle
+          articleHeroImage {
+            url
+          }
+          articlePreview
+        }
+      }
+    }
+  `
+  const article = await Client.request<ResourcesMetadataResponse>(query)
 
   if (!article) {
     return { title: 'Article Not Found' }
   }
 
   return {
-    title: article.fields.blogTitle,
-    description: article.fields.articlePreview || '',
-    // openGraph: {
-    //   images: article.fields.thumbnail?.fields?.file
-    //     ? [`https:${article.fields.thumbnail.fields.file.url}`]
-    //     : []
-    // }
+    title: article.resourcesCollection.items[0].blogTitle,
+    description: article.resourcesCollection.items[0].articlePreview || '',
+    openGraph: {
+      images: article.resourcesCollection.items[0].articleHeroImage
+        ? [`${article.resourcesCollection.items[0].articleHeroImage.url}`]
+        : [],
+    },
   }
 }
