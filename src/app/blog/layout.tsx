@@ -1,9 +1,16 @@
 import Header from '@/components/Header'
 import CallToAction from '@/sections/cta'
 import Footer from '@/sections/footer'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  verification: {
+    google: 'Ik-mtRBYs0hKr24g4O_0YQ95I2j35rxO0ND01L23-G4'
+  }
+}
 
 export default function BlogLayout({
-  children,
+  children
 }: {
   children: React.ReactNode
 }) {
