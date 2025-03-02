@@ -64,7 +64,7 @@ export default async function BlogPage() {
       <div className="text-4xl lg:text-5xl font-bold p-6">
         Resources for you
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-2 p-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 p-6">
         {posts.resourcesCollection.items.map((post) => {
           return (
             <Link href={`/blog/${post.slug}`} key={post._id} className="h-full">

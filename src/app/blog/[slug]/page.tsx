@@ -54,13 +54,13 @@ const richTextOptions = {
     [BLOCKS.PARAGRAPH]: (node: Node, children: React.ReactNode) => (
       <p className="mb-4 text-gray-800">{children}</p>
     ),
-    [BLOCKS.HEADING_1]: (node: Node, children: React.ReactNode) => (
+    [BLOCKS.HEADING_4]: (node: Node, children: React.ReactNode) => (
       <h1 className="text-3xl font-bold mb-4">{children}</h1>
     ),
-    [BLOCKS.HEADING_2]: (node: Node, children: React.ReactNode) => (
+    [BLOCKS.HEADING_5]: (node: Node, children: React.ReactNode) => (
       <h2 className="text-2xl font-bold mb-3">{children}</h2>
     ),
-    [BLOCKS.HEADING_3]: (node: Node, children: React.ReactNode) => (
+    [BLOCKS.HEADING_6]: (node: Node, children: React.ReactNode) => (
       <h3 className="text-xl font-bold mb-2">{children}</h3>
     ),
     [BLOCKS.UL_LIST]: (node: Node, children: React.ReactNode) => (
