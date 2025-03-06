@@ -1,12 +1,15 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import TextWipeAnimation from '@/components/textwipe'
 import { Separator } from '@/components/ui/separator'
+import Header from '@/components/Header'
 // import { Button } from '@/components/ui/button'
 
 const HeroSection: React.FC = () => {
   return (
     <section className="relative h-screen w-full">
+      <Header />
       <Image
         // src=""
         src="/resources/globehand.jpg"
@@ -16,10 +19,10 @@ const HeroSection: React.FC = () => {
       />
       <div className="absolute inset-0 bg-[#EDF7F4] opacity-95"></div>
       <div className="absolute inset-0 flex flex justify-center items-center text-blue-900">
-        <div className="flex mx-9">
+        <div className="flex mx-[10%]">
           <Separator
             orientation="vertical"
-            className="hidden lg:block h-[280px] mt-1 bg-[gold] me-3 w-[8px]"
+            className="hidden lg:block h-[280px] mt-1 bg-[#FF8D00] me-3 w-[8px]"
           />
           <div className="flex flex-col justify-center text-center lg:text-left items-center lg:items-start">
             <h1 className="text-2xl md:text-5xl font-bold font-[rajdhani]">
@@ -49,13 +52,15 @@ const HeroSection: React.FC = () => {
             </Link>
             {/* </Button> */}
           </div>
-          <div className="bg-[#EDF7F4] shadow-lg rounded-lg flex flex-col items-center overflow-hidden me-[5%]">
+          <div className="hidden bg-[#EDF7F4] shadow-lg rounded-lg lg:flex flex-col justify-evenly overflow-hidden w-[60%] px-9">
             <Image
               src="/dataanalysis.gif"
               alt="data analysis"
               height={500}
               width={500}
+              className="mx-auto"
             />
+            <TextWipeAnimation />
           </div>
         </div>
       </div>
