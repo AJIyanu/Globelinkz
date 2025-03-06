@@ -7,7 +7,10 @@ import { useState, useEffect } from 'react'
 import { useMemo } from 'react'
 
 export default function OurCompetence() {
-  const words = useMemo(() => ['service1', 'service2', 'service3'], [])
+  const words = useMemo(
+    () => ['Services', 'Competence', 'Expertise', 'Capabilities', 'Strengths'],
+    []
+  )
 
   const [index, setIndex] = useState(0)
   const [text, setText] = useState('')
@@ -61,7 +64,7 @@ export default function OurCompetence() {
   }, [])
 
   return (
-    <div className="w-[80%] lg:w-full">
+    <div className="w-[80%] lg:w-full lg:overflow-hidden ">
       <div className="flex text-3xl font-bold mt-[50px] ms-[25%] lg:ms-[30%] xl:ms-[40%] md:text-5xl">
         <span>Our&nbsp;</span>
         <span className="relative inline-block">
@@ -91,7 +94,7 @@ export default function OurCompetence() {
         transition={{ duration: 1.5, ease: 'easeInOut' }}
         style={{ width: '5%' }}
       />
-      <div className="w-full h-[650px] px-8 bg-gradient-to-t from-indigo-700 to-white lg:flex justify-around hidden">
+      <div className="w-full h-[750px] px-8 bg-gradient-to-t from-indigo-700 to-white lg:flex justify-around hidden">
         <motion.div
           initial={{ scale: 1 }}
           whileHover={{ scale: 1.05 }}
