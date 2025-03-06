@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 
 const rajdhani = Rajdhani({
   weight: ['400', '600', '700'],
-  subsets: [`devanagari`, `latin`],
+  subsets: ['devanagari', 'latin'],
 })
 
 export const metadata: Metadata = {
