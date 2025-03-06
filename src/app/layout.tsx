@@ -16,7 +16,10 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 })
 
-const rajdhani = Rajdhani({ weight: ['400', '600', '700'] })
+const rajdhani = Rajdhani({
+  weight: ['400', '600', '700'],
+  subsets: [`devanagari`, `latin`],
+})
 
 export const metadata: Metadata = {
   title: 'Welcome | Globelinkz',

@@ -36,7 +36,7 @@ const HeroSection: React.FC = () => {
             {/* <Button asChild> */}
             <Link
               href="#"
-              className="flex items-center mt-4 text-2xl bg-green-700 p-3 rounded-md hover:bg-green-900"
+              className="flex items-center mt-4 text-2xl bg-green-700 p-3 rounded-md hover:bg-green-900 font-semibold text-[#EDF7F4]"
             >
               Let&apos;s Chat
               <Image
