@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
+import { Geist, Geist_Mono, Rajdhani } from 'next/font/google'
 import { Inter } from 'next/font/google'
 import './globals.css'
 
@@ -15,6 +15,8 @@ const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
   subsets: ['latin'],
 })
+
+const rajdhani = Rajdhani({ weight: ['400', '600', '700'] })
 
 export const metadata: Metadata = {
   title: 'Welcome | Globelinkz',
@@ -33,7 +35,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${inter.className} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${inter.className} ${rajdhani} antialiased`}
       >
         {children}
       </body>

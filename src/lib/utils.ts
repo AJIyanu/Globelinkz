@@ -26,6 +26,7 @@ interface NavigationItem {
 
 export const navigation: NavigationItem[] = [
   { name: 'Home', href: '/' },
+  { name: 'Data Analysis', href: '/data-analysis' },
   { name: 'Blog', href: '/blog' },
   { name: 'Portfolio', href: '#' },
   { name: 'Services', href: '#' },
