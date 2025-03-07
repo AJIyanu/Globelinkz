@@ -24,7 +24,7 @@ export default function TextWipeAnimation() {
   }, [index])
 
   return (
-    <div className="flex justify-start items-center text-[#FF8D00] text-4xl font-bold overflow-hidden">
+    <div className="flex justify-start items-center text-[#FF8D00] text-4xl font-bold overflow-hidden mb-9">
       <AnimatePresence mode="wait">
         <motion.div
           key={words[index]}

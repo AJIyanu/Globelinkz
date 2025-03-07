@@ -34,7 +34,7 @@ const techStackArray = [
 
 export default function TechStack() {
   return (
-    <div className="w-[80%] flex items-center my-10">
+    <div className="w-[80%] flex items-center my-10 text-blue-900">
       <div className="w-[40%]">
         <h2 className="font-[rajdhani] text-5xl font-bold">OUR</h2>
         <h2 className="font-[rajdhani] text-5xl font-bold">TECH</h2>
