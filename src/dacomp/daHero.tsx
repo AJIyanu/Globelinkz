@@ -22,13 +22,13 @@ const HeroSection: React.FC = () => {
         <div className="flex mx-[10%]">
           <Separator
             orientation="vertical"
-            className="hidden lg:block h-[280px] mt-1 bg-[#FF8D00] me-3 w-[8px]"
+            className="hidden lg:block h-[300px] mt-4 bg-[#FF8D00] me-3 w-[8px]"
           />
           <div className="flex flex-col justify-center text-center lg:text-left items-center lg:items-start">
-            <h1 className="text-2xl md:text-5xl font-bold font-[rajdhani]">
+            <h1 className="text-2xl md:text-4xl font-bold font-[rajdhani]">
               Your Data Holds the Answer
             </h1>
-            <h1 className="text-5xl md:text-9xl font-bold font-[rajdhani]">
+            <h1 className="text-5xl md:text-7xl font-bold font-[rajdhani]">
               We Convey <br /> Them to LIGHT
             </h1>
             <p className="text-md md:text-xl w-[70%] lg:w-[50%] mt-3">
@@ -39,7 +39,7 @@ const HeroSection: React.FC = () => {
             {/* <Button asChild> */}
             <Link
               href="#"
-              className="flex items-center mt-4 text-2xl bg-green-700 p-3 rounded-md hover:bg-green-900 font-semibold text-[#EDF7F4]"
+              className="flex items-center mt-4 text-2xl bg-green-700 p-5 rounded-md hover:bg-green-900 font-semibold text-[#EDF7F4] py-1"
             >
               Let&apos;s Chat
               <Image
