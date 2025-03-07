@@ -56,7 +56,7 @@ export default async function OurTeam() {
         Together, our team&apos;s unparalleled expertise transforms complex
         datasets into actionable strategies.
       </p>
-      <div className="flex items-center mt-10">
+      <div className="flex items-center justify-around min-w-full text-indigo-900 mt-10">
         {teamMembers.staffCollection.items.map((team, idx) => (
           <div
             key={idx}
@@ -64,9 +64,12 @@ export default async function OurTeam() {
             style={{ backgroundImage: `url(${team.portrait.url})` }}
           >
             <div className="bg-white/30 backdrop-blur-md flex flex-col items-center rounded-md mt-auto mb-4 w-[90%] shadow-lg">
-              <h3 className="font-[700] text-2xl">{`${team.lastName} ${team.firstName}`}</h3>
+              <h3
+                className="font-bold text-3xl"
+                style={{ WebkitTextStroke: '0.4px white' }}
+              >{`${team.lastName} ${team.firstName}`}</h3>
               <p className="font-[600]">{team.teamRole}</p>
-              <p>{team.qualification}</p>
+              {/* <p>{team.qualification}</p> */}
             </div>
           </div>
         ))}

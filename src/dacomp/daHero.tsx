@@ -39,14 +39,14 @@ const HeroSection: React.FC = () => {
             {/* <Button asChild> */}
             <Link
               href="#"
-              className="flex items-center mt-4 text-2xl bg-green-700 p-5 rounded-md hover:bg-green-900 font-semibold text-[#EDF7F4] py-1"
+              className="flex items-center mt-4 text-2xl bg-green-700 p-5 rounded-md hover:bg-green-900 font-semibold text-[#EDF7F4] py-2"
             >
               Let&apos;s Chat
               <Image
                 src="/icons8-whatsapp.gif"
                 alt="whatsapp"
-                height={50}
-                width={50}
+                height={30}
+                width={30}
                 className="ms-3 mix-blend-multiply"
               />
             </Link>

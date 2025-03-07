@@ -49,7 +49,6 @@ export default function TechStack() {
           data.{' '}
         </p>
       </div>
-
       <div className="ms-[50px] grid grid-cols-4 gap-9 w-full border-l border-gray-500">
         {techStackArray.map((stack, idx) => (
           <div className="flex- flex-col items-center" key={idx}>
