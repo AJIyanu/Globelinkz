@@ -4,6 +4,7 @@ import OurTeam from '@/sections/ourteam'
 import Footer from '@/sections/footer'
 import CallToAction from '@/sections/cta'
 import AnalyticFramework from '@/sections/framwork'
+import DataReview from '@/dacomp/dareview'
 
 export default function DataAnalysisPage() {
   return (
@@ -12,6 +13,7 @@ export default function DataAnalysisPage() {
       <TechStack />
       <AnalyticFramework />
       <OurTeam />
+      <DataReview />
       <div className="relative bg-black w-full">
         <div className="absolute inset-0 hidden lg:block bg-[url(/footer.jpg)] bg-cover bg-center">
           <div className="absolute inset-0 bg-black bg-opacity-70"></div>
