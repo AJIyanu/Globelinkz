@@ -1,0 +1,24 @@
+import { Client } from '@/lib/utils'
+import { gql } from 'graphql-request'
+import DataAReviewClient, { ReviewData } from './dataareviewclient'
+
+const REVIEW_QUERY = gql`
+  {
+    reviewCollection(where: { ratingFor: "Data Analysis" }) {
+      items {
+        rating
+        content
+        dateOfReview
+        reviewVerificationLink
+        reviewPlatform
+        subject
+      }
+    }
+  }
+`
+
+export default async function DataReview(): Promise<JSX.Element> {
+  const reviewData: ReviewData = await Client.request<ReviewData>(REVIEW_QUERY)
+
+  return <DataAReviewClient reviewData={reviewData} />
+}

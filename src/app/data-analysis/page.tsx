@@ -4,7 +4,7 @@ import OurTeam from '@/sections/ourteam'
 import Footer from '@/sections/footer'
 import CallToAction from '@/sections/cta'
 import AnalyticFramework from '@/sections/framwork'
-import DataReview from '@/dacomp/dareview'
+import DataReview from '@/dacomp/datareview'
 
 export default function DataAnalysisPage() {
   return (

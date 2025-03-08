@@ -40,7 +40,7 @@ export default async function OurTeam() {
   const teamMembers = await Client.request<StaffData>(query)
 
   return (
-    <div className="bg-[#EDF7F4] xl:w-[80%] font-[rajdhani] text-blue-900 flex flex-col items-center py-12">
+    <div className="bg-[#EDF7F4] xl:w-[80%] font-[rajdhani] text-blue-900 flex flex-col items-center justify-center py-12 overflow-hidden">
       <h2 className="text-center text-5xl font-bold ">
         &quot;The Strength of the Team is Each Individual Member.
         <br />
@@ -56,7 +56,7 @@ export default async function OurTeam() {
         Together, our team&apos;s unparalleled expertise transforms complex
         datasets into actionable strategies.
       </p>
-      <div className="flex items-center justify-around min-w-full text-indigo-900 mt-10">
+      <div className="grid grid-cols-3 gap-9 text-indigo-900 mt-10">
         {teamMembers.staffCollection.items.map((team, idx) => (
           <div
             key={idx}
