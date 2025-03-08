@@ -17,7 +17,7 @@ const REVIEW_QUERY = gql`
   }
 `
 
-export default async function DataReview(): Promise<JSX.Element> {
+export default async function DataReview() {
   const reviewData: ReviewData = await Client.request<ReviewData>(REVIEW_QUERY)
 
   return <DataAReviewClient reviewData={reviewData} />
