@@ -12,6 +12,7 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel'
 import { useRef } from 'react'
+import { format } from 'date-fns'
 import Autoplay from 'embla-carousel-autoplay'
 
 export interface Review {
@@ -44,6 +45,10 @@ export default function DataAReviewClient({
     if (link) {
       window.open(link, '_blank', 'noopener,noreferrer')
     }
+  }
+
+  const formatDate = (dateString: string): string => {
+    return format(new Date(dateString), 'MMMM d, yyyy')
   }
 
   return (
@@ -120,7 +125,7 @@ export default function DataAReviewClient({
                           className="w-[1px] mx-2 bg-gray-500 h-8 my-auto"
                         />
                         <div className="flex items-center font-inter">
-                          {review.dateOfReview}
+                          {formatDate(review.dateOfReview)}
                         </div>
                       </div>
                     </div>
