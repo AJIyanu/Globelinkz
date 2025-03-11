@@ -14,19 +14,19 @@ import {
   FormField,
   FormItem,
   FormLabel,
-  FormMessage,
+  FormMessage
 } from '@/components/ui/form'
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
-  SelectValue,
+  SelectValue
 } from '@/components/ui/select'
 import {
   Popover,
   PopoverContent,
-  PopoverTrigger,
+  PopoverTrigger
 } from '@/components/ui/popover'
 import { Input } from '@/components/ui/input'
 import { CalendarIcon, Clock } from 'lucide-react'
@@ -41,7 +41,7 @@ const generate24HourTimeOptions = () => {
       time.setHours(hour, minute, 0, 0)
       options.push({
         value: `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}`,
-        label: format(time, 'h:mm a'),
+        label: format(time, 'h:mm a')
       })
     }
   }
@@ -54,12 +54,12 @@ const quickBookingOptions = [
   {
     value: 'now',
     label: 'Now',
-    description: 'Might take up to 10 mins to setup meeting',
+    description: 'Might take up to 10 mins to setup meeting'
   },
   { value: 'next1hr', label: 'Next 1 hour' },
   { value: 'next2hr', label: 'Next 2 hours' },
   { value: 'next5hr', label: 'Next 5 hours' },
-  { value: 'anytimeToday', label: 'Anytime today' },
+  { value: 'anytimeToday', label: 'Anytime today' }
 ]
 
 const platformOptions = ['Google Meet', 'Zoom', 'WhatsApp Video Call']
@@ -67,27 +67,27 @@ const platformOptions = ['Google Meet', 'Zoom', 'WhatsApp Video Call']
 // Create the form schema with conditional validation
 const formSchema = z.object({
   name: z.string().min(2, {
-    message: 'Name must be at least 2 characters.',
+    message: 'Name must be at least 2 characters.'
   }),
   email: z.string().email({
-    message: 'Please enter a valid email address.',
+    message: 'Please enter a valid email address.'
   }),
   platform: z.enum(['Google Meet', 'Zoom', 'WhatsApp Video Call'], {
-    required_error: 'Please select a video call platform.',
+    required_error: 'Please select a video call platform.'
   }),
   quickBooking: z.enum(
     ['now', 'next1hr', 'next2hr', 'next5hr', 'anytimeToday', 'custom'],
     {
-      required_error: 'Please select a booking time option.',
+      required_error: 'Please select a booking time option.'
     }
   ),
   date: z.date({
-    required_error: 'Please select a date.',
+    required_error: 'Please select a date.'
   }),
   time: z.string({
-    required_error: 'Please select a time.',
+    required_error: 'Please select a time.'
   }),
-  timezone: z.string(),
+  timezone: z.string()
 })
 
 // Type for our form values
@@ -98,7 +98,7 @@ const decodeBase64Url = (encoded: string): string => {
   return Buffer.from(encoded, 'base64').toString('utf-8')
 }
 
-export function BookingForm() {
+function BookingForm() {
   const [quickTimeSelected, setQuickTimeSelected] = useState(false)
   const [clientTimezone, setClientTimezone] = useState('')
   const [timezoneOffset, setTimezoneOffset] = useState(0)
@@ -154,8 +154,8 @@ export function BookingForm() {
       quickBooking: 'custom',
       date: now,
       time: '10:00 AM',
-      timezone: '',
-    },
+      timezone: ''
+    }
   })
 
   useEffect(() => {
@@ -405,7 +405,7 @@ export function BookingForm() {
                       onSelect={field.onChange}
                       disabled={
                         quickTimeSelected || {
-                          before: new Date(),
+                          before: new Date()
                         }
                       }
                       initialFocus
