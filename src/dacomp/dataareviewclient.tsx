@@ -47,7 +47,7 @@ export default function DataAReviewClient({
   }
 
   return (
-    <div className="w-[80%] py-8 bg-green-100 px-3">
+    <div className="w-[90%] xl:w-[80%] py-8 bg-green-100 px-3">
       <Carousel
         opts={{
           align: 'start',
@@ -59,7 +59,10 @@ export default function DataAReviewClient({
       >
         <CarouselContent className="-ml-5">
           {reviewData.reviewCollection.items.map((review, idx) => (
-            <CarouselItem key={idx} className="pl-5 my-auto basis-1/3">
+            <CarouselItem
+              key={idx}
+              className="pl-5 my-auto lg:basis-1/2 xl:basis-1/3"
+            >
               <div>
                 <Card
                   className={`${review.reviewVerificationLink ? 'cursor-pointer hover:shadow-lg transition-shadow duration-200' : ''}`}

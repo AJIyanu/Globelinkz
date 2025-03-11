@@ -40,10 +40,10 @@ const headers = {
 
 export const Client = new GraphQLClient(endpoint, {
   headers,
-  requestMiddleware: (request) => {
-    console.log('Request URL:', request.url)
-    console.log('Request Headers:', request.headers)
-    console.log('Request Body:', request.body)
-    return request
-  },
+  // requestMiddleware: (request) => {
+  //   console.log('Request URL:', request.url)
+  //   console.log('Request Headers:', request.headers)
+  //   console.log('Request Body:', request.body)
+  // return request
+  // },
 })

@@ -8,7 +8,7 @@ import DataReview from '@/dacomp/datareview'
 
 export default function DataAnalysisPage() {
   return (
-    <div className="flex flex-col items-center ">
+    <div className="flex flex-col items-center">
       <HeroSection />
       <TechStack />
       <AnalyticFramework />

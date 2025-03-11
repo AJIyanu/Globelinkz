@@ -34,13 +34,15 @@ const techStackArray = [
 
 export default function TechStack() {
   return (
-    <div className="w-[80%] flex items-center my-10 text-blue-900">
-      <div className="w-[40%]">
-        <h2 className="font-[rajdhani] text-5xl font-bold">OUR</h2>
-        <h2 className="font-[rajdhani] text-5xl font-bold">TECH</h2>
-        <h2 className="font-[rajdhani] text-5xl font-bold">STACK</h2>
+    <div className="lg:w-[90%] xl:w-[80%] flex flex-col justify-center lg:flex-row items-center my-10 text-blue-900 px-5">
+      <div className="text-center lg: text-left lg:w-[40%] mb-9">
+        <div className="font-[rajdhani] text-5xl font-bold flex justify-center lg:flex-col lg:items-start">
+          <h2 className="me-2">OUR</h2>
+          <h2 className="me-2">TECH</h2>
+          <h2 className="me-2">STACK</h2>
+        </div>
         <Separator />
-        <p className="font-[rajdhani] text-2xl text-left">
+        <p className="font-[rajdhani] text-2xl lg:text-left">
           <span className="italic font-semibold">Measure twice, cut once </span>
           <br />
           That&apos;s our guiding principle at Globlinkz. We believe that
@@ -49,9 +51,9 @@ export default function TechStack() {
           data.{' '}
         </p>
       </div>
-      <div className="ms-[50px] grid grid-cols-4 gap-9 w-full border-l border-gray-500">
+      <div className="mx-auto lg:ms-[20px] lg:p-[50px] grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-9 w-full lg:border-l border-gray-500">
         {techStackArray.map((stack, idx) => (
-          <div className="flex- flex-col items-center" key={idx}>
+          <div className="flex flex-col items-center" key={idx}>
             <Image
               src={stack.imgSrc}
               alt={stack.name}

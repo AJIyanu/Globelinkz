@@ -32,13 +32,15 @@ const dataFramework = [
 
 export default function AnalyticFramework() {
   return (
-    <div className="font-[rajdhani] text-blue-900 flex flex-row-reverse w-[80%] py-8 px-5 justify-between items-center bg-green-100">
-      <div className="w-[40%]">
-        <h2 className=" text-5xl font-bold">OUR</h2>
-        <h2 className=" text-5xl font-bold">ANALYTIC</h2>
-        <h2 className=" text-5xl font-bold">FRAMEWORK</h2>
+    <div className="font-[rajdhani] text-blue-900 flex flex-col lg:flex-row-reverse xl:w-[80%] py-8 px-[5%] justify-between items-center bg-green-100 overflow-hidden">
+      <div className="px-5 lg:w-[40%]">
+        <div className="text-3xl xl:text-5xl font-bold flex lg:flex-row lg:items-start justify-center">
+          <h2 className="me-3">OUR</h2>
+          <h2 className="me-3">ANALYTIC</h2>
+          <h2 className="me-3">FRAMEWORK</h2>
+        </div>
         <Separator />
-        <p className="text-2xl text-left">
+        <p className="text-1xl xl:text-2xl text-center lg:text-left">
           <span className="italic font-semibold">
             Every battle is won before it is ever fought.
           </span>
@@ -48,14 +50,14 @@ export default function AnalyticFramework() {
           exactly which approach to deploy, or even blend, for maximum impact.
         </p>
       </div>
-      <div className="w-[50%]">
+      <div className="px-5 lg:w-[50%]">
         <Accordion type="single" collapsible className="w-full">
           {dataFramework.map((frameElement, idx) => (
             <AccordionItem key={idx} value={frameElement.trigger}>
-              <AccordionTrigger className="hover:no-underline font-semibold text-2xl">
+              <AccordionTrigger className="hover:no-underline font-semibold text-1xl lg:text-2xl">
                 {frameElement.trigger}
               </AccordionTrigger>
-              <AccordionContent className="font-[500] text-2xl">
+              <AccordionContent className="font-[500] text-1xl lg:text-2xl">
                 {frameElement.content}
               </AccordionContent>
             </AccordionItem>
