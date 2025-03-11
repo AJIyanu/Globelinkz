@@ -30,6 +30,10 @@ const techStackArray = [
     name: 'R',
     imgSrc: '/icons/r.png',
   },
+  {
+    name: 'Microsoft PowerBi',
+    imgSrc: '/icons/powerbi.png',
+  },
 ]
 
 export default function TechStack() {
@@ -53,7 +57,10 @@ export default function TechStack() {
       </div>
       <div className="mx-auto lg:ms-[20px] lg:p-[50px] grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-9 w-full lg:border-l border-gray-500">
         {techStackArray.map((stack, idx) => (
-          <div className="flex flex-col items-center" key={idx}>
+          <div
+            className="flex flex-col items-center inset-shadow-sm inset-shadow-indigo-500"
+            key={idx}
+          >
             <Image
               src={stack.imgSrc}
               alt={stack.name}
