@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
-import { format, addHours } from 'date-fns'
+import { format } from 'date-fns'
 import { Calendar } from '@/components/ui/calendar'
 import { Button } from '@/components/ui/button'
 import { Suspense } from 'react'
@@ -207,44 +207,29 @@ function BookingForm() {
     }
   }
 
-  const convertToMyTimezone = (date: Date, timeString: string) => {
-    // Clone the date to avoid modifying the original
-    const clientDateTime = new Date(date)
+  // const convertToMyTimezone = (date: Date, timeString: string) => {
+  //   // Clone the date to avoid modifying the original
+  //   const clientDateTime = new Date(date)
 
-    // Parse the time string (format: "HH:mm")
-    const [hours, minutes] = timeString.split(':').map(Number)
+  //   // Parse the time string (format: "HH:mm")
+  //   const [hours, minutes] = timeString.split(':').map(Number)
 
-    // Set the hours and minutes
-    clientDateTime.setHours(hours, minutes, 0, 0)
+  //   // Set the hours and minutes
+  //   clientDateTime.setHours(hours, minutes, 0, 0)
 
-    // For demonstration, let's say your timezone is UTC
-    // You should replace this with your actual timezone offset
-    const myTimezoneOffset = 0 // UTC (replace with your timezone offset)
+  //   // For demonstration, let's say your timezone is UTC
+  //   // You should replace this with your actual timezone offset
+  //   const myTimezoneOffset = 0 // UTC (replace with your timezone offset)
 
-    // Calculate the difference between client timezone and your timezone
-    const timeDifference = myTimezoneOffset - timezoneOffset
+  //   // Calculate the difference between client timezone and your timezone
+  //   const timeDifference = myTimezoneOffset - timezoneOffset
 
-    // Add the difference to convert to your timezone
-    return addHours(clientDateTime, timeDifference)
-  }
+  //   // Add the difference to convert to your timezone
+  //   return addHours(clientDateTime, timeDifference)
+  // }
 
   // Form submission handler
   const onSubmit = async (data: FormValues) => {
-    if (data.time !== 'Anytime') {
-      const myTimezoneMeeting = convertToMyTimezone(data.date, data.time)
-      console.log(
-        "Original time (client's timezone):",
-        format(data.date, 'PPP'),
-        'at',
-        data.time
-      )
-      // console.log(
-      //   'Converted time (your timezone):',
-      //   format(myTimezoneMeeting, "PPP 'at' h:mm a")
-      // )
-    }
-    console.log(data)
-
     const response = await fetch('/api/submitBooking', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
