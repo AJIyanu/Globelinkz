@@ -35,7 +35,7 @@ export default function EncodePage() {
   }
 
   return (
-    <div className="max-w-md mx-auto p-6 space-y-4 border rounded-lg shadow-lg">
+    <div className="w-[25rem] lg:w-[35rem] mx-auto p-6 space-y-4 border rounded-lg shadow-lg">
       <h2 className="text-2xl font-bold">Generate Booking Link</h2>
 
       <Input
