@@ -1,6 +1,7 @@
 // import { Dialog, DialogPanel } from "@headlessui/react";
 // import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Header from '@/components/Header'
+import { CalendarCheck2 } from 'lucide-react'
 import Image from 'next/image'
 
 export default function Hero() {
@@ -33,8 +34,17 @@ export default function Hero() {
               </p>
               <div className="mt-10 flex items-center gap-x-6 flex-col md:flex-row">
                 <a
-                  href="#"
+                  href="/bookings"
                   className="rounded-md bg-green-600 flex gap-2 items-center px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                >
+                  Book an Appointment
+                  <CalendarCheck2 className="ms-3" />
+                </a>
+                <a
+                  href="https://api.whatsapp.com/send?phone=2347036825350"
+                  target="_blank"
+                  className="flex items-center text-sm/6 font-semibold text-green-100"
+                  rel="noreferrer"
                 >
                   Start a Conversation
                   <Image
@@ -42,10 +52,8 @@ export default function Hero() {
                     height={24}
                     src="/icons8-whatsapp-24.png"
                     alt="whatsapp--v1"
+                    className="ms-3"
                   />
-                </a>
-                <a href="#" className="text-sm/6 font-semibold text-green-100">
-                  Book an Appointment <span aria-hidden="true">→</span>
                 </a>
               </div>
             </div>

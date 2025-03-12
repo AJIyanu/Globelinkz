@@ -4,6 +4,7 @@ import Link from 'next/link'
 import TextWipeAnimation from '@/components/textwipe'
 import { Separator } from '@/components/ui/separator'
 import Header from '@/components/Header'
+import { CalendarCheck2 } from 'lucide-react'
 // import { Button } from '@/components/ui/button'
 
 const HeroSection: React.FC = () => {
@@ -38,17 +39,11 @@ const HeroSection: React.FC = () => {
             </p>
             {/* <Button asChild> */}
             <Link
-              href="#"
-              className="flex items-center mt-4 text-2xl bg-green-700 p-5 rounded-md hover:bg-green-900 font-semibold text-[#EDF7F4] py-2"
+              href="/bookings"
+              className="flex items-center mt-4 text-sm bg-green-700 p-5 rounded-md hover:bg-green-900 font-semibold text-[#EDF7F4] py-2"
             >
-              Let&apos;s Chat
-              <Image
-                src="/icons8-whatsapp.gif"
-                alt="whatsapp"
-                height={30}
-                width={30}
-                className="ms-3 mix-blend-multiply"
-              />
+              Schedule a Consultation
+              <CalendarCheck2 className="ms-3" />
             </Link>
             {/* </Button> */}
           </div>

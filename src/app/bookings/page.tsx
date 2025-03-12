@@ -229,7 +229,7 @@ function BookingForm() {
   }
 
   // Form submission handler
-  const onSubmit = (data: FormValues) => {
+  const onSubmit = async (data: FormValues) => {
     if (data.time !== 'Anytime') {
       const myTimezoneMeeting = convertToMyTimezone(data.date, data.time)
       console.log(
@@ -238,12 +238,21 @@ function BookingForm() {
         'at',
         data.time
       )
-      console.log(
-        'Converted time (your timezone):',
-        format(myTimezoneMeeting, "PPP 'at' h:mm a")
-      )
+      // console.log(
+      //   'Converted time (your timezone):',
+      //   format(myTimezoneMeeting, "PPP 'at' h:mm a")
+      // )
     }
     console.log(data)
+
+    const response = await fetch('/api/submitBooking', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    })
+
+    const result = await response.json()
+    console.log(result)
     // Handle form submission here
     alert('Booking submitted successfully!')
   }
