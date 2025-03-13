@@ -236,10 +236,10 @@ function BookingForm() {
       body: JSON.stringify(data),
     })
 
-    const result = await response.json()
-    console.log(result)
+    await response.json()
     // Handle form submission here
     alert('Booking submitted successfully!')
+    window.location.href = '/data-analysis'
   }
 
   return (
