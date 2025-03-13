@@ -243,7 +243,7 @@ function BookingForm() {
   }
 
   return (
-    <div className="max-w-2xl mx-auto p-6 bg-white border rounded-lg shadow-md">
+    <div className="w-[90%] mx-auto p-6 bg-white border rounded-lg shadow-md">
       <h2 className="text-2xl font-bold mb-6 text-center">Book a Meeting</h2>
 
       <div className="text-sm text-gray-500 mb-4 text-center">
@@ -461,7 +461,7 @@ function BookingForm() {
 
 export default function Page() {
   return (
-    <div className="py-9">
+    <div className="py-9 w-full lg:w-[70%]">
       <Suspense
         fallback={
           <div className="p-6 text-center">Loading booking form...</div>
