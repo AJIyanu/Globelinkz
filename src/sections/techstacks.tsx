@@ -40,7 +40,7 @@ export default function TechStack() {
   return (
     <div className="lg:w-[90%] xl:w-[80%] flex flex-col justify-center lg:flex-row items-center my-10 text-blue-900 px-5">
       <div className="text-center lg: text-left lg:w-[40%] mb-9">
-        <div className="font-[rajdhani] text-5xl font-bold flex justify-center lg:flex-col lg:items-start">
+        <div className="font-[rajdhani] text-3xl lg:text-5xl font-bold flex justify-center lg:flex-col lg:items-start">
           <h2 className="me-2">OUR</h2>
           <h2 className="me-2">TECH</h2>
           <h2 className="me-2">STACK</h2>
@@ -68,7 +68,7 @@ export default function TechStack() {
               height={150}
               className="rounded-lg shadaow-lg border-gray-700 border p-4 mx-auto"
             />
-            <p className="text-center text-3xl mt-6 font-semibold mb-auto">
+            <p className="text-center text-xl lg:text-3xl mt-6 font-semibold mb-auto">
               {stack.name}
             </p>
           </div>

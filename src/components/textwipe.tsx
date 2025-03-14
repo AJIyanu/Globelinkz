@@ -24,11 +24,11 @@ export default function TextWipeAnimation() {
   }, [index])
 
   return (
-    <div className="flex justify-start items-center text-[#FF8D00] text-4xl font-bold overflow-hidden mb-9">
+    <div className="flex justify-start items-center text-[#FF8D00] text-md lg:text-4xl font-bold overflow-hidden mb-9">
       <AnimatePresence mode="wait">
         <motion.div
           key={words[index]}
-          className={`relative ${index === words.length - 1 ? 'font-bold text-green-700 italic text-5xl' : ''}`}
+          className={`relative ${index === words.length - 1 ? 'font-bold text-green-700 italic lg:text-5xl' : ''}`}
           initial={{ width: 0 }}
           animate={{ width: '100%' }}
           exit={{ width: 0 }}

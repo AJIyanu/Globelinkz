@@ -41,15 +41,15 @@ export default async function OurTeam() {
 
   return (
     <div className="bg-[#EDF7F4] xl:w-[80%] font-[rajdhani] text-blue-900 flex flex-col items-center justify-center py-12 overflow-hidden px-5">
-      <h2 className="text-center text-5xl font-bold ">
+      <h2 className="text-center text-3xl lg:text-5xl font-bold ">
         &quot;The Strength of the Team is Each Individual Member.
         <br />
-        <span className="text-4xl">
+        <span className="hidden md:block text-1xl lg:text-4xl">
           The Strength of Each Member is the Team.&quot;
         </span>{' '}
-        – <span className="text-3xl italic">Phil Jackson</span>
+        – <span className="text-md lg:text-3xl italic">Phil Jackson</span>
       </h2>
-      <p className="font-semibold text-center text-2xl  px-9">
+      <p className="font-semibold text-center text-md lg:text-2xl  px-9">
         At GLoblinkz, our data analysts are the best in the business. Each
         expert brings a unique set of skills and deep insights to the table,
         ensuring that every data challenge is met with precision and creativity.
@@ -60,7 +60,7 @@ export default async function OurTeam() {
         {teamMembers.staffCollection.items.map((team, idx) => (
           <div
             key={idx}
-            className="flex flex-col items-center w-[400px] h-[400px] rounded-lg shadow-md"
+            className="flex flex-col aspect-square items-center w-[300px] bg-center bg-top lg:w-[400px] rounded-lg shadow-md"
             style={{ backgroundImage: `url(${team.portrait.url})` }}
           >
             <div className="bg-white/30 backdrop-blur-md flex flex-col items-center rounded-md mt-auto mb-4 w-[90%] shadow-lg">

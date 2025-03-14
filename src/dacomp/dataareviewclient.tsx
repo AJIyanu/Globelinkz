@@ -52,7 +52,7 @@ export default function DataAReviewClient({
   }
 
   return (
-    <div className="w-[90%] xl:w-[80%] py-8 bg-green-100 px-3">
+    <div className="w-[80%] xl:w-[80%] py-8 bg-green-100 px-3">
       <Carousel
         opts={{
           align: 'start',

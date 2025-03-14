@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.globelinkz.com
+
+# Sitemaps
+Sitemap: https://www.globelinkz.com/sitemap.xml

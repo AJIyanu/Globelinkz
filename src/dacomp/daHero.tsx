@@ -20,7 +20,7 @@ const HeroSection: React.FC = () => {
       />
       <div className="absolute inset-0 bg-[#EDF7F4] opacity-95"></div>
       <div className="absolute inset-0 flex flex justify-center items-center text-blue-900">
-        <div className="flex mx-[10%]">
+        <div className="flex mx-[10%] flex-col lg:flex-row items-center justify-evenly">
           <Separator
             orientation="vertical"
             className="hidden lg:block h-[300px] mt-4 bg-[#FF8D00] me-3 w-[8px]"
@@ -47,13 +47,13 @@ const HeroSection: React.FC = () => {
             </Link>
             {/* </Button> */}
           </div>
-          <div className="hidden bg-[#EDF7F4] shadow-lg rounded-lg lg:flex flex-col justify-evenly overflow-hidden w-[60%] px-9">
+          <div className="mt-auto lg:bg-[#EDF7F4] lg:shadow-lg rounded-lg lg:flex flex-col justify-evenly overflow-hidden w-[60%] px-9">
             <Image
               src="/dataanalysis.gif"
               alt="data analysis"
               height={500}
               width={500}
-              className="mx-auto"
+              className="mx-auto hidden lg:block"
             />
             <TextWipeAnimation />
           </div>
