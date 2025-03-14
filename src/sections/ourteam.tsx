@@ -1,7 +1,7 @@
 import { Client } from '@/lib/utils'
 import { gql } from 'graphql-request'
 
-interface StaffData {
+export interface StaffData {
   staffCollection: {
     items: StaffMember[]
   }
@@ -17,12 +17,16 @@ interface StaffMember {
   portrait: {
     url: string
   }
+  customerReview: string
 }
 
 export default async function OurTeam() {
   const query = gql`
     {
-      staffCollection {
+      staffCollection(
+        where: { role_contains_some: "Data Analyst" }
+        order: hierarchy_ASC
+      ) {
         items {
           lastName
           firstName

@@ -32,8 +32,12 @@ export interface ReviewData {
   reviewCollection: ReviewCollection
 }
 
-interface DataReviewClientProps {
+export interface DataReviewClientProps {
   reviewData: ReviewData
+}
+
+export const formatDate = (dateString: string): string => {
+  return format(new Date(dateString), 'MMMM d, yyyy')
 }
 
 export default function DataAReviewClient({
@@ -45,10 +49,6 @@ export default function DataAReviewClient({
     if (link) {
       window.open(link, '_blank', 'noopener,noreferrer')
     }
-  }
-
-  const formatDate = (dateString: string): string => {
-    return format(new Date(dateString), 'MMMM d, yyyy')
   }
 
   return (

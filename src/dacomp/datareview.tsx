@@ -2,7 +2,7 @@ import { Client } from '@/lib/utils'
 import { gql } from 'graphql-request'
 import DataAReviewClient, { ReviewData } from './dataareviewclient'
 
-const REVIEW_QUERY = gql`
+export const REVIEW_QUERY = gql`
   {
     reviewCollection(where: { ratingFor: "Data Analysis" }) {
       items {

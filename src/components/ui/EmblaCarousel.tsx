@@ -8,16 +8,10 @@ import ClassNames from 'embla-carousel-class-names'
 import useEmblaCarousel from 'embla-carousel-react'
 // import Image from "next/image";
 import { Separator } from '@radix-ui/react-separator'
-
-interface StaffMember {
-  name: string
-  role: string
-  quote: string
-  imageUrl: string
-}
+import { StaffData } from '@/sections/ourteam'
 
 type PropType = {
-  slides: StaffMember[]
+  slides: StaffData
   options?: EmblaOptionsType
 }
 
@@ -49,26 +43,26 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
     <section className="embla">
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
-          {slides.map((staff, idx) => (
+          {slides.staffCollection.items.map((staff, idx) => (
             <div className="embla__slide" key={idx}>
               <div className="border-indigo-500 border-2 rounded-xl shadow-xl p-3 flex flex-col md:flex-row items-center">
                 <div
                   className="aspect-square rounded-full border-2 border-indigo-300 w-[220px] md:w-[55%]"
                   style={{
-                    backgroundImage: `url(staff/${staff.imageUrl})`,
-                    backgroundPosition: 'center top -1.5rem',
+                    backgroundImage: `url(${staff.portrait.url})`,
+                    backgroundPosition: 'center top',
                   }}
                 />
                 <div className="ps-3 w-full text-center md:w-[45%] md:text-left">
                   <h2 className="text-2xl md:text-3xl font-bold text-gray-800">
-                    {staff.name}
+                    {`${staff.firstName} ${staff.lastName}`}
                   </h2>
                   <h3 className="text-1xl font-semibold mb-1 text-gray-800">
-                    {staff.role}
+                    {staff.teamRole}
                   </h3>
                   <Separator className="bg-gray-600 h-[1] md:hidden" />
                   <blockquote className="text-justify mt-3 md:border-l-2 md:pl-3 md:italic border-gray-600 md:bg-gray-100 rounded p-2">
-                    {staff.quote}
+                    {staff.customerReview}
                   </blockquote>
                 </div>
               </div>
