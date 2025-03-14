@@ -22,7 +22,7 @@ export default function BlogLayout({
       </div>
 
       {/* Page Content */}
-      <div className="w-full lg:w-[80%] border-l border-r border-gray-300 h-screen flex flex-col items-center justify-center">
+      <div className="w-full lg:w-[80%] border-l border-r border-gray-300 min-h-screen flex flex-col items-center justify-center">
         {children}
       </div>
 

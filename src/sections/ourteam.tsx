@@ -50,7 +50,7 @@ export default async function OurTeam() {
         – <span className="text-md lg:text-3xl italic">Phil Jackson</span>
       </h2>
       <p className="font-semibold text-center text-md lg:text-2xl  px-9">
-        At GLoblinkz, our data analysts are the best in the business. Each
+        At Globelinkz, our data analysts are the best in the business. Each
         expert brings a unique set of skills and deep insights to the table,
         ensuring that every data challenge is met with precision and creativity.
         Together, our team&apos;s unparalleled expertise transforms complex

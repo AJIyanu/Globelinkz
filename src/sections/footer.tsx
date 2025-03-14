@@ -49,7 +49,7 @@ export default function Footer() {
       <div>
         <p>
           © 2025 Globelinkz{' '}
-          <span className="hidden sm:inline">Full Digital Service Agency</span>
+          <span className="hidden sm:inline">Full Service Digital Agency</span>
         </p>
       </div>
     </div>

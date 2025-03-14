@@ -10,8 +10,8 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center">
       <Hero />
-      <WhyUs />
       <OurCompetence />
+      <WhyUs />
       <div className="hidden">about us</div>
       <div className="hidden">blog post</div>
       <Reviews />

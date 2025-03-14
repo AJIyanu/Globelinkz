@@ -49,7 +49,7 @@ export default function TechStack() {
         <p className="font-[rajdhani] text-2xl lg:text-left">
           <span className="italic font-semibold">Measure twice, cut once </span>
           <br />
-          That&apos;s our guiding principle at Globlinkz. We believe that
+          That&apos;s our guiding principle at Globelinkz. We believe that
           precision starts with having the right tools, and our advanced tech
           stack is built to unlock deep, actionable insights from your
           data.{' '}
