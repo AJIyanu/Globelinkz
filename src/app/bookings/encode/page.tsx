@@ -24,7 +24,7 @@ export default function EncodePage() {
       return
     }
 
-    const bookingUrl = `https://globelinkz.vercel.app/bookings?name=${encodeBase64Url(name)}&email=${encodeBase64Url(email)}`
+    const bookingUrl = `https://globelinkz.com/bookings?name=${encodeBase64Url(name)}&email=${encodeBase64Url(email)}`
     setEncodedLink(bookingUrl)
   }
 
