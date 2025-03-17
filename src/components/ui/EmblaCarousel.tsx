@@ -19,7 +19,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
   const { slides, options } = props
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [
     Autoplay({ delay: 8000 }),
-    ClassNames(),
+    ClassNames()
   ])
 
   const onNavButtonClick = useCallback((emblaApi: EmblaCarouselType) => {
@@ -51,6 +51,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                   style={{
                     backgroundImage: `url(${staff.portrait.url})`,
                     backgroundPosition: 'center top',
+                    backgroundSize: 'contain'
                   }}
                 />
                 <div className="ps-3 w-full text-center md:w-[45%] md:text-left">

@@ -22,8 +22,8 @@ export async function POST(req: Request) {
       secure: true,
       auth: {
         user: process.env.ZOHO_USER!,
-        pass: process.env.ZOHO_PASS!,
-      },
+        pass: process.env.ZOHO_PASS!
+      }
     })
 
     // Email options
@@ -33,7 +33,7 @@ export async function POST(req: Request) {
       subject: 'Your Booking Details',
       html: `
                <p data-sourcepos="3:1-3:17">Dear ${name},</p>
-                <p data-sourcepos="5:1-5:123">Thank you for booking a meeting with us! We truly appreciate you choosing <a target="_blank" rel="noopener noreferrer" href="https://www.globelinkz.com"><strong>GLOBELINKZ FULL DIGITAL AGENCY</strong></a> for your data analysis needs.</p>
+                <p data-sourcepos="5:1-5:123">Thank you for booking a meeting with us! We truly appreciate you choosing <a target="_blank" rel="noopener noreferrer" href="https://www.globelinkz.com"><strong>GLOBELINKZ FULL SERVICE DIGITAL AGENCY</strong></a> for your data analysis needs.</p>
                 <p data-sourcepos="7:1-7:65">We're excited to connect with you. Here are your ${platform} meeting details:</p>
                 <ul data-sourcepos="9:1-12:0">
                     <li data-sourcepos="9:1-9:18"><strong>Date:</strong> ${format(parseISO(date), 'EEE, do MMMM, yyyy')}</li>
@@ -48,7 +48,7 @@ export async function POST(req: Request) {
                 <p data-sourcepos="23:1-23:10">Sincerely,</p>
                 <p data-sourcepos="25:1-26:14">Elijah</p>
                 <p data-sourcepos="25:1-26:14">CEO @ <a target="_blank" rel="noopener noreferrer" href="https://globelinkz">Globelinkz</a></p>
-            `,
+            `
     }
 
     const companymailOptions = {
@@ -70,7 +70,7 @@ export async function POST(req: Request) {
                 <p data-sourcepos="16:1-16:50">Please review the booking and prepare accordingly.</p>
                 <p data-sourcepos="18:1-18:10">Thank you,</p>
                 <p data-sourcepos="20:1-20:40">The Software Engineering Team</p>
-            `,
+            `
     }
 
     // Send email
