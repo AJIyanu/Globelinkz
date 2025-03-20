@@ -22,15 +22,28 @@ export function splitStringRegx(inputString: string): string[] {
 interface NavigationItem {
   name: string
   href: string
+  sub?: {
+    name: string
+    href: string
+  }[]
 }
 
 export const navigation: NavigationItem[] = [
   { name: 'Home', href: '/' },
-  { name: 'Data Analysis', href: '/data-analysis' },
-  { name: 'Blog', href: '/blog' },
-  { name: 'Portfolio', href: '#' },
-  { name: 'Services', href: '#' },
+  // { name: 'Data Analysis', href: '/data-analysis' },
+  {
+    name: 'Services',
+    href: '#',
+    sub: [
+      { name: 'Data Analysis', href: '/data-analysis' },
+      { name: 'Digital Marketing', href: '#' },
+      { name: 'Branding', href: '#' },
+      { name: 'Web Design', href: '#' },
+      // { name: 'Metric View App ', href: '#' }
+    ],
+  },
   { name: 'About us', href: '#' },
+  { name: 'Blog', href: '/blog' },
 ]
 
 const endpoint = `${process.env.GRAPHCMS_ENDPOINT}${process.env.CONTENTFUL_SPACE_ID}/environments/${process.env.CONTENTFUL_ENVIRONMENT}`

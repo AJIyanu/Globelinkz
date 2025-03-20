@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono, Rajdhani } from 'next/font/google'
+import { Geist, Geist_Mono, Oswald, Asap_Condensed } from 'next/font/google'
 import { Inter } from 'next/font/google'
 import './globals.css'
 
@@ -16,9 +16,14 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 })
 
-const rajdhani = Rajdhani({
+const asapCondensed = Oswald({
   weight: ['400', '600', '700'],
-  subsets: ['devanagari', 'latin'],
+  subsets: ['cyrillic', 'latin'],
+})
+
+const rajdhani = Asap_Condensed({
+  weight: ['400', '600', '700'],
+  subsets: ['vietnamese', 'latin'],
 })
 
 export const metadata: Metadata = {
@@ -88,7 +93,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${inter.className} ${rajdhani.className} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${asapCondensed} ${inter.className} ${rajdhani.className} antialiased`}
       >
         {children}
       </body>
