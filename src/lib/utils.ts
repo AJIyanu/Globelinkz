@@ -36,13 +36,13 @@ export const navigation: NavigationItem[] = [
     href: '/services',
     sub: [
       { name: 'Data Analysis', href: '/data-analysis' },
-      { name: 'Digital Marketing', href: '#' },
-      { name: 'Branding', href: '#' },
-      { name: 'Web Design', href: '#' },
+      { name: 'Digital Marketing', href: 'digital-marketing' },
+      { name: 'Branding', href: 'branding' },
+      { name: 'Web Design', href: 'webdesign' },
       // { name: 'Metric View App ', href: '#' }
     ],
   },
-  { name: 'About us', href: '#' },
+  { name: 'About us', href: 'aboutus' },
   { name: 'Blog', href: '/blog' },
 ]
 

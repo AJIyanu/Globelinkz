@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono, Oswald, Asap_Condensed } from 'next/font/google'
+import CallToAction from '@/sections/cta'
+import Footer from '@/sections/footer'
 import { Inter } from 'next/font/google'
 import './globals.css'
 
@@ -95,7 +97,19 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${asapCondensed} ${inter.className} ${rajdhani.className} antialiased`}
       >
-        {children}
+        <div className="flex flex-col items-center overflow-hidden">
+          {children}
+          <div className="relative bg-black">
+            <div className="absolute inset-0 hidden lg:block bg-[url(/footer.jpg)] bg-cover bg-center">
+              <div className="absolute inset-0 bg-black bg-opacity-70"></div>
+            </div>
+
+            <div className="relative z-10 flex flex-col items-center">
+              <CallToAction />
+              <Footer />
+            </div>
+          </div>
+        </div>
       </body>
     </html>
   )

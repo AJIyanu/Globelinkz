@@ -2,8 +2,6 @@ import Hero from '@/sections/hero'
 import WhyUs from '@/sections/whyus'
 import Reviews from '@/sections/review'
 import OurCompetence from '@/sections/services'
-import CallToAction from '@/sections/cta'
-import Footer from '@/sections/footer'
 import React from 'react'
 import { Client } from '@/lib/utils'
 import { gql } from 'graphql-request'
@@ -60,16 +58,6 @@ export default async function Home() {
       <div className="hidden">about us</div>
       <div className="hidden">blog post</div>
       <Reviews reviewData={reviewData} staffData={teamMembers} />
-      <div className="relative bg-black">
-        <div className="absolute inset-0 hidden lg:block bg-[url(/footer.jpg)] bg-cover bg-center">
-          <div className="absolute inset-0 bg-black bg-opacity-70"></div>
-        </div>
-
-        <div className="relative z-10 flex flex-col items-center">
-          <CallToAction />
-          <Footer />
-        </div>
-      </div>
     </div>
   )
 }

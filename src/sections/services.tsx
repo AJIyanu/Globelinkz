@@ -123,61 +123,70 @@ export default function OurCompetence() {
           whileHover={{ scale: 1.05 }}
           className="w-[22%] h-[85%] bg-indigo-200 pt-8 mt-[4%] rounded-xl shadow-md flex flex-col items-center"
         >
-          <Image
-            src="/webdev.gif"
-            width={400}
-            height={400}
-            alt="data analysis"
-            className="mix-blend-multiply"
-          />
-          <h1 className="mt-auto text-3xl font-bold">WEB</h1>
-          <h1 className="text-3xl font-bold">DEVELOPMENT</h1>
-          <Separator className="w-[85%] mx-auto bg-black my-2" />
-          <p className="mb-9 text-center mx-3">
-            We create custom websites tailored to your specific needs, ensuring
-            a seamless user experience, responsive design, and robust
-            functionality.
-          </p>
+          <Link href="/webdesign" className="flex flex-col items-center">
+            <Image
+              src="/webdev.gif"
+              width={400}
+              height={400}
+              alt="data analysis"
+              className="mix-blend-multiply"
+            />
+            <h1 className="mt-auto text-3xl font-bold">WEB</h1>
+            <h1 className="text-3xl font-bold">DEVELOPMENT</h1>
+            <Separator className="w-[85%] mx-auto bg-black my-2" />
+            <p className="mb-9 text-center mx-3">
+              We create custom websites tailored to your specific needs,
+              ensuring a seamless user experience, responsive design, and robust
+              functionality.
+            </p>
+          </Link>
         </motion.div>
         <motion.div
           whileHover={{ scale: 1.05 }}
           className="w-[22%] h-[70%] bg-[#3EE8C4] rounded-xl shadow-md flex flex-col items-center"
         >
-          <Image
-            src="/digitMarket.gif"
-            width={400}
-            height={400}
-            alt="data analysis"
-            className="mix-blend-multiply"
-          />
-          <h1 className="mt-auto text-3xl font-bold">DIGITAL</h1>
-          <h1 className="text-3xl font-bold">MARKETING</h1>
-          <Separator className="w-[85%] mx-auto bg-black my-2" />
-          <p className="mb-9 text-center mx-5">
-            We develop and execute data-driven strategies across various
-            channels, including SEO, PPC, social media, and email marketing, to
-            maximize your online visibility and generate leads.
-          </p>
+          <Link
+            href="/digital-markteting"
+            className="flex flex-col items-center"
+          >
+            <Image
+              src="/digitMarket.gif"
+              width={400}
+              height={400}
+              alt="data analysis"
+              className="mix-blend-multiply"
+            />
+            <h1 className="mt-auto text-3xl font-bold">DIGITAL</h1>
+            <h1 className="text-3xl font-bold">MARKETING</h1>
+            <Separator className="w-[85%] mx-auto bg-black my-2" />
+            <p className="mb-9 text-center mx-5">
+              We develop and execute data-driven strategies across various
+              channels, including SEO, PPC, social media, and email marketing,
+              to maximize your online visibility and generate leads.
+            </p>
+          </Link>
         </motion.div>
         <motion.div
           whileHover={{ scale: 1.05 }}
           className="w-[22%] h-[85%] bg-indigo-200 pt-8 mt-[4%] rounded-xl shadow-md flex flex-col items-center"
         >
-          <Image
-            src="/glz.gif"
-            width={400}
-            height={400}
-            alt="data analysis"
-            className="mix-blend-multiply"
-          />
-          <h1 className="mt-auto text-3xl font-bold">BRANDING/</h1>
-          <h1 className="text-3xl font-bold">GRAPHICS</h1>
-          <Separator className="w-[85%] mx-auto bg-black my-2" />
-          <p className="mb-9 text-center mx-5">
-            Our branding and graphic design services create visually stunning
-            logos, marketing materials, and brand guidelines that communicate
-            your unique value proposition.
-          </p>
+          <Link href="/branding" className="flex flex-col items-center">
+            <Image
+              src="/glz.gif"
+              width={400}
+              height={400}
+              alt="data analysis"
+              className="mix-blend-multiply"
+            />
+            <h1 className="mt-auto text-3xl font-bold">BRANDING/</h1>
+            <h1 className="text-3xl font-bold">GRAPHICS</h1>
+            <Separator className="w-[85%] mx-auto bg-black my-2" />
+            <p className="mb-9 text-center mx-5">
+              Our branding and graphic design services create visually stunning
+              logos, marketing materials, and brand guidelines that communicate
+              your unique value proposition.
+            </p>
+          </Link>
         </motion.div>
       </div>
       <div className="grid grid-cols-2 gap-3 px-5 mb-5 lg:hidden w-full">
