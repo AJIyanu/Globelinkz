@@ -33,7 +33,7 @@ export const navigation: NavigationItem[] = [
   // { name: 'Data Analysis', href: '/data-analysis' },
   {
     name: 'Services',
-    href: '#',
+    href: '/services',
     sub: [
       { name: 'Data Analysis', href: '/data-analysis' },
       { name: 'Digital Marketing', href: '#' },

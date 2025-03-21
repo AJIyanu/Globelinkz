@@ -17,12 +17,12 @@ export default function BlogLayout({
   return (
     <div className="flex flex-col items-center">
       {/* Header Section */}
-      <div className="bg-indigo-300 w-full h-[80px] lg:h-[100px]">
-        <Header color="black" />
-      </div>
+      {/* <div className="bg-indigo-300 w-full h-[80px] lg:h-[100px]"> */}
+      <Header color="black" />
+      {/* </div> */}
 
       {/* Page Content */}
-      <div className="w-full lg:w-[80%] border-l border-r border-gray-300 min-h-screen flex flex-col items-center justify-center">
+      <div className="w-full border-l border-r border-gray-300 min-h-screen flex flex-col items-center justify-center bg-cover">
         {children}
       </div>
 

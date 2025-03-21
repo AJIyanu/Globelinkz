@@ -20,6 +20,8 @@ interface StaffMember {
   customerReview: string
 }
 
+export const revalidate = 3600
+
 export default async function OurTeam() {
   const query = gql`
     {

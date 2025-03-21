@@ -44,6 +44,8 @@ const STAFF_QUERY = gql`
   }
 `
 
+export const revalidate = 3600
+
 export default async function Home() {
   const [reviewData, teamMembers] = await Promise.all([
     Client.request<ReviewData>(REVIEW_QUERY),
