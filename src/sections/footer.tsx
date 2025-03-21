@@ -6,45 +6,46 @@ import {
   // Youtube,
   LinkedinIcon,
 } from 'lucide-react'
+import Link from 'next/link'
 
 export default function Footer() {
   return (
     <div className="bg-gray-800 gap-10 p-10 text-white w-full flex flex-col items-center justify-center lg:bg-transparent">
-      <div className="grid grid-cols-2 md:flex gap-7">
+      <div className="flex gap-7">
         {navigation.map((item, idx) => (
-          <a href={item.href} key={idx} className="text-white">
+          <Link href={item.href} key={idx} className="text-white">
             {item.name}
-          </a>
+          </Link>
         ))}
       </div>
       <div className="flex gap-7">
-        <a
+        <Link
           href="https://www.facebook.com/Globelinkz"
           target="_blank"
           rel="noreferrer"
         >
           <Facebook />
-        </a>
-        <a
+        </Link>
+        <Link
           href="https://www.instagram.com/globelinkz/"
           target="_blank"
           rel="noreferrer"
         >
           <Instagram />
-        </a>
+        </Link>
         {/* <a href="#">
           <Twitter />
         </a>
         <a href="#">
           <Youtube />
         </a> */}
-        <a
+        <Link
           href="https://ng.linkedin.com/company/globelinkz"
           target="_blank"
           rel="noreferrer"
         >
           <LinkedinIcon />
-        </a>
+        </Link>
       </div>
       <div>
         <p>

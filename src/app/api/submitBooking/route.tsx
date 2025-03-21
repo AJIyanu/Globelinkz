@@ -5,7 +5,8 @@ import { format, parseISO } from 'date-fns'
 // Define the POST handler
 export async function POST(req: Request) {
   try {
-    const { name, email, date, platform, time, timezone } = await req.json()
+    const { name, email, date, platform, time, timezone, additionalNote } =
+      await req.json()
 
     if (!name || !email) {
       return NextResponse.json(
@@ -65,6 +66,7 @@ export async function POST(req: Request) {
                     <li data-sourcepos="10:1-10:18"><strong>Time:</strong> ${time}</li>
                     <li data-sourcepos="11:1-11:38"><strong>User Time Zone:</strong> ${timezone}</li>
                     <li data-sourcepos="12:1-13:0"><strong>Platform:</strong> ${platform}</li>
+                    <li data-sourcepos="12:1-13:0"><strong>Additional Note:</strong> ${additionalNote}</li>
                 </ul>
                 <p data-sourcepos="14:1-14:118">Please ensure that the meeting link is generated and sent to ${name} 30 minutes before the scheduled meeting time.</p>
                 <p data-sourcepos="16:1-16:50">Please review the booking and prepare accordingly.</p>

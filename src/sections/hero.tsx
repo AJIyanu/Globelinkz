@@ -1,8 +1,7 @@
-// import { Dialog, DialogPanel } from "@headlessui/react";
-// import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Header from '@/components/Header'
 import { CalendarCheck2 } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Hero() {
   return (
@@ -33,17 +32,17 @@ export default function Hero() {
                 the curve and achieve sustainable growth.
               </p>
               <div className="mt-10 flex items-center gap-x-6 flex-col md:flex-row">
-                <a
+                <Link
                   href="/bookings"
                   className="rounded-md bg-green-600 flex gap-2 items-center px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
                   Book an Appointment
                   <CalendarCheck2 className="ms-3" />
-                </a>
-                <a
+                </Link>
+                <Link
                   href="https://api.whatsapp.com/send?phone=2347036825350"
                   target="_blank"
-                  className="flex items-center text-sm/6 font-semibold text-green-100"
+                  className="flex items-center text-sm/6 font-semibold text-green-100 mt-5 lg:mt-0"
                   rel="noreferrer"
                 >
                   Start a Conversation
@@ -54,7 +53,7 @@ export default function Hero() {
                     alt="whatsapp--v1"
                     className="ms-3"
                   />
-                </a>
+                </Link>
               </div>
             </div>
           </div>

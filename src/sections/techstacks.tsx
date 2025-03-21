@@ -40,13 +40,13 @@ export default function TechStack() {
   return (
     <div className="lg:w-[90%] xl:w-[80%] flex flex-col justify-center lg:flex-row items-center my-10 text-blue-900 px-5">
       <div className="text-center lg: text-left lg:w-[40%] mb-9">
-        <div className="font-[rajdhani] text-3xl lg:text-5xl font-bold flex justify-center lg:flex-col lg:items-start">
+        <div className="text-3xl lg:text-5xl font-bold flex justify-center lg:flex-col lg:items-start">
           <h2 className="me-2">OUR</h2>
           <h2 className="me-2">TECH</h2>
           <h2 className="me-2">STACK</h2>
         </div>
         <Separator />
-        <p className="font-[rajdhani] text-2xl lg:text-left">
+        <p className="text-2xl lg:text-left">
           <span className="italic font-semibold">Measure twice, cut once </span>
           <br />
           That&apos;s our guiding principle at Globelinkz. We believe that

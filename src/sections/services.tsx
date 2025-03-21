@@ -5,6 +5,7 @@ import { Separator } from '@/components/ui/separator'
 import * as motion from 'motion/react-client'
 import { useState, useEffect } from 'react'
 import { useMemo } from 'react'
+import Link from 'next/link'
 
 export default function OurCompetence() {
   const words = useMemo(
@@ -100,21 +101,23 @@ export default function OurCompetence() {
           whileHover={{ scale: 1.05 }}
           className="w-[22%] h-[70%] bg-[#3EE8C4] rounded-xl shadow-md pt-5 flex flex-col items-center"
         >
-          <Image
-            src="/data_analyst.gif"
-            width={400}
-            height={400}
-            alt="data analysis"
-            className=""
-          />
-          <h1 className="mt-auto text-3xl font-bold">DATA</h1>
-          <h1 className="text-3xl font-bold">ANALYSIS</h1>
-          <Separator className="w-[85%] mx-auto bg-black my-2" />
-          <p className="text-center mx-3 mb-9">
-            We transform raw data into actionable intelligence, revealing
-            trends, patterns, and opportunities to optimize your business
-            performance.
-          </p>
+          <Link href="/data-analysis" className="flex flex-col items-center">
+            <Image
+              src="/data_analyst.gif"
+              width={400}
+              height={400}
+              alt="data analysis"
+              className=""
+            />
+            <h1 className="mt-auto text-3xl font-bold">DATA</h1>
+            <h1 className="text-3xl font-bold">ANALYSIS</h1>
+            <Separator className="w-[85%] mx-auto bg-black my-2" />
+            <p className="text-center mx-3 mb-9">
+              We transform raw data into actionable intelligence, revealing
+              trends, patterns, and opportunities to optimize your business
+              performance.
+            </p>
+          </Link>
         </motion.div>
         <motion.div
           whileHover={{ scale: 1.05 }}
@@ -248,15 +251,17 @@ export default function OurCompetence() {
             repeatDelay: 1,
           }}
         >
-          <Image
-            src="/data_analyst.gif"
-            width={350}
-            height={350}
-            alt="data analysis"
-          />
-          <h1 className="text-sm md:text-2xl font-bold text-center mt-auto mb-3">
-            Data Analysis
-          </h1>
+          <Link href="/data-analysis">
+            <Image
+              src="/data_analyst.gif"
+              width={350}
+              height={350}
+              alt="data analysis"
+            />
+            <h1 className="text-sm md:text-2xl font-bold text-center mt-auto mb-3">
+              Data Analysis
+            </h1>
+          </Link>
         </motion.div>
         <motion.div
           className="bg-indigo-300 px-2 inset-shadow-sm inset-shadow-indigo-500 flex flex-col items-center overflow-hidden aspect-square"

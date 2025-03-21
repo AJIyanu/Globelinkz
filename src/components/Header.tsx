@@ -14,7 +14,11 @@ import { Menu } from 'lucide-react'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import { navigation } from '@/lib/utils'
 
-export default function Header() {
+interface HeaderProps {
+  color?: string
+}
+
+export default function Header({ color = 'white' }: HeaderProps) {
   return (
     <div>
       <header className="absolute inset-x-0 top-0 z-50">
@@ -36,13 +40,17 @@ export default function Header() {
           </div>
 
           <div className="hidden lg:flex me-20 rounded-full px-5 shadow-lg bg-white/10 backdrop-blur-md border">
-            <Menubar className="border-none bg-transparent">
+            <Menubar
+              className={`border-none bg-transparent text-${color} tracking-widest`}
+            >
               {navigation.map((item) => (
                 <MenubarMenu key={item.name}>
                   {/* If item has submenu, create a dropdown trigger */}
                   {item.sub && item.sub.length > 0 ? (
                     <>
-                      <MenubarTrigger className="text-sm font-semibold text-gray-900 bg-transparent hover:bg-transparent focus:bg-transparent">
+                      <MenubarTrigger
+                        className={`text-sm font-semibold text-${color} bg-transparent hover:bg-transparent focus:bg-transparent`}
+                      >
                         {item.name}
                       </MenubarTrigger>
                       <MenubarContent className="bg-white/30 backdrop-blur-md">
@@ -50,7 +58,7 @@ export default function Header() {
                           <MenubarItem key={subItem.name} asChild>
                             <Link
                               href={subItem.href}
-                              className="text-sm font-medium cursor-pointer"
+                              className={`text-sm font-medium cursor-pointer text-${color}`}
                             >
                               {subItem.name}
                             </Link>
@@ -63,7 +71,7 @@ export default function Header() {
                     <MenubarTrigger asChild>
                       <Link
                         href={item.href}
-                        className="text-sm font-semibold text-indigo-900 bg-transparent focus:bg-transparent"
+                        className="text-sm font-semibold bg-transparent focus:bg-transparent"
                       >
                         {item.name}
                       </Link>

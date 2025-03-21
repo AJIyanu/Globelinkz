@@ -63,10 +63,10 @@ export const metadata: Metadata = {
     canonical: 'https://www.globelinkz.com',
   },
   viewport: 'width=device-width, initial-scale=1',
-  themeColor: '#000000', // Add your brand color here
+  // themeColor: '#000000', // Add your brand color here
   category: 'technology',
-  creator: 'Globelinkz Digital Agency',
-  publisher: 'Globelinkz Digital Agency',
+  creator: 'Globelinkz Full Service Digital Agency',
+  publisher: 'Globelinkz Full Service Digital Agency',
   formatDetection: {
     telephone: true,
     date: true,

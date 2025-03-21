@@ -44,7 +44,7 @@ export default async function OurTeam() {
   const teamMembers = await Client.request<StaffData>(query)
 
   return (
-    <div className="bg-[#EDF7F4] xl:w-[80%] font-[rajdhani] text-blue-900 flex flex-col items-center justify-center py-12 overflow-hidden px-5">
+    <div className="bg-[#EDF7F4] xl:w-[80%]  text-blue-900 flex flex-col items-center justify-center py-12 overflow-hidden px-5">
       <h2 className="text-center text-3xl lg:text-5xl font-bold ">
         &quot;The Strength of the Team is Each Individual Member.
         <br />
@@ -67,12 +67,12 @@ export default async function OurTeam() {
             className="flex flex-col aspect-square items-center w-[300px] bg-center bg-top lg:w-[400px] rounded-lg shadow-md"
             style={{ backgroundImage: `url(${team.portrait.url})` }}
           >
-            <div className="bg-white/30 backdrop-blur-md flex flex-col items-center rounded-md mt-auto mb-4 w-[90%] shadow-lg">
+            <div className="bg-white/30 backdrop-blur-md flex flex-col items-center rounded-md mt-auto mb-4 w-[90%] shadow-lg text-white">
               <h3
                 className="font-bold text-3xl"
-                style={{ WebkitTextStroke: '0.4px white' }}
+                // style={{ WebkitTextStroke: '0.4px white' }}
               >{`${team.lastName} ${team.firstName}`}</h3>
-              <p className="font-[600]">{team.teamRole}</p>
+              <p className="font-[600] ">{team.teamRole}</p>
               {/* <p>{team.qualification}</p> */}
             </div>
           </div>

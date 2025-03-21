@@ -32,7 +32,7 @@ const dataFramework = [
 
 export default function AnalyticFramework() {
   return (
-    <div className="font-[rajdhani] text-blue-900 flex flex-col lg:flex-row-reverse xl:w-[80%] py-8 px-[5%] justify-between items-center bg-green-100 overflow-hidden">
+    <div className="text-blue-900 flex flex-col lg:flex-row-reverse xl:w-[80%] py-8 px-[5%] justify-between items-center bg-green-100 overflow-hidden">
       <div className="px-5 lg:w-[40%]">
         <div className="text-3xl xl:text-5xl font-bold flex lg:flex-row lg:items-start justify-center">
           <h2 className="me-3">OUR</h2>

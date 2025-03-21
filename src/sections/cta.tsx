@@ -1,5 +1,6 @@
 import { CalendarCheck2 } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function CallToAction() {
   return (
@@ -20,14 +21,14 @@ export default function CallToAction() {
         to new heights.
       </p>
       <div className="mt-10 flex items-center gap-x-12 flex-col md:flex-row">
-        <a
+        <Link
           href="/bookings"
           className="rounded-md bg-green-600 flex gap-2 items-center px-4 py-3 text-white text-sm md:text-xl hover:bg-green-700 mb-2 md:mb-0"
         >
           Book an Appointment
           <CalendarCheck2 className="ms-3" />
-        </a>
-        <a
+        </Link>
+        <Link
           href="https://api.whatsapp.com/send?phone=2347036825350"
           className="flex items-center text-sm/6 font-semibold text-green-700 border-2 border-green-700 rounded-md px-4 py-3"
         >
@@ -39,7 +40,7 @@ export default function CallToAction() {
             alt="whatsapp--v1"
             className="ms-3"
           />
-        </a>
+        </Link>
       </div>
     </div>
   )

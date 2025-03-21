@@ -9,7 +9,7 @@ import FreqAQ from '@/sections/faq'
 
 export default function DataAnalysisPage() {
   return (
-    <div className="flex flex-col items-center overflow-hidden">
+    <div className="flex flex-col items-center overflow-hidden tracking-wide">
       <HeroSection />
       <TechStack />
       <AnalyticFramework />
