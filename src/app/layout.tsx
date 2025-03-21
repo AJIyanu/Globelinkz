@@ -97,7 +97,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${asapCondensed} ${inter.className} ${rajdhani.className} antialiased`}
       >
-        <div className="flex flex-col items-center overflow-hidden">
+        <div className="flex flex-col items-center overflow-hidden w-dvw">
           {children}
           <div className="relative bg-black">
             <div className="absolute inset-0 hidden lg:block bg-[url(/footer.jpg)] bg-cover bg-center">

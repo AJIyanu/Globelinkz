@@ -248,7 +248,7 @@ function BookingForm() {
   }
 
   return (
-    <div className="w-[90%] mx-auto p-6 bg-white border rounded-lg shadow-md tracking-wide">
+    <div className="w-[90%] mx-auto p-6 bg-white border rounded-lg shadow-md tracking-wide w-full">
       <h2 className="text-2xl font-bold mb-6 text-center">Book a Meeting</h2>
 
       <div className="text-sm text-gray-500 mb-4 text-center">
