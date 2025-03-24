@@ -4,6 +4,7 @@ import CallToAction from '@/sections/cta'
 import Footer from '@/sections/footer'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import Script from 'next/script'
 
 // Configure your fonts
 const inter = Inter({ subsets: ['latin'] })
@@ -87,6 +88,20 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <Script
+          strategy="lazyOnload"
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_MEASUREMENT_ID}`}
+        />
+        <Script strategy="lazyOnload" id="ga-script">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${process.env.GA_MEASUREMENT_ID}', {
+              page_path: window.location.pathname,
+            });
+          `}
+        </Script>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
