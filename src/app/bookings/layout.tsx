@@ -13,7 +13,7 @@ export default function BlogLayout({
   children: React.ReactNode
 }) {
   return (
-    <div className="flex flex-col items-center">
+    <div className="w-full flex flex-col items-center">
       {/* Header Section */}
       <div className="bg-indigo-300 w-full h-[80px] lg:h-[100px]">
         <Header color="black" />
