@@ -2,9 +2,12 @@ import Header from '@/components/Header'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  verification: {
-    google: 'Ik-mtRBYs0hKr24g4O_0YQ95I2j35rxO0ND01L23-G4',
-  },
+  title: 'Blog Page - Globelinkz',
+  description:
+    'Globelinkz is Nigeria’s trusted global digital partner, specializing in data analysis, digital marketing, and custom web/dashboard development. We empower your business growth with innovative, measurable solutions.',
+  keywords:
+    'digital agency, Nigeria, data analysis, digital marketing, web development, dashboard development, global clients, SEO, web design, marketing strategy, data insights, web applications',
+  robots: 'index, follow',
 }
 
 export default function BlogLayout({

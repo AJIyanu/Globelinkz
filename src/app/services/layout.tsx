@@ -1,4 +1,14 @@
 import Header from '@/components/Header'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Globelinkz Services Page',
+  description:
+    'Globelinkz is Nigeria’s trusted global digital partner, specializing in data analysis, digital marketing, and custom web/dashboard development. We empower your business growth with innovative, measurable solutions.',
+  keywords:
+    'digital agency, Nigeria, data analysis, digital marketing, web development, dashboard development, global clients, SEO, web design, marketing strategy, data insights, web applications',
+  robots: 'index, follow',
+}
 
 export default function ServicesLayout({
   children,
