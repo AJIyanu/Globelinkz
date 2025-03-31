@@ -29,7 +29,7 @@ export default function ServiceOverview({
 }: ServiceOverviewProps) {
   return (
     <div
-      className={`flex ${direction === 'reversed' ? 'flex-row' : 'flex-row-reverse'} items-center justify-center w-[80%] overflow-hidden h-[500px] my-2`}
+      className={`flex flex-col ${direction === 'reversed' ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center justify-center lg:w-[90%] xl:w-[80%] overflow-hidden lg:h-[500px] my-2`}
     >
       <div className="relative bg-black w-full h-full">
         {/* <div
