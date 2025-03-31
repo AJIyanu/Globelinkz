@@ -10,7 +10,7 @@ import { StaffData } from '@/sections/ourteam'
 
 const REVIEW_QUERY = gql`
   {
-    reviewCollection(where: { ratingFor: "Data Analysis" }) {
+    reviewCollection {
       items {
         rating
         content
