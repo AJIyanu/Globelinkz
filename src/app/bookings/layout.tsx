@@ -9,12 +9,12 @@ export const metadata: Metadata = {
     'digital agency, Nigeria, data analysis, digital marketing, web development, dashboard development, global clients, SEO, web design, marketing strategy, data insights, web applications',
   robots: 'index, follow',
   verification: {
-    google: 'Ik-mtRBYs0hKr24g4O_0YQ95I2j35rxO0ND01L23-G4',
-  },
+    google: 'Ik-mtRBYs0hKr24g4O_0YQ95I2j35rxO0ND01L23-G4'
+  }
 }
 
 export default function BlogLayout({
-  children,
+  children
 }: {
   children: React.ReactNode
 }) {

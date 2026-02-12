@@ -2,7 +2,7 @@ import {
   Accordion,
   AccordionContent,
   AccordionItem,
-  AccordionTrigger,
+  AccordionTrigger
 } from '@/components/ui/accordion'
 import Image from 'next/image'
 import { Client } from '@/lib/utils'

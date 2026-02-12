@@ -11,22 +11,22 @@ const inter = Inter({ subsets: ['latin'] })
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
-  subsets: ['latin'],
+  subsets: ['latin']
 })
 
 const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
-  subsets: ['latin'],
+  subsets: ['latin']
 })
 
 const asapCondensed = Oswald({
   weight: ['400', '600', '700'],
-  subsets: ['cyrillic', 'latin'],
+  subsets: ['cyrillic', 'latin']
 })
 
 const rajdhani = Asap_Condensed({
   weight: ['400', '600', '700'],
-  subsets: ['vietnamese', 'latin'],
+  subsets: ['vietnamese', 'latin']
 })
 
 export const metadata: Metadata = {
@@ -49,10 +49,10 @@ export const metadata: Metadata = {
         url: 'https://www.globelinkz.com/globelinkz-full.png',
         width: 1200,
         height: 630,
-        alt: 'Globelinkz Digital Agency',
-      },
+        alt: 'Globelinkz Digital Agency'
+      }
     ],
-    siteName: 'Globelinkz',
+    siteName: 'Globelinkz'
   },
   twitter: {
     card: 'summary_large_image',
@@ -60,10 +60,10 @@ export const metadata: Metadata = {
       'Globelinkz - Full Service Digital Agency | Data, Marketing & Web Development',
     description:
       'Globelinkz: Your global digital partner in Nigeria. We provide data analysis, digital marketing, and web/dashboard development. Drive growth with our expert solutions.',
-    images: ['https://www.globelinkz.com/globelinkz-full.png'],
+    images: ['https://www.globelinkz.com/globelinkz-full.png']
   },
   alternates: {
-    canonical: 'https://www.globelinkz.com',
+    canonical: 'https://www.globelinkz.com'
   },
   viewport: 'width=device-width, initial-scale=1',
   category: 'technology',
@@ -74,13 +74,13 @@ export const metadata: Metadata = {
     date: true,
     address: true,
     email: true,
-    url: true,
+    url: true
   },
-  metadataBase: new URL('https://www.globelinkz.com'),
+  metadataBase: new URL('https://www.globelinkz.com')
 }
 
 export default function RootLayout({
-  children,
+  children
 }: Readonly<{
   children: React.ReactNode
 }>) {

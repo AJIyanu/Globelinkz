@@ -18,9 +18,9 @@ export default function AboutUsSection() {
           Your Partner in Sales Growth
         </h1>
         <p className="text-lg mt-7 mb-7">
-          "At Globelinkz, we understand how tough it can be to grow your
+          At Globelinkz, we understand how tough it can be to grow your
           business. With years of experience, we’ve helped companies increase
-          their sales and reach their goals with effective marketing."
+          their sales and reach their goals with effective marketing.
         </p>
         <Link href="/learn-more">
           <Button variant="acent">Learn more</Button>

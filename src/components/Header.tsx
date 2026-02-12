@@ -7,7 +7,7 @@ import {
   MenubarContent,
   MenubarItem,
   MenubarMenu,
-  MenubarTrigger,
+  MenubarTrigger
 } from '@/components/ui/menubar'
 
 import { Menu } from 'lucide-react'

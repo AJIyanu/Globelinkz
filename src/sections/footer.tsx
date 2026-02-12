@@ -4,7 +4,7 @@ import {
   Instagram,
   // Twitter,
   // Youtube,
-  LinkedinIcon,
+  LinkedinIcon
 } from 'lucide-react'
 import Link from 'next/link'
 

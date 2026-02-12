@@ -196,14 +196,14 @@ export default function OurCompetence() {
           whileInView={{
             scale: [1, 0.9, 0.9, 1, 1],
             rotate: [0, 0, 180, 180, 0],
-            borderRadius: ['0%', '0%', '50%', '50%', '10%'],
+            borderRadius: ['0%', '0%', '50%', '50%', '10%']
           }}
           transition={{
             duration: 2,
             ease: 'easeInOut',
             times: [0, 0.2, 0.5, 0.8, 1],
             // repeat: Infinity,
-            repeatDelay: 1,
+            repeatDelay: 1
           }}
         >
           <Image
@@ -223,14 +223,14 @@ export default function OurCompetence() {
           whileInView={{
             scale: [1, 0.9, 0.9, 1, 1],
             rotate: [0, 0, 180, 180, 0],
-            borderRadius: ['0%', '0%', '50%', '50%', '10%'],
+            borderRadius: ['0%', '0%', '50%', '50%', '10%']
           }}
           transition={{
             duration: 2,
             ease: 'easeInOut',
             times: [0, 0.2, 0.5, 0.8, 1],
             // repeat: Infinity,
-            repeatDelay: 1,
+            repeatDelay: 1
           }}
         >
           <Image
@@ -250,14 +250,14 @@ export default function OurCompetence() {
           whileInView={{
             scale: [1, 0.9, 0.9, 1, 1],
             rotate: [0, 0, 180, 180, 0],
-            borderRadius: ['0%', '0%', '50%', '50%', '10%'],
+            borderRadius: ['0%', '0%', '50%', '50%', '10%']
           }}
           transition={{
             duration: 2,
             ease: 'easeInOut',
             times: [0, 0.2, 0.5, 0.8, 1],
             // repeat: Infinity,
-            repeatDelay: 1,
+            repeatDelay: 1
           }}
         >
           <Link href="/data-analysis">
@@ -278,14 +278,14 @@ export default function OurCompetence() {
           whileInView={{
             scale: [1, 0.9, 0.9, 1, 1],
             rotate: [0, 0, 180, 180, 0],
-            borderRadius: ['0%', '0%', '50%', '50%', '10%'],
+            borderRadius: ['0%', '0%', '50%', '50%', '10%']
           }}
           transition={{
             duration: 2,
             ease: 'easeInOut',
             times: [0, 0.2, 0.5, 0.8, 1],
             // repeat: Infinity,
-            repeatDelay: 1,
+            repeatDelay: 1
           }}
         >
           <Image

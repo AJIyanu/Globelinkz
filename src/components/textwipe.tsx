@@ -6,7 +6,7 @@ const words = [
   'Your Data...',
   'Our Insight...',
   'Your Advantage...',
-  'GLOBELINKZ!',
+  'GLOBELINKZ!'
 ]
 const normalDuration = 6000
 const lastWordDuration = normalDuration * 2

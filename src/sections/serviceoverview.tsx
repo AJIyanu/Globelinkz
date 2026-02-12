@@ -25,7 +25,7 @@ export default function ServiceOverview({
   name,
   desc,
   img,
-  lnk,
+  lnk
 }: ServiceOverviewProps) {
   return (
     <div

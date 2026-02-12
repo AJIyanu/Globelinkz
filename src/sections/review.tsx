@@ -11,7 +11,7 @@ import { EmblaOptionsType } from 'embla-carousel'
 import {
   Carousel,
   CarouselContent,
-  CarouselItem,
+  CarouselItem
   // CarouselNext,
   // CarouselPrevious,
 } from '@/components/ui/carousel'
@@ -20,7 +20,7 @@ const OPTIONS: EmblaOptionsType = { align: 'start', loop: true, duration: 50 }
 const REVOPTIONS: EmblaOptionsType = {
   align: 'end',
   loop: true,
-  duration: 50,
+  duration: 50
 }
 import { ReviewData } from '@/dacomp/dataareviewclient'
 import { StaffData } from './ourteam'
