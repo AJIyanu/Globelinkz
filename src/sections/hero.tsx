@@ -25,7 +25,7 @@ export default function Hero() {
           <div className="max-w-2xl py-32 md:ms-20 sm:py-48 lg:py-56">
             <div className="text-center md:text-left">
               <h1 className="text-4xl text-white font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl">
-                Unlock Consistent Sales Growth
+                Get More Sales, Boost Your Revenue, and Improve Your Life
               </h1>
               <p className="mt-8 text-lg font-medium text-pretty text-green-300 sm:text-xl/8">
                 Boost your sales with tailored marketing strategies.
