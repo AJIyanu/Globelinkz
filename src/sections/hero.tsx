@@ -28,7 +28,7 @@ export default function Hero() {
                 Get More Sales, Boost Your Revenue, and Improve Your Life
               </h1>
               <p className="mt-8 text-lg font-medium text-pretty text-green-300 sm:text-xl/8">
-                Boost your sales with tailored marketing strategies.
+                Tailored marketing strategies that drive results and elevate your business
               </p>
               <div className="mt-10 flex items-center gap-x-6 flex-col md:flex-row">
                 <Link

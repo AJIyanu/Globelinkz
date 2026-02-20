@@ -1,5 +1,5 @@
 import Hero from '@/sections/hero'
-import WhyUs from '@/sections/whyus'
+// import WhyUs from '@/sections/whyus'
 import Reviews from '@/sections/review'
 import OurCompetence from '@/sections/services'
 import React from 'react'
@@ -58,7 +58,7 @@ export default async function Home() {
       <AboutUsSection />
       <StruggleSection />
       <OurCompetence />
-      <WhyUs />
+      {/* <WhyUs /> */}
       <div className="hidden">about us</div>
       <div className="hidden">blog post</div>
       <Reviews reviewData={reviewData} staffData={teamMembers} />
