@@ -96,7 +96,7 @@ export default function StruggleSection() {
             text-1xl sm:text-1xl md:text-3xl 
             leading-tight tracking-wide font-bold bg-white/30 backdrop-blur-sm py-2 px-4 rounded-full border-2 border-white/50"
             >
-            We've Got Solutions for Your Business Struggles
+            We&apos;ve Got Solutions for Your Business Struggles
             </motion.p>
             </div>
       <div
@@ -147,7 +147,7 @@ export default function StruggleSection() {
           text-3xl sm:text-4xl md:text-5xl 
           leading-tight tracking-wide"
           >
-          We understand, and we're here to help free you from all of that.
+          We understand, and we&apos;re here to help free you from all of that.
           </motion.p>
           </div>
         
