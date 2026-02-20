@@ -3,7 +3,7 @@ import { Card, CardContent } from '@/components/ui/card'
 
 export default function OurCompetence() {
   return (
-    <div className="flex flex-col items-center space-y-10">
+    <div className="flex flex-col items-center space-y-10 pt-10">
       <div className="text-center space-y-2">
         <div className="text-5xl text-brand-green font-bold">Our Services</div>
         <div className="text-lg max-w-lg font-semibold">
@@ -12,7 +12,7 @@ export default function OurCompetence() {
           and see real results.
         </div>
       </div>
-      <div className="grid grid-cols-3 gap-2">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
         <Card className="m-4 p-6 bg-brand-green text-white hover:scale-105 hover:shadow-lg transition-all duration-300 max-w-md">
           <CardContent className="flex flex-col space-y-2">
             {/* <CardHeader> */}

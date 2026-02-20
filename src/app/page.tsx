@@ -8,6 +8,7 @@ import { gql } from 'graphql-request'
 import { ReviewData } from '@/dacomp/dataareviewclient'
 import { StaffData } from '@/sections/ourteam'
 import AboutUsSection from '@/sections/about-us-section'
+import StruggleSection from '@/sections/StruggleSection'
 
 const REVIEW_QUERY = gql`
   {
@@ -55,6 +56,7 @@ export default async function Home() {
     <div className="flex flex-col items-center overflow-hidden tracking-wide w-full">
       <Hero />
       <AboutUsSection />
+      <StruggleSection />
       <OurCompetence />
       <WhyUs />
       <div className="hidden">about us</div>

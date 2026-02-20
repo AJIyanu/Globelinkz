@@ -5,8 +5,8 @@ import Link from 'next/link'
 
 export default function Hero() {
   return (
-    <div className="relative w-full h-screen bg-green-200 bg-[url(/gl_hero-100.jpg)] bg-cover">
-      {/* <div className="absolute inset-0 bg-green-200 opacity-50"></div> */}
+    <div className="relative w-full h-screen bg bg-[url(/hero-sm-bg.jpeg)] xl:bg-[url(/gl_hero-100.jpg)] bg-cover bg-right">
+      <div className="absolute inset-0 bg-blue-900 opacity-90 xl:hidden"></div>
       <div className="relative z-10">
         <Header />
         <div className="relative isolate px-6 pt-14 lg:px-8">
