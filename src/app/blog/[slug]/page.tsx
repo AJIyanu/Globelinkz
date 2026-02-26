@@ -7,7 +7,7 @@ import {
   Document,
   INLINES,
   MARKS,
-  Node,
+  Node
 } from '@contentful/rich-text-types'
 import { format, parseISO } from 'date-fns'
 import { Client } from '@/lib/utils'
@@ -86,7 +86,7 @@ const richTextOptions = {
       >
         {children}
       </a>
-    ),
+    )
   },
   renderMark: {
     [MARKS.BOLD]: (text: React.ReactNode) => <strong>{text}</strong>,
@@ -94,8 +94,8 @@ const richTextOptions = {
     [MARKS.UNDERLINE]: (text: React.ReactNode) => <u>{text}</u>,
     [MARKS.CODE]: (text: React.ReactNode) => (
       <code className="px-1 py-0.5 bg-gray-100 rounded">{text}</code>
-    ),
-  },
+    )
+  }
 }
 
 export default async function ArticlePage(props: {
@@ -236,7 +236,7 @@ export async function generateMetadata(props: {
     openGraph: {
       images: article.resourcesCollection.items[0].articleHeroImage
         ? [`${article.resourcesCollection.items[0].articleHeroImage.url}`]
-        : [],
-    },
+        : []
+    }
   }
 }

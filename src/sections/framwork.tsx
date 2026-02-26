@@ -3,31 +3,31 @@ import {
   Accordion,
   AccordionContent,
   AccordionItem,
-  AccordionTrigger,
+  AccordionTrigger
 } from '@/components/ui/accordion'
 
 const dataFramework = [
   {
     trigger: 'Descriptive Analytics – Understand Your Past, Plan Your Future',
     content:
-      'Imagine you’re reviewing your business’s performance over the last quarter. Descriptive analytics gathers all your historical data—like sales numbers, website traffic, or customer feedback—and presents it in an easy-to-understand format. For example, if you run an online store, you can quickly see which products sold the most and during which periods, giving you a clear picture of what happened. This insight helps you understand past trends so you can build on what works.',
+      'Imagine you’re reviewing your business’s performance over the last quarter. Descriptive analytics gathers all your historical data—like sales numbers, website traffic, or customer feedback—and presents it in an easy-to-understand format. For example, if you run an online store, you can quickly see which products sold the most and during which periods, giving you a clear picture of what happened. This insight helps you understand past trends so you can build on what works.'
   },
   {
     trigger: 'Diagnostic Analytics – Identify Root Causes and Improve',
     content:
-      'Now, suppose you notice a sudden dip in your online sales. Diagnostic analytics digs deeper to uncover why that happened. You might explore whether a recent website update, a change in marketing strategy, or even external factors like market competition contributed to the drop. By analyzing these factors, you can pinpoint the root cause and address it directly, ensuring that you learn from the past to improve your future strategies.',
+      'Now, suppose you notice a sudden dip in your online sales. Diagnostic analytics digs deeper to uncover why that happened. You might explore whether a recent website update, a change in marketing strategy, or even external factors like market competition contributed to the drop. By analyzing these factors, you can pinpoint the root cause and address it directly, ensuring that you learn from the past to improve your future strategies.'
   },
   {
     trigger: 'Predictive Analytics – Anticipate Trends and Prepare Ahead',
     content:
-      'Imagine being able to forecast future sales trends or customer behavior with confidence. Predictive analytics uses your historical data to create statistical models that estimate what might happen next. For instance, if you’re planning inventory for the upcoming season, predictive analytics can help you anticipate demand, ensuring you stock the right amount of products. This foresight empowers you to prepare for the future and make proactive decisions.',
+      'Imagine being able to forecast future sales trends or customer behavior with confidence. Predictive analytics uses your historical data to create statistical models that estimate what might happen next. For instance, if you’re planning inventory for the upcoming season, predictive analytics can help you anticipate demand, ensuring you stock the right amount of products. This foresight empowers you to prepare for the future and make proactive decisions.'
   },
   {
     trigger:
       'Prescriptive Analytics – Turn Insights into Actionable Strategies',
     content:
-      'Picture a scenario where you not only know what might happen but also get clear recommendations on how to act. Prescriptive analytics takes things a step further by simulating different strategies and suggesting the optimal course of action. For example, if your predictive models indicate a potential drop in sales, prescriptive analytics might recommend targeted promotions or adjustments in pricing strategies. This framework gives you actionable insights that help you turn data into decisions that drive your business forward.',
-  },
+      'Picture a scenario where you not only know what might happen but also get clear recommendations on how to act. Prescriptive analytics takes things a step further by simulating different strategies and suggesting the optimal course of action. For example, if your predictive models indicate a potential drop in sales, prescriptive analytics might recommend targeted promotions or adjustments in pricing strategies. This framework gives you actionable insights that help you turn data into decisions that drive your business forward.'
+  }
 ]
 
 export default function AnalyticFramework() {

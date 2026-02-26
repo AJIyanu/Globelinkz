@@ -1,5 +1,5 @@
 import Hero from '@/sections/hero'
-import WhyUs from '@/sections/whyus'
+// import WhyUs from '@/sections/whyus'
 import Reviews from '@/sections/review'
 import OurCompetence from '@/sections/services'
 import React from 'react'
@@ -7,6 +7,8 @@ import { Client } from '@/lib/utils'
 import { gql } from 'graphql-request'
 import { ReviewData } from '@/dacomp/dataareviewclient'
 import { StaffData } from '@/sections/ourteam'
+import AboutUsSection from '@/sections/about-us-section'
+import StruggleSection from '@/sections/StruggleSection'
 
 const REVIEW_QUERY = gql`
   {
@@ -47,14 +49,16 @@ export const revalidate = 3600
 export default async function Home() {
   const [reviewData, teamMembers] = await Promise.all([
     Client.request<ReviewData>(REVIEW_QUERY),
-    Client.request<StaffData>(STAFF_QUERY),
+    Client.request<StaffData>(STAFF_QUERY)
   ])
 
   return (
     <div className="flex flex-col items-center overflow-hidden tracking-wide w-full">
       <Hero />
+      <AboutUsSection />
+      <StruggleSection />
       <OurCompetence />
-      <WhyUs />
+      {/* <WhyUs /> */}
       <div className="hidden">about us</div>
       <div className="hidden">blog post</div>
       <Reviews reviewData={reviewData} staffData={teamMembers} />

@@ -4,36 +4,36 @@ import Image from 'next/image'
 const techStackArray = [
   {
     name: 'SPSS',
-    imgSrc: '/icons/spss.png',
+    imgSrc: '/icons/spss.png'
   },
   {
     name: 'STATA',
-    imgSrc: '/icons/stata.png',
+    imgSrc: '/icons/stata.png'
   },
   {
     name: 'SQL',
-    imgSrc: '/icons/sql.png',
+    imgSrc: '/icons/sql.png'
   },
   {
     name: 'NVIVO',
-    imgSrc: '/icons/nvivo.png',
+    imgSrc: '/icons/nvivo.png'
   },
   {
     name: 'ATLAS',
-    imgSrc: '/icons/ATLAS.ti.png',
+    imgSrc: '/icons/ATLAS.ti.png'
   },
   {
     name: 'MAXQDA',
-    imgSrc: '/icons/maxqda.png',
+    imgSrc: '/icons/maxqda.png'
   },
   {
     name: 'R',
-    imgSrc: '/icons/r.png',
+    imgSrc: '/icons/r.png'
   },
   {
     name: 'Microsoft PowerBi',
-    imgSrc: '/icons/powerbi.png',
-  },
+    imgSrc: '/icons/powerbi.png'
+  }
 ]
 
 export default function TechStack() {

@@ -32,7 +32,7 @@ const ReviewCarousel: React.FC<PropType> = (props) => {
   const { slides, options } = props
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [
     Autoplay({ delay: 8000 }),
-    ClassNames(),
+    ClassNames()
   ])
 
   const onNavButtonClick = useCallback((emblaApi: EmblaCarouselType) => {

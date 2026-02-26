@@ -9,7 +9,7 @@ import {
   CarouselContent,
   CarouselItem,
   CarouselNext,
-  CarouselPrevious,
+  CarouselPrevious
 } from '@/components/ui/carousel'
 import { useRef } from 'react'
 import { format } from 'date-fns'
@@ -41,7 +41,7 @@ export const formatDate = (dateString: string): string => {
 }
 
 export default function DataAReviewClient({
-  reviewData,
+  reviewData
 }: DataReviewClientProps) {
   const plugin = useRef(Autoplay({ delay: 4000, stopOnInteraction: true }))
 
@@ -55,7 +55,7 @@ export default function DataAReviewClient({
     <div className="w-[80%] xl:w-[80%] py-8 bg-green-100 px-3">
       <Carousel
         opts={{
-          align: 'start',
+          align: 'start'
         }}
         className="w-full"
         plugins={[plugin.current]}

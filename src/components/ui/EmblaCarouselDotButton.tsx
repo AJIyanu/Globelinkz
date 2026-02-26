@@ -4,7 +4,7 @@ import React, {
   ComponentPropsWithRef,
   useCallback,
   useEffect,
-  useState,
+  useState
 } from 'react'
 import { EmblaCarouselType } from 'embla-carousel'
 
@@ -49,7 +49,7 @@ export const useDotButton = (
   return {
     selectedIndex,
     scrollSnaps,
-    onDotButtonClick,
+    onDotButtonClick
   }
 }
 

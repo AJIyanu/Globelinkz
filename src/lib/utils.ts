@@ -38,21 +38,21 @@ export const navigation: NavigationItem[] = [
       { name: 'Data Analysis', href: '/data-analysis' },
       { name: 'Digital Marketing', href: 'digital-marketing' },
       { name: 'Branding', href: 'branding' },
-      { name: 'Web Design', href: 'webdesign' },
+      { name: 'Web Design', href: 'webdesign' }
       // { name: 'Metric View App ', href: '#' }
-    ],
+    ]
   },
   { name: 'About us', href: 'aboutus' },
-  { name: 'Blog', href: '/blog' },
+  { name: 'Blog', href: '/blog' }
 ]
 
 const endpoint = `${process.env.GRAPHCMS_ENDPOINT}${process.env.CONTENTFUL_SPACE_ID}/environments/${process.env.CONTENTFUL_ENVIRONMENT}`
 const headers = {
-  Authorization: `Bearer ${process.env.CONTENTFUL_ACCESS_TOKEN}`,
+  Authorization: `Bearer ${process.env.CONTENTFUL_ACCESS_TOKEN}`
 }
 
 export const Client = new GraphQLClient(endpoint, {
-  headers,
+  headers
   // requestMiddleware: (request) => {
   //   console.log('Request URL:', request.url)
   //   console.log('Request Headers:', request.headers)

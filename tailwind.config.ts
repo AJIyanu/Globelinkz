@@ -14,6 +14,10 @@ export default {
         inter: ['Inter', 'sans-serif']
       },
       colors: {
+        'brand-neon': '#00F33C',
+        'brand-green': '#006633',
+        'brand-blue': '#007AAD',
+        'brand-navy': '#15265D',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {

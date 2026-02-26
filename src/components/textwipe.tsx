@@ -1,12 +1,12 @@
 'use client'
 import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence } from 'motion/react'
 
 const words = [
   'Your Data...',
   'Our Insight...',
   'Your Advantage...',
-  'GLOBELINKZ!',
+  'GLOBELINKZ!'
 ]
 const normalDuration = 6000
 const lastWordDuration = normalDuration * 2
