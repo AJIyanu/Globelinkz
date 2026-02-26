@@ -80,7 +80,7 @@ export default function StruggleSection() {
           w-full flex
           flex-col
           text-white 
-          h-screen justify-between
+          min-h-screen justify-between
           `}
       >
           <div className="mx-auto">
@@ -93,7 +93,7 @@ export default function StruggleSection() {
               ease: [0.22, 1, 0.36, 1],
             }}
             className="md:mt-5 
-            text-1xl sm:text-1xl md:text-3xl 
+            text-1xl sm:text-1xl md:text-1xl 
             leading-tight tracking-wide font-bold bg-white/30 backdrop-blur-sm py-2 px-4 rounded-full border-2 border-white/50"
             >
             We&apos;ve Got Solutions for Your Business Struggles
@@ -122,7 +122,7 @@ export default function StruggleSection() {
                     delay: lineIndex * 0.9,
                     ease: [0.22, 1, 0.36, 1],
                   }}
-                  className="text-4xl sm:text-4xl md:text-5xl 
+                  className="text-4xl sm:text-3xl md:text-3xl lg:text-4xl
                              leading-[1.1] tracking-wide"
                 >
                   {line}
@@ -144,7 +144,7 @@ export default function StruggleSection() {
             ease: [0.22, 1, 0.36, 1],
           }}
           className="md:mb-14 
-          text-3xl sm:text-4xl md:text-5xl 
+          text-3xl sm:text-2xl md:text-2xl lg:text-4xl 
           leading-tight tracking-wide"
           >
           We understand, and we&apos;re here to help free you from all of that.
