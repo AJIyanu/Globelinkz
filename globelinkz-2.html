@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GlobeLinkz — The Agency Behind the Numbers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Epilogue:ital,wght@0,300;0,400;0,500;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --g:#7DC12A; --gb:#9AD93A; --navy:#0A1E42; --blue:#1457A0;
+  --dk:#040810; --dk2:#070D1C; --card:#0A1525;
+  --w:#fff; --ow:#C8DCEF; --gr:#6E88A2; --red:#E84040;
+  --fh:'Bebas Neue',sans-serif; --fb:'Epilogue',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:var(--dk);color:var(--w);overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+
+/* ── NAV ─────────────────────────────── */
+#nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:20px 7%;transition:all .3s}
+#nav.sc{background:rgba(4,8,16,.95);backdrop-filter:blur(18px);padding:13px 7%;border-bottom:1px solid rgba(125,193,42,.1)}
+.logo{font-family:var(--fh);font-size:24px;letter-spacing:2px}
+.logo b{color:var(--g)}
+.nl{display:flex;align-items:center;gap:32px;list-style:none}
+.nl a{font-size:14px;font-weight:500;color:var(--gr);transition:color .2s}
+.nl a:hover{color:var(--w)}
+.nl .ncta{background:var(--g);color:var(--dk)!important;padding:10px 22px;border-radius:6px;font-weight:700!important}
+.nl .ncta:hover{background:var(--gb)}
+
+/* ── BTNS ────────────────────────────── */
+.btn{display:inline-flex;align-items:center;gap:9px;padding:16px 34px;border-radius:8px;font-family:var(--fb);font-size:15px;font-weight:700;border:none;cursor:pointer;transition:all .25s;text-decoration:none}
+.bg{background:var(--g);color:var(--dk);box-shadow:0 0 36px rgba(125,193,42,.25)}
+.bg:hover{background:var(--gb);transform:translateY(-3px);box-shadow:0 0 56px rgba(125,193,42,.4)}
+.bo{background:transparent;color:var(--w);border:1.5px solid rgba(255,255,255,.18)}
+.bo:hover{border-color:var(--g);color:var(--g)}
+.blg{padding:20px 46px;font-size:17px}
+.bsm{padding:11px 24px;font-size:14px}
+
+/* ── REVEAL ──────────────────────────── */
+.rv{opacity:0;transform:translateY(32px);transition:opacity .75s ease,transform .75s ease}
+.rv.in{opacity:1;transform:translateY(0)}
+.rv2{opacity:0;transform:translateX(-24px);transition:opacity .75s ease,transform .75s ease}
+.rv2.in{opacity:1;transform:translateX(0)}
+.rv3{opacity:0;transform:translateX(24px);transition:opacity .75s ease,transform .75s ease}
+.rv3.in{opacity:1;transform:translateX(0)}
+
+/* ══════════════════════════════════════
+   PAGE 1 — HERO
+══════════════════════════════════════ */
+#hero{
+  min-height:100vh;position:relative;overflow:hidden;
+  display:grid;grid-template-columns:1fr 1fr;
+}
+
+/* left — copy */
+.hero-copy{
+  display:flex;flex-direction:column;justify-content:center;
+  padding:140px 0 100px 7%;
+  position:relative;z-index:2;
+}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;background:rgba(125,193,42,.08);border:1px solid rgba(125,193,42,.28);color:var(--g);padding:7px 18px;border-radius:100px;font-size:12px;font-weight:700;letter-spacing:.5px;margin-bottom:28px;width:fit-content}
+.dot{width:7px;height:7px;background:var(--g);border-radius:50%;animation:dp 2s infinite;flex-shrink:0}
+@keyframes dp{0%,100%{box-shadow:0 0 0 0 rgba(125,193,42,.7)}70%{box-shadow:0 0 0 8px rgba(125,193,42,0)}}
+
+.hero-h{font-family:var(--fh);font-size:clamp(56px,6vw,88px);line-height:.92;letter-spacing:.5px;margin-bottom:24px}
+.hero-h .g{color:var(--g)}
+.hero-h .wh{color:var(--w)}
+
+.hero-sub{font-size:18px;line-height:1.75;color:var(--ow);max-width:500px;margin-bottom:38px}
+.hero-sub strong{color:var(--w)}
+
+.hero-btns{display:flex;gap:13px;flex-wrap:wrap;margin-bottom:50px}
+
+.hero-nums{display:flex;gap:28px;padding-top:26px;border-top:1px solid rgba(255,255,255,.07)}
+.hn .n{font-family:var(--fh);font-size:36px;color:var(--g);line-height:1}
+.hn .l{font-size:11px;color:var(--gr);margin-top:3px}
+
+/* right — full bleed image */
+.hero-img{
+  position:relative;overflow:hidden;
+}
+.hero-img img{
+  width:100%;height:100%;object-fit:cover;object-position:center top;
+  filter:brightness(.7);
+}
+.hero-img::before{
+  content:'';position:absolute;inset:0;z-index:1;
+  background:linear-gradient(90deg,var(--dk) 0%,transparent 30%),
+    linear-gradient(180deg,transparent 60%,var(--dk) 100%);
+}
+/* floating proof badge on image */
+.img-badge{
+  position:absolute;bottom:40px;left:50%;transform:translateX(-50%);z-index:2;
+  background:rgba(10,21,37,.92);border:1px solid rgba(125,193,42,.25);
+  border-radius:12px;padding:16px 22px;white-space:nowrap;
+  backdrop-filter:blur(14px);
+}
+.ib-big{font-family:var(--fh);font-size:38px;color:var(--g);line-height:1}
+.ib-sm{font-size:12px;color:var(--gr);margin-top:3px}
+
+/* ── TICKER ──────────────────────────── */
+.ticker{background:rgba(125,193,42,.06);border-top:1px solid rgba(125,193,42,.1);border-bottom:1px solid rgba(125,193,42,.1);padding:14px 0;overflow:hidden}
+.tt{display:flex;gap:60px;animation:tkr 26s linear infinite;white-space:nowrap;width:max-content}
+@keyframes tkr{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.ti{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--g)}
+.td{width:5px;height:5px;background:var(--g);border-radius:50%}
+
+/* ══════════════════════════════════════
+   PAGE 2 — PAIN  (visual-first)
+══════════════════════════════════════ */
+#pain{padding:130px 7%;background:var(--dk);position:relative;overflow:hidden}
+#pain::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 20%,rgba(232,64,64,.06) 0%,transparent 70%);pointer-events:none}
+
+.pain-top{text-align:center;margin-bottom:80px}
+.stag{display:inline-flex;align-items:center;gap:9px;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--g);margin-bottom:18px}
+.stag::before{content:'';width:20px;height:2px;background:var(--g)}
+.ctag{justify-content:center}
+.ctag::before{display:none}
+.sh{font-family:var(--fh);font-size:clamp(42px,5.5vw,72px);line-height:1;letter-spacing:.5px;margin-bottom:20px}
+.sh span{color:var(--g)}
+.sh .rd{color:var(--red)}
+.sp{font-size:17px;line-height:1.85;color:var(--ow);max-width:580px;margin-bottom:32px}
+
+/* bento mosaic */
+.pain-bento{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  grid-template-rows:auto auto auto;
+  gap:4px;
+}
+
+/* cells */
+.pb{background:var(--card);position:relative;overflow:hidden;transition:background .3s}
+.pb:hover{background:#0D1D30}
+.pb::after{content:'';position:absolute;top:0;left:0;width:3px;height:0;background:var(--g);transition:height .4s}
+.pb:hover::after{height:100%}
+.pb-pad{padding:36px 30px}
+
+/* image cell */
+.pb-img{overflow:hidden;min-height:280px}
+.pb-img img{width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(.65) saturate(.8);transition:transform .5s,filter .5s}
+.pb-img:hover img{transform:scale(1.04);filter:brightness(.75)}
+.pb-img-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(4,8,16,.9) 100%);z-index:1}
+.pb-img-text{position:absolute;bottom:24px;left:24px;right:24px;z-index:2}
+.pb-img-text h3{font-family:var(--fh);font-size:28px;margin-bottom:6px}
+.pb-img-text p{font-size:13px;color:var(--ow);line-height:1.6}
+
+/* graph cell */
+.pb-graph{padding:32px 28px;display:flex;flex-direction:column}
+.graph-title{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gr);margin-bottom:20px}
+
+/* bar chart */
+.bar-chart{display:flex;align-items:flex-end;gap:10px;height:120px;margin-bottom:14px}
+.bar-wrap{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px}
+.bar{width:100%;border-radius:4px 4px 0 0;transition:height .5s ease}
+.bar-val{font-size:11px;font-weight:700;color:var(--w)}
+.bar-lbl{font-size:10px;color:var(--gr);text-align:center;line-height:1.3}
+.bar-bad{background:rgba(232,64,64,.5)}
+.bar-good{background:linear-gradient(180deg,var(--g),#4a9010)}
+.chart-note{font-size:12px;color:var(--gr);line-height:1.6;margin-top:8px}
+
+/* donut */
+.donut-wrap{display:flex;align-items:center;gap:20px;margin-top:8px}
+.donut{width:90px;height:90px;flex-shrink:0}
+.donut svg{transform:rotate(-90deg)}
+.donut-labels{display:flex;flex-direction:column;gap:8px}
+.dl{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--ow)}
+.dl-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+
+/* stat call-out cell */
+.pb-stat{padding:36px 30px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+.pb-stat .big{font-family:var(--fh);font-size:80px;line-height:1;color:var(--g)}
+.pb-stat .lbl{font-size:14px;color:var(--ow);margin-top:8px;line-height:1.5;max-width:180px}
+.pb-stat .sub{font-size:12px;color:var(--gr);margin-top:6px}
+
+/* text cell */
+.pb-text{padding:36px 30px}
+.pb-text .emoji{font-size:32px;margin-bottom:14px}
+.pb-text h3{font-size:18px;font-weight:800;margin-bottom:10px;letter-spacing:-.2px}
+.pb-text p{font-size:14px;color:var(--gr);line-height:1.8}
+.pb-text .echo{margin-top:14px;font-size:13px;font-style:italic;color:rgba(255,255,255,.28);padding-top:14px;border-top:1px solid rgba(255,255,255,.05)}
+
+/* wide */
+.pb-wide{grid-column:span 2}
+.pb-wide-inner{display:grid;grid-template-columns:1fr 1fr;height:100%}
+.pb-wide-copy{padding:36px 30px;display:flex;flex-direction:column;justify-content:center}
+.pb-wide-copy h3{font-size:18px;font-weight:800;margin-bottom:10px}
+.pb-wide-copy p{font-size:14px;color:var(--gr);line-height:1.8;margin-bottom:16px}
+.pb-wide-visual{display:flex;flex-direction:column;justify-content:center;align-items:center;padding:28px;background:rgba(255,255,255,.02);gap:14px}
+
+/* line chart sparkline */
+.sparkline{width:100%;height:80px;position:relative}
+.sparkline svg{width:100%;height:100%}
+
+/* pain CTA bar */
+.pain-cta{
+  margin-top:80px;
+  background:linear-gradient(135deg,rgba(10,30,66,.7),rgba(7,13,28,.9));
+  border:1px solid rgba(125,193,42,.15);border-radius:20px;
+  padding:56px 64px;
+  display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;
+}
+.pain-cta::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--g),transparent)}
+.pain-cta h2{font-family:var(--fh);font-size:clamp(32px,4vw,52px);line-height:1.05;margin-bottom:12px}
+.pain-cta h2 span{color:var(--g)}
+.pain-cta p{font-size:16px;color:var(--ow);max-width:520px;line-height:1.7}
+.pain-cta-btns{display:flex;flex-direction:column;gap:12px;align-items:center;min-width:220px}
+
+/* ══════════════════════════════════════
+   PAGE 3 — PROOF
+══════════════════════════════════════ */
+#proof{padding:130px 7%;background:var(--dk2);position:relative}
+#proof::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--g),transparent)}
+
+.proof-head{text-align:center;margin-bottom:80px}
+
+/* two case study cards side by side */
+.proof-cases{display:grid;grid-template-columns:1fr 1fr;gap:5px;margin-bottom:80px}
+.pc{position:relative;overflow:hidden;border-radius:0}
+.pc-img{position:relative;height:420px;overflow:hidden}
+.pc-img img{width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(.5)}
+.pc-img::before{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,transparent 30%,rgba(4,8,16,.95) 100%)}
+.pc-content{position:absolute;bottom:0;left:0;right:0;z-index:2;padding:32px}
+.pc-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(125,193,42,.15);border:1px solid rgba(125,193,42,.3);color:var(--g);padding:5px 14px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px}
+.pc-amount{font-family:var(--fh);font-size:clamp(44px,5vw,68px);color:var(--g);line-height:1;margin-bottom:4px}
+.pc-from{font-size:14px;color:var(--ow);margin-bottom:16px}
+.pc-stats{display:flex;gap:20px;flex-wrap:wrap}
+.pcs-item .n{font-family:var(--fh);font-size:26px;color:var(--w);line-height:1}
+.pcs-item .n em{color:var(--g);font-style:normal}
+.pcs-item .l{font-size:11px;color:var(--gr);margin-top:2px}
+
+/* proof graph section */
+.proof-graph-row{display:grid;grid-template-columns:1fr 1fr;gap:5px}
+.pgr{background:var(--card);padding:40px}
+.pgr-title{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gr);margin-bottom:24px}
+.pgr h3{font-family:var(--fh);font-size:28px;margin-bottom:8px}
+.pgr .note{font-size:14px;color:var(--gr);line-height:1.7;margin-top:12px}
+
+/* stacked area chart */
+.area-chart{width:100%;height:160px;margin-bottom:8px}
+
+/* comparison bars */
+.comp-bars{display:flex;flex-direction:column;gap:14px;margin-top:10px}
+.cb{display:flex;align-items:center;gap:12px}
+.cb-label{font-size:12px;color:var(--gr);min-width:90px}
+.cb-track{flex:1;background:rgba(255,255,255,.06);border-radius:100px;height:10px;overflow:hidden}
+.cb-fill{height:100%;border-radius:100px;background:linear-gradient(90deg,var(--g),var(--blue))}
+.cb-val{font-size:12px;font-weight:700;color:var(--g);min-width:40px;text-align:right}
+
+/* blockquote */
+.proof-bq{
+  margin-top:5px;background:var(--card);padding:40px 44px;
+  position:relative;
+}
+.proof-bq::before{content:'"';font-family:Georgia,serif;font-size:120px;color:rgba(125,193,42,.1);position:absolute;top:-10px;left:28px;line-height:1}
+blockquote{font-size:18px;line-height:1.8;color:var(--ow);font-style:italic;position:relative;z-index:1;max-width:700px}
+blockquote strong{color:var(--g);font-style:normal}
+.bq-by{margin-top:16px;font-size:13px;color:var(--gr)}
+
+/* ══════════════════════════════════════
+   PAGE 4 — BEFORE / AFTER  (no direct mention)
+══════════════════════════════════════ */
+#ba{padding:130px 7%;background:var(--dk);position:relative;overflow:hidden}
+
+.ba-head{text-align:center;margin-bottom:80px}
+
+/* split image + content */
+.ba-split{display:grid;grid-template-columns:1fr 1fr;min-height:580px;margin-bottom:5px}
+.ba-side{position:relative;overflow:hidden}
+.ba-side img{width:100%;height:100%;object-fit:cover;object-position:center}
+
+/* left — dark/pain */
+.ba-left img{filter:brightness(.4) saturate(.3)}
+.ba-left::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(232,64,64,.15),transparent 50%);z-index:1}
+.ba-left-content{position:absolute;inset:0;z-index:2;padding:48px;display:flex;flex-direction:column;justify-content:flex-end}
+.ba-left-content .bl-tag{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--red);margin-bottom:16px}
+.ba-left-content h3{font-family:var(--fh);font-size:clamp(30px,3.5vw,48px);margin-bottom:16px;color:var(--w)}
+.ba-left-content ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.ba-left-content ul li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:rgba(255,255,255,.65);line-height:1.6}
+.ba-left-content ul li::before{content:'✗';color:var(--red);font-weight:900;flex-shrink:0;margin-top:1px}
+
+/* right — bright/hope */
+.ba-right img{filter:brightness(.5) saturate(.8)}
+.ba-right::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(125,193,42,.1),transparent 50%);z-index:1}
+.ba-right-content{position:absolute;inset:0;z-index:2;padding:48px;display:flex;flex-direction:column;justify-content:flex-end}
+.ba-right-content .br-tag{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--g);margin-bottom:16px}
+.ba-right-content h3{font-family:var(--fh);font-size:clamp(30px,3.5vw,48px);margin-bottom:16px;color:var(--w)}
+.ba-right-content ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.ba-right-content ul li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:rgba(255,255,255,.8);line-height:1.6}
+.ba-right-content ul li::before{content:'✓';color:var(--g);font-weight:900;flex-shrink:0;margin-top:1px}
+
+/* divider line */
+.ba-divider{
+  background:linear-gradient(180deg,rgba(232,64,64,.3),rgba(125,193,42,.3));
+  width:4px;position:absolute;left:50%;top:0;bottom:0;z-index:10;
+  transform:translateX(-50%);
+}
+
+/* CTA below */
+.ba-cta{background:var(--card);padding:56px 64px;display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap}
+.ba-cta h3{font-family:var(--fh);font-size:clamp(28px,3.5vw,46px);max-width:560px;line-height:1.05}
+.ba-cta h3 span{color:var(--g)}
+.ba-cta-btns{display:flex;gap:12px;flex-wrap:wrap}
+
+/* ══════════════════════════════════════
+   PAGE 5 — SERVICES
+══════════════════════════════════════ */
+#services{padding:130px 7%;background:var(--dk2);position:relative}
+
+.svc-top{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:70px}
+
+/* platform pills */
+.platforms{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.plt{display:flex;align-items:center;gap:9px;background:var(--card);border:1px solid rgba(255,255,255,.07);border-radius:100px;padding:10px 18px;font-size:13px;font-weight:700;transition:all .25s}
+.plt:hover{border-color:var(--g);background:rgba(125,193,42,.07)}
+.plt-icon{font-size:18px}
+
+/* service grid */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
+.sc{background:var(--card);position:relative;overflow:hidden;transition:background .3s}
+.sc:hover{background:#0D1D30}
+.sc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--g),var(--blue));transform:scaleX(0);transform-origin:left;transition:transform .4s}
+.sc:hover::after{transform:scaleX(1)}
+.sc-img{height:200px;overflow:hidden;position:relative}
+.sc-img img{width:100%;height:100%;object-fit:cover;filter:brightness(.55);transition:transform .5s}
+.sc:hover .sc-img img{transform:scale(1.05)}
+.sc-img::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,var(--card) 100%)}
+.sc-body{padding:26px 26px 30px}
+.sc-n{font-family:var(--fh);font-size:46px;color:rgba(125,193,42,.1);line-height:1;margin-bottom:10px}
+.sc h3{font-size:18px;font-weight:800;margin-bottom:10px}
+.sc p{font-size:14px;color:var(--gr);line-height:1.75;margin-bottom:16px}
+.sc-win{font-size:13px;font-weight:700;color:var(--g);display:flex;align-items:center;gap:7px}
+.sc-win::before{content:'→'}
+
+/* ══════════════════════════════════════
+   PAGE 6 — HOW WE WORK
+══════════════════════════════════════ */
+#how{padding:130px 7%;background:var(--dk)}
+
+.how-split{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-bottom:80px}
+.how-steps{display:flex;flex-direction:column;gap:0}
+.hs{display:flex;gap:22px;padding:28px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.hs:first-child{padding-top:0}
+.hs:last-child{border-bottom:none;padding-bottom:0}
+.hs-num{width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,var(--g),var(--blue));display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-size:22px;flex-shrink:0;box-shadow:0 0 22px rgba(125,193,42,.22)}
+.hs-body h3{font-size:17px;font-weight:800;margin-bottom:7px}
+.hs-body p{font-size:14px;color:var(--gr);line-height:1.8}
+.hs-micro{margin-top:7px;font-size:13px;color:var(--g);font-weight:700;font-style:italic}
+
+.how-img{position:relative;border-radius:16px;overflow:hidden;height:480px}
+.how-img img{width:100%;height:100%;object-fit:cover;filter:brightness(.6)}
+.how-img::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,30,66,.6),transparent 60%);z-index:1}
+.how-img-badge{position:absolute;top:28px;left:28px;z-index:2;background:rgba(10,21,37,.92);border:1px solid rgba(125,193,42,.25);border-radius:10px;padding:14px 18px;backdrop-filter:blur(12px)}
+.hib-big{font-family:var(--fh);font-size:32px;color:var(--g);line-height:1}
+.hib-sm{font-size:11px;color:var(--gr);margin-top:3px}
+
+.tailor{background:linear-gradient(135deg,rgba(10,30,66,.6),rgba(7,13,28,.9));border:1px solid rgba(125,193,42,.12);border-radius:16px;padding:44px;display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center}
+.t-big{font-family:var(--fh);font-size:80px;color:var(--g);line-height:1;white-space:nowrap}
+.t-body h3{font-size:22px;font-weight:800;margin-bottom:10px}
+.t-body p{font-size:15px;color:var(--ow);line-height:1.8}
+
+/* ══════════════════════════════════════
+   PAGE 7 — REVIEWS
+══════════════════════════════════════ */
+#reviews{padding:130px 7%;background:var(--dk2)}
+.rv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin-top:60px}
+.rc{background:var(--card);padding:28px;transition:all .3s}
+.rc:hover{background:#0D1D30}
+.rq{font-size:42px;line-height:1;color:rgba(125,193,42,.15);font-family:Georgia,serif;margin-bottom:6px}
+.stars{color:var(--g);font-size:13px;letter-spacing:2px;margin-bottom:12px}
+.rt{font-size:15px;line-height:1.8;color:var(--ow);margin-bottom:20px;font-style:italic}
+.rby{display:flex;align-items:center;gap:12px}
+.rav{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--blue));display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;flex-shrink:0}
+.rname{font-size:14px;font-weight:700}
+.rsrc{font-size:11px;color:var(--g);margin-top:2px}
+
+/* wide review feature */
+.rc-feature{grid-column:span 3;background:linear-gradient(135deg,rgba(10,30,66,.6),rgba(10,21,37,.8));border:1px solid rgba(125,193,42,.15);padding:44px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
+.rcf-quote{font-size:clamp(18px,2.5vw,24px);line-height:1.7;color:var(--ow);font-style:italic;max-width:640px}
+.rcf-quote strong{color:var(--g);font-style:normal}
+.rcf-by{text-align:right}
+.rcf-name{font-size:16px;font-weight:800}
+.rcf-src{font-size:12px;color:var(--g);margin-top:4px}
+.rcf-stars{color:var(--g);font-size:16px;letter-spacing:2px;margin-top:8px}
+
+/* ══════════════════════════════════════
+   PAGE 8 — BOOK
+══════════════════════════════════════ */
+#book{padding:130px 7%;background:linear-gradient(135deg,var(--navy) 0%,#071628 55%,rgba(125,193,42,.04) 100%);position:relative;overflow:hidden}
+#book::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--g),transparent)}
+.book-glow{position:absolute;right:-180px;top:40%;width:500px;height:500px;background:radial-gradient(circle,rgba(125,193,42,.1),transparent 65%);pointer-events:none}
+
+.book-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.book-img{position:relative;border-radius:16px;overflow:hidden;height:100%;min-height:500px}
+.book-img img{width:100%;height:100%;object-fit:cover;filter:brightness(.6)}
+.book-img::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(4,8,16,.9) 100%);z-index:1}
+.book-img-content{position:absolute;bottom:0;left:0;right:0;z-index:2;padding:36px}
+.book-warn{background:rgba(232,64,64,.08);border:1px solid rgba(232,64,64,.2);border-radius:10px;padding:18px 20px;font-size:14px;line-height:1.7;color:rgba(255,255,255,.8)}
+.book-warn strong{color:var(--red)}
+
+.form-box{background:rgba(10,21,37,.9);border:1px solid rgba(125,193,42,.2);border-radius:20px;padding:42px 38px;backdrop-filter:blur(20px)}
+.ft{font-family:var(--fh);font-size:30px;margin-bottom:4px}
+.fs{font-size:14px;color:var(--gr);margin-bottom:26px}
+.fg{margin-bottom:16px}
+.fg label{display:block;font-size:13px;font-weight:700;color:var(--ow);margin-bottom:7px}
+.fg input,.fg select,.fg textarea{width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:13px 16px;color:var(--w);font-family:var(--fb);font-size:15px;outline:none;transition:border-color .2s;-webkit-appearance:none}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--g);background:rgba(125,193,42,.04)}
+.fg input::placeholder,.fg textarea::placeholder{color:var(--gr)}
+.fg select option{background:var(--dk);color:var(--w)}
+.fg textarea{resize:vertical;min-height:85px}
+.fsub{width:100%;background:var(--g);color:var(--dk);padding:17px;border-radius:8px;font-weight:800;font-size:16px;border:none;cursor:pointer;font-family:var(--fb);transition:all .25s;margin-top:6px;box-shadow:0 0 28px rgba(125,193,42,.2)}
+.fsub:hover{background:var(--gb);transform:translateY(-2px);box-shadow:0 0 48px rgba(125,193,42,.38)}
+.fnote{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:12px;font-size:12px;color:var(--gr);text-align:center}
+.fnote::before{content:'🔒'}
+.wyg{margin-top:26px;padding-top:22px;border-top:1px solid rgba(255,255,255,.06)}
+.wyg-h{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--g);margin-bottom:12px}
+.wyg-l{list-style:none}
+.wyg-l li{display:flex;align-items:flex-start;gap:9px;font-size:14px;color:var(--ow);margin-bottom:9px;line-height:1.6}
+.wyg-l li::before{content:'✓';color:var(--g);font-weight:900;flex-shrink:0;margin-top:1px}
+
+/* ══════════════════════════════════════
+   PAGE 9 — FINAL CTA
+══════════════════════════════════════ */
+#final{position:relative;overflow:hidden;min-height:70vh;display:flex;align-items:center;justify-content:center}
+.final-bg{position:absolute;inset:0;z-index:0}
+.final-bg img{width:100%;height:100%;object-fit:cover;filter:brightness(.25)}
+.final-bg::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,var(--dk) 0%,transparent 30%,transparent 70%,var(--dk) 100%),linear-gradient(90deg,rgba(4,8,16,.6),transparent 50%,rgba(4,8,16,.6));z-index:1}
+.final-inner{position:relative;z-index:2;text-align:center;padding:100px 7%}
+.final-inner .sh{font-size:clamp(46px,7.5vw,100px);max-width:860px;margin:0 auto 20px}
+.final-inner .sp{font-size:19px;text-align:center;margin:0 auto 48px;max-width:600px}
+.final-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.fnudge{font-size:13px;color:var(--gr);margin-top:22px}
+.fnudge span{color:var(--g);font-weight:700}
+
+/* ── FOOTER ──────────────────────────── */
+footer{background:#020610;padding:80px 7% 32px;border-top:1px solid rgba(125,193,42,.07)}
+.fg-grid{display:grid;grid-template-columns:2.2fr 1fr 1fr;gap:70px;margin-bottom:60px}
+.fl .logo{display:block;font-size:26px;margin-bottom:14px}
+.fl-desc{font-size:14px;color:var(--gr);line-height:1.8;max-width:280px;margin-bottom:22px}
+.fl-soc{display:flex;gap:10px}
+.fs-btn{width:38px;height:38px;border-radius:8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;text-decoration:none;color:var(--gr);font-size:13px;font-weight:700;transition:all .2s}
+.fs-btn:hover{background:var(--g);color:var(--dk);border-color:var(--g)}
+.fc h4{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--g);margin-bottom:18px}
+.fc ul{list-style:none}
+.fc ul li{margin-bottom:11px}
+.fc ul li a{text-decoration:none;color:var(--gr);font-size:14px;transition:color .2s}
+.fc ul li a:hover{color:var(--w)}
+.fbot{padding-top:24px;border-top:1px solid rgba(255,255,255,.04);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.fbot p{font-size:13px;color:#2A3E58}
+.fbl{display:flex;gap:20px}
+.fbl a{font-size:13px;color:#2A3E58;text-decoration:none;transition:color .2s}
+.fbl a:hover{color:var(--gr)}
+
+/* ── WA FLOAT ─────────────────────────── */
+.wa{position:fixed;bottom:28px;right:28px;z-index:600;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;font-size:26px;box-shadow:0 8px 32px rgba(37,211,102,.42);transition:transform .2s;text-decoration:none}
+.wa:hover{transform:scale(1.1)}
+
+/* ── RESPONSIVE ──────────────────────── */
+@media(max-width:1000px){
+  #hero{grid-template-columns:1fr}
+  .hero-img{display:none}
+  .hero-copy{padding:130px 5% 80px}
+  .pain-bento{grid-template-columns:1fr 1fr}
+  .pb-wide{grid-column:span 1}
+  .pb-wide-inner{grid-template-columns:1fr}
+  .proof-cases,.proof-graph-row,.ba-split,.svc-top,.how-split,.book-inner,.fg-grid{grid-template-columns:1fr}
+  .ba-split{min-height:auto}
+  .ba-side{min-height:400px}
+  .svc-grid{grid-template-columns:repeat(2,1fr)}
+  .rv-grid{grid-template-columns:1fr 1fr}
+  .rc-feature{grid-template-columns:1fr;gap:20px}
+  .rcf-by{text-align:left}
+  .fg-grid{gap:40px}
+  .pain-cta{grid-template-columns:1fr;gap:28px}
+}
+@media(max-width:768px){
+  .nl{display:none}
+  .pain-bento{grid-template-columns:1fr}
+  .pb-wide{grid-column:span 1}
+  .svc-grid{grid-template-columns:1fr}
+  .rv-grid{grid-template-columns:1fr}
+  .rc-feature{grid-column:span 1}
+  .ba-cta{flex-direction:column}
+  .tailor{grid-template-columns:1fr;gap:20px}
+  .pain-cta{padding:36px 28px}
+  #pain,#proof,#ba,#services,#how,#reviews,#book,#final{padding:80px 5%}
+  .ba-cta{padding:36px 24px}
+}
+</style>
+</head>
+<body>
+
+<a href="https://api.whatsapp.com/send?phone=2347036825350" class="wa">💬</a>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#hero" class="logo">Globe<b>Linkz</b></a>
+  <ul class="nl">
+    <li><a href="#pain">The Problem</a></li>
+    <li><a href="#proof">Results</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="#reviews">Clients</a></li>
+    <li><a href="#book" class="ncta">Book Free Session →</a></li>
+  </ul>
+</nav>
+
+<!-- ════════════ PAGE 1 — HERO ════════════ -->
+<section id="hero">
+  <div class="hero-copy">
+    <div class="eyebrow rv"><div class="dot"></div>$5,800 → $51K · ₦200K → ₦20M · Real clients, real campaigns</div>
+
+    <h1 class="hero-h rv">
+      SALES ARE<br>
+      <span class="g">WAITING FOR</span><br>
+      YOU ON THE<br>
+      <span class="g">OTHER SIDE</span><br>
+      OF THE RIGHT<br>
+      STRATEGY.
+    </h1>
+
+    <p class="hero-sub rv">
+      You have a business worth growing.
+      <strong>What's missing is the system that puts it in front of the right people</strong> — consistently, strategically, and at scale.
+      That's exactly what we build.
+    </p>
+
+    <div class="hero-btns rv">
+      <a href="#book" class="btn bg blg">Book My Free Strategy Session →</a>
+      <a href="https://api.whatsapp.com/send?phone=2347036825350" class="btn bo">💬 Talk to Us</a>
+    </div>
+
+    <div class="hero-nums rv">
+      <div class="hn"><div class="n">$51K</div><div class="l">From $5,800 in ad spend</div></div>
+      <div class="hn"><div class="n">₦20M</div><div class="l">From ₦200K in 12 days</div></div>
+      <div class="hn"><div class="n">4.9★</div><div class="l">Verified client reviews</div></div>
+      <div class="hn"><div class="n">Global</div><div class="l">Clients across continents</div></div>
+    </div>
+  </div>
+
+  <div class="hero-img">
+    <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?w=900&q=80&fit=crop" alt="Business team">
+    <div class="img-badge">
+      <div class="ib-big">100x ROI</div>
+      <div class="ib-sm">Achieved for a client in 12 days</div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="tt">
+    <div class="ti"><div class="td"></div>Facebook Ads</div>
+    <div class="ti"><div class="td"></div>Google Ads</div>
+    <div class="ti"><div class="td"></div>Instagram Ads</div>
+    <div class="ti"><div class="td"></div>TikTok Ads</div>
+    <div class="ti"><div class="td"></div>$5,800 → $51,000</div>
+    <div class="ti"><div class="td"></div>₦200K → ₦20M in 12 Days</div>
+    <div class="ti"><div class="td"></div>Sales Funnels</div>
+    <div class="ti"><div class="td"></div>Conversion Websites</div>
+    <div class="ti"><div class="td"></div>SEO & Organic Growth</div>
+    <div class="ti"><div class="td"></div>Working With Businesses Globally</div>
+    <!-- duplicate -->
+    <div class="ti"><div class="td"></div>Facebook Ads</div>
+    <div class="ti"><div class="td"></div>Google Ads</div>
+    <div class="ti"><div class="td"></div>Instagram Ads</div>
+    <div class="ti"><div class="td"></div>TikTok Ads</div>
+    <div class="ti"><div class="td"></div>$5,800 → $51,000</div>
+    <div class="ti"><div class="td"></div>₦200K → ₦20M in 12 Days</div>
+    <div class="ti"><div class="td"></div>Sales Funnels</div>
+    <div class="ti"><div class="td"></div>Conversion Websites</div>
+    <div class="ti"><div class="td"></div>SEO & Organic Growth</div>
+    <div class="ti"><div class="td"></div>Working With Businesses Globally</div>
+  </div>
+</div>
+
+<!-- ════════════ PAGE 2 — PAIN ════════════ -->
+<section id="pain">
+  <div class="pain-top rv">
+    <div class="stag ctag">What's Really Going On</div>
+    <h2 class="sh" style="max-width:800px;margin:0 auto 20px;text-align:center">
+      Your Business Has a<br><span class="rd">Visibility Problem.</span>
+    </h2>
+    <p class="sp" style="text-align:center;margin:0 auto;max-width:600px">
+      It's not the product. It's not the team. It's the gap between where you are and where your customers can actually find you. Let's look at it honestly.
+    </p>
+  </div>
+
+  <div class="pain-bento">
+    <!-- Row 1 -->
+    <div class="pb pb-img rv">
+      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80&fit=crop&crop=face" alt="Frustrated business owner">
+      <div class="pb-img-overlay"></div>
+      <div class="pb-img-text">
+        <h3>"I Post Every Day.<br>Nothing Comes Back."</h3>
+        <p>Consistent effort. Empty results. The content is there — the strategy isn't.</p>
+      </div>
+    </div>
+
+    <div class="pb pb-stat rv" style="animation-delay:.1s">
+      <div class="big">87%</div>
+      <div class="lbl">of ad budgets are wasted without the right targeting and funnel structure</div>
+      <div class="sub">— industry average</div>
+      <a href="#book" class="btn bg bsm" style="margin-top:20px">Fix Mine →</a>
+    </div>
+
+    <div class="pb pb-graph rv" style="animation-delay:.2s">
+      <div class="graph-title">Revenue: No Strategy vs. With Strategy</div>
+      <div class="bar-chart" id="bc1"></div>
+      <div class="chart-note">Businesses with a structured ad strategy consistently see 3–8× the revenue of those running without one.</div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="pb pb-wide rv" style="animation-delay:.1s">
+      <div class="pb-wide-inner">
+        <div class="pb-wide-copy">
+          <div class="emoji" style="font-size:30px;margin-bottom:12px">💸</div>
+          <h3>"I Tried Ads Once. Burned the Budget."</h3>
+          <p>You ran a campaign. Watched money leave the account. Got almost nothing in return. That experience wasn't proof that ads don't work — it was proof that the strategy was wrong.</p>
+          <div class="echo" style="margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,.05);font-size:13px;font-style:italic;color:rgba(255,255,255,.28)">"Never again," you said. But you still need customers.</div>
+        </div>
+        <div class="pb-wide-visual">
+          <div class="graph-title" style="align-self:flex-start;width:100%">What Went Wrong</div>
+          <div class="comp-bars" style="width:100%">
+            <div class="cb"><span class="cb-label">Targeting</span><div class="cb-track"><div class="cb-fill" style="width:22%"></div></div><span class="cb-val">22%</span></div>
+            <div class="cb"><span class="cb-label">Ad Creative</span><div class="cb-track"><div class="cb-fill" style="width:35%"></div></div><span class="cb-val">35%</span></div>
+            <div class="cb"><span class="cb-label">Offer</span><div class="cb-track"><div class="cb-fill" style="width:18%"></div></div><span class="cb-val">18%</span></div>
+            <div class="cb"><span class="cb-label">Funnel</span><div class="cb-track"><div class="cb-fill" style="width:10%"></div></div><span class="cb-val">10%</span></div>
+          </div>
+          <p style="font-size:12px;color:var(--gr);margin-top:4px">Average scores on first-time DIY campaigns. All fixable.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pb pb-img rv" style="animation-delay:.2s">
+      <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80&fit=crop" alt="Business owner at desk frustrated">
+      <div class="pb-img-overlay"></div>
+      <div class="pb-img-text">
+        <h3>"Same Ceiling.<br>Every Month."</h3>
+        <p>The product is there. The drive is there. The numbers just won't move.</p>
+      </div>
+    </div>
+
+    <!-- Row 3 -->
+    <div class="pb pb-graph rv">
+      <div class="graph-title">Where You're Losing Customers</div>
+      <div class="donut-wrap">
+        <div class="donut">
+          <svg viewBox="0 0 36 36">
+            <circle cx="18" cy="18" r="15.9" fill="none" stroke="rgba(255,255,255,.06)" stroke-width="3.5"/>
+            <circle cx="18" cy="18" r="15.9" fill="none" stroke="#E84040" stroke-width="3.5" stroke-dasharray="42 58" stroke-linecap="round"/>
+            <circle cx="18" cy="18" r="15.9" fill="none" stroke="#1457A0" stroke-width="3.5" stroke-dasharray="28 72" stroke-dashoffset="-42" stroke-linecap="round"/>
+            <circle cx="18" cy="18" r="15.9" fill="none" stroke="#7DC12A" stroke-width="3.5" stroke-dasharray="20 80" stroke-dashoffset="-70" stroke-linecap="round"/>
+            <circle cx="18" cy="18" r="15.9" fill="none" stroke="#4a5568" stroke-width="3.5" stroke-dasharray="10 90" stroke-dashoffset="-90" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="donut-labels">
+          <div class="dl"><div class="dl-dot" style="background:#E84040"></div>Never saw your ad — 42%</div>
+          <div class="dl"><div class="dl-dot" style="background:#1457A0"></div>Saw it, didn't click — 28%</div>
+          <div class="dl"><div class="dl-dot" style="background:#7DC12A"></div>Clicked, didn't convert — 20%</div>
+          <div class="dl"><div class="dl-dot" style="background:#4a5568"></div>Converted — 10%</div>
+        </div>
+      </div>
+      <div class="chart-note" style="margin-top:16px">The average business loses 90% of potential customers before they ever buy. A proper funnel changes all of this.</div>
+    </div>
+
+    <div class="pb pb-text rv" style="animation-delay:.1s">
+      <div class="emoji">😤</div>
+      <h3>"My Competitors Are Everywhere. I'm Better."</h3>
+      <p>You watch businesses with lesser products gain all the traction. They're not better than you — they're just more visible. And visibility is a strategy, not a coincidence.</p>
+      <div class="echo">"It's genuinely frustrating to watch."</div>
+    </div>
+
+    <div class="pb pb-text rv" style="animation-delay:.2s">
+      <div class="emoji">🕐</div>
+      <h3>"I'm Already Running a Business Full Time."</h3>
+      <p>You don't have the hours to also master paid ads, build funnels, write copy, and analyse campaigns. That's a full-time discipline on its own. It's ours.</p>
+      <div class="echo">"I know exactly what I need. I just can't do it myself."</div>
+      <a href="#book" class="btn bg bsm" style="margin-top:20px">Let's Talk →</a>
+    </div>
+  </div>
+
+  <div class="pain-cta rv" style="position:relative">
+    <div>
+      <h2>The Customers Are Out There.<br><span>They're Just Not Finding You Yet.</span></h2>
+      <p style="margin-top:14px">Every week without a working strategy is a week your competitors take ground that belongs to you. That changes with one conversation.</p>
+    </div>
+    <div class="pain-cta-btns">
+      <a href="#book" class="btn bg">Book Free Session →</a>
+      <a href="#proof" class="btn bo">See Real Results ↓</a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ PAGE 3 — PROOF ════════════ -->
+<section id="proof">
+  <div class="proof-head rv">
+    <div class="stag ctag">Case Studies</div>
+    <h2 class="sh" style="text-align:center">The Numbers<br>Don't Lie.</h2>
+    <p class="sp" style="text-align:center;margin:0 auto">Two campaigns. Two continents. One consistent outcome — real revenue from real strategy.</p>
+  </div>
+
+  <div class="proof-cases rv">
+    <!-- Case 1 -->
+    <div class="pc">
+      <div class="pc-img">
+        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=700&q=80&fit=crop" alt="Business growth">
+      </div>
+      <div class="pc-content">
+        <div class="pc-badge">West Africa · Campaign</div>
+        <div class="pc-amount">₦20,000,000</div>
+        <div class="pc-from">Generated from ₦200,000 in ad spend</div>
+        <div class="pc-stats">
+          <div class="pcs-item"><div class="n"><em>12</em> Days</div><div class="l">Time to result</div></div>
+          <div class="pcs-item"><div class="n"><em>100x</em></div><div class="l">Return on spend</div></div>
+          <div class="pcs-item"><div class="n"><em>10,000%</em></div><div class="l">ROI</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Case 2 -->
+    <div class="pc">
+      <div class="pc-img">
+        <img src="https://images.unsplash.com/photo-1551135049-8a33b5883817?w=700&q=80&fit=crop" alt="International business growth">
+      </div>
+      <div class="pc-content">
+        <div class="pc-badge">International · Campaign</div>
+        <div class="pc-amount">$51,000</div>
+        <div class="pc-from">Generated from $5,800 in ad spend</div>
+        <div class="pc-stats">
+          <div class="pcs-item"><div class="n"><em>8.7x</em></div><div class="l">Return on spend</div></div>
+          <div class="pcs-item"><div class="n"><em>879%</em></div><div class="l">ROI</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="proof-graph-row rv">
+    <!-- Revenue growth chart -->
+    <div class="pgr">
+      <div class="pgr-title">Revenue Growth — Campaign Timeline</div>
+      <h3>₦200K → ₦20M</h3>
+      <svg class="area-chart" viewBox="0 0 400 160" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="ag" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#7DC12A" stop-opacity="0.5"/>
+            <stop offset="100%" stop-color="#7DC12A" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <path d="M0,155 L40,150 L80,145 L120,130 L160,100 L200,70 L240,45 L280,25 L320,12 L360,6 L400,3 L400,160 L0,160 Z" fill="url(#ag)"/>
+        <polyline points="0,155 40,150 80,145 120,130 160,100 200,70 240,45 280,25 320,12 360,6 400,3" fill="none" stroke="#7DC12A" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="400" cy="3" r="5" fill="#7DC12A"/>
+        <text x="366" y="0" font-size="10" fill="#7DC12A" font-weight="bold">₦20M</text>
+        <text x="2" y="155" font-size="9" fill="#6E88A2">Day 1</text>
+        <text x="170" y="155" font-size="9" fill="#6E88A2">Day 6</text>
+        <text x="360" y="155" font-size="9" fill="#6E88A2">Day 12</text>
+      </svg>
+      <div class="note">Starting with ₦200K, revenue scaled exponentially over 12 days as campaign optimisation compounded results.</div>
+    </div>
+
+    <!-- Comparison -->
+    <div class="pgr">
+      <div class="pgr-title">Before GlobeLinkz vs. After</div>
+      <h3>$5,800 → $51,000</h3>
+      <div class="comp-bars" style="margin-top:20px">
+        <div class="cb"><span class="cb-label" style="min-width:100px">ROAS Before</span><div class="cb-track"><div class="cb-fill" style="width:12%;background:rgba(232,64,64,.5)"></div></div><span class="cb-val" style="color:var(--red)">0.8x</span></div>
+        <div class="cb"><span class="cb-label" style="min-width:100px">ROAS After</span><div class="cb-track"><div class="cb-fill" style="width:88%"></div></div><span class="cb-val">8.7x</span></div>
+        <div class="cb"><span class="cb-label" style="min-width:100px">Conv. Before</span><div class="cb-track"><div class="cb-fill" style="width:8%;background:rgba(232,64,64,.5)"></div></div><span class="cb-val" style="color:var(--red)">1.2%</span></div>
+        <div class="cb"><span class="cb-label" style="min-width:100px">Conv. After</span><div class="cb-track"><div class="cb-fill" style="width:72%"></div></div><span class="cb-val">11.4%</span></div>
+        <div class="cb"><span class="cb-label" style="min-width:100px">Cost/Lead</span><div class="cb-track"><div class="cb-fill" style="width:15%;background:rgba(232,64,64,.5)"></div></div><span class="cb-val" style="color:var(--g)">−74%</span></div>
+      </div>
+      <div class="note">Same platforms. Same market. Completely different approach — and completely different results.</div>
+    </div>
+  </div>
+
+  <div class="proof-bq rv">
+    <blockquote>
+      "The ads brought <strong>buyers</strong> — not traffic, not vanity numbers. People who were actually ready to spend money. I couldn't believe how quickly the whole thing moved."
+    </blockquote>
+    <div class="bq-by">— Client · West Africa</div>
+    <div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap">
+      <a href="#book" class="btn bg">I Want Results Like These →</a>
+      <a href="https://api.whatsapp.com/send?phone=2347036825350" class="btn bo">💬 Ask Us How</a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ PAGE 4 — BEFORE / AFTER ════ -->
+<section id="ba">
+  <div class="ba-head rv">
+    <div class="stag ctag">Two Realities</div>
+    <h2 class="sh" style="text-align:center;max-width:700px;margin:0 auto 16px">
+      Where You Are vs.<br><span>Where You Could Be.</span>
+    </h2>
+    <p class="sp" style="text-align:center;margin:0 auto;max-width:580px">The gap between these two isn't talent, luck, or time. It's strategy.</p>
+  </div>
+
+  <div class="ba-split" style="position:relative">
+    <!-- LEFT — pain -->
+    <div class="ba-side ba-left">
+      <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=700&q=80&fit=crop" alt="Stressed business owner">
+      <div class="ba-left-content">
+        <div class="bl-tag">Right Now — Without a Strategy</div>
+        <h3>Invisible.<br>Inconsistent.<br>Frustrated.</h3>
+        <ul>
+          <li>Competitors take customers that should be yours</li>
+          <li>Revenue hits the same ceiling every single month</li>
+          <li>Ad money spent with little to show for it</li>
+          <li>No clear picture of what's actually working</li>
+          <li>Another year passes without the breakthrough</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ba-divider"></div>
+
+    <!-- RIGHT — hope -->
+    <div class="ba-side ba-right">
+      <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=700&q=80&fit=crop&crop=face" alt="Confident business owner">
+      <div class="ba-right-content">
+        <div class="br-tag">90 Days From Now — With GlobeLinkz</div>
+        <h3>Visible.<br>Growing.<br>In Control.</h3>
+        <ul>
+          <li>Your ideal customers find you before anyone else</li>
+          <li>A system running campaigns that actually convert</li>
+          <li>Revenue compounds — month on month</li>
+          <li>You know exactly what's working and why</li>
+          <li>You focus on your business — we fuel the growth</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="ba-cta rv" style="position:relative">
+    <h3>The Only Difference Between<br><span>These Two Realities Is One Decision.</span></h3>
+    <div class="ba-cta-btns">
+      <a href="#book" class="btn bg blg">Book My Free Session →</a>
+      <a href="https://api.whatsapp.com/send?phone=2347036825350" class="btn bo">💬 Chat First</a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ PAGE 5 — SERVICES ════════════ -->
+<section id="services">
+  <div class="svc-top">
+    <div class="rv2">
+      <div class="stag">What We Do</div>
+      <h2 class="sh">Built Around<br>Your Business.<br><span>Not a Template.</span></h2>
+    </div>
+    <div class="rv3">
+      <p class="sp">Every strategy we build is tailored to your market, your offer, and your budget. We pick the right platforms, the right message, and the right approach — specifically for you.</p>
+      <div class="platforms">
+        <div class="plt"><span class="plt-icon">👤</span>Facebook Ads</div>
+        <div class="plt"><span class="plt-icon">📸</span>Instagram Ads</div>
+        <div class="plt"><span class="plt-icon">🎵</span>TikTok Ads</div>
+        <div class="plt"><span class="plt-icon">🔍</span>Google Ads</div>
+      </div>
+      <a href="#book" class="btn bg" style="margin-top:28px">Build My Strategy →</a>
+    </div>
+  </div>
+
+  <div class="svc-grid rv">
+    <div class="sc">
+      <div class="sc-img">
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80&fit=crop" alt="Paid advertising">
+      </div>
+      <div class="sc-body">
+        <div class="sc-n">01</div>
+        <h3>Paid Advertising</h3>
+        <p>Campaigns built to bring in money — not just clicks. Facebook, Instagram, TikTok, Google. Every naira and dollar tracked and refined until it's working hard for you.</p>
+        <div class="sc-win">Your budget becomes a revenue engine</div>
+      </div>
+    </div>
+
+    <div class="sc">
+      <div class="sc-img">
+        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&q=80&fit=crop" alt="Sales funnel">
+      </div>
+      <div class="sc-body">
+        <div class="sc-n">02</div>
+        <h3>Sales Funnel Design</h3>
+        <p>We map the journey from first touch to final sale and close every gap along the way. The leaks in your funnel are costing you more than you realise.</p>
+        <div class="sc-win">More buyers from your existing traffic</div>
+      </div>
+    </div>
+
+    <div class="sc">
+      <div class="sc-img">
+        <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&q=80&fit=crop" alt="Website design">
+      </div>
+      <div class="sc-body">
+        <div class="sc-n">03</div>
+        <h3>Websites That Sell</h3>
+        <p>Fast, clear, and built to convert. Your website should be earning you customers around the clock — not just sitting there looking pretty.</p>
+        <div class="sc-win">A site that works while you sleep</div>
+      </div>
+    </div>
+
+    <div class="sc">
+      <div class="sc-img">
+        <img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=600&q=80&fit=crop" alt="SEO">
+      </div>
+      <div class="sc-body">
+        <div class="sc-n">04</div>
+        <h3>SEO & Organic Growth</h3>
+        <p>When someone searches for what you sell — they should find you before anyone else. We build the kind of presence that keeps bringing in customers long after the work is done.</p>
+        <div class="sc-win">Traffic that compounds every month</div>
+      </div>
+    </div>
+
+    <div class="sc">
+      <div class="sc-img">
+        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=80&fit=crop" alt="Brand strategy">
+      </div>
+      <div class="sc-body">
+        <div class="sc-n">05</div>
+        <h3>Brand & Content Strategy</h3>
+        <p>Your message, your voice, your content plan — shaped so everything you publish builds trust, attracts the right people, and makes you the obvious choice.</p>
+        <div class="sc-win">Authority that turns attention into sales</div>
+      </div>
+    </div>
+
+    <div class="sc">
+      <div class="sc-img">
+        <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&q=80&fit=crop" alt="Offer strategy">
+      </div>
+      <div class="sc-body">
+        <div class="sc-n">06</div>
+        <h3>Offer & Positioning</h3>
+        <p>Sometimes the product is right but the framing is off. We sharpen how your offer lands so it feels compelling, makes sense immediately, and moves people to act.</p>
+        <div class="sc-win">The same offer — far more effectively sold</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ PAGE 6 — HOW WE WORK ════════ -->
+<section id="how">
+  <div class="how-split">
+    <div class="how-steps rv2">
+      <div class="stag">The Process</div>
+      <h2 class="sh" style="margin-bottom:40px">From First Call<br>to <span>Real Revenue.</span></h2>
+
+      <div class="hs">
+        <div class="hs-num">1</div>
+        <div class="hs-body">
+          <h3>Book Your Free Strategy Session</h3>
+          <p>We start with a focused conversation. You tell us about your business, what's not working, and where you want to go. We listen and ask the right questions.</p>
+          <div class="hs-micro">Zero cost. Zero obligation.</div>
+        </div>
+      </div>
+      <div class="hs">
+        <div class="hs-num">2</div>
+        <div class="hs-body">
+          <h3>We Build Your Custom Strategy</h3>
+          <p>Based entirely on your business — the right platforms, the right message, the right offer structure. No templates recycled from other clients.</p>
+          <div class="hs-micro">Built for you. Nobody else.</div>
+        </div>
+      </div>
+      <div class="hs">
+        <div class="hs-num">3</div>
+        <div class="hs-body">
+          <h3>We Execute & You See the Results</h3>
+          <p>Campaigns run, funnels managed, everything tracked and optimised as we go. Regular, honest updates so you always know where things stand.</p>
+          <div class="hs-micro">Like our clients — the numbers move.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="how-img rv3">
+      <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=700&q=80&fit=crop" alt="Team working on strategy">
+      <div class="how-img-badge">
+        <div class="hib-big">100%</div>
+        <div class="hib-sm">Custom strategy — no templates</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tailor rv">
+    <div class="t-big">WHY<br>IT<br>WORKS</div>
+    <div class="t-body">
+      <h3>We Build Around Your Business — Not the Other Way Around</h3>
+      <p>There are no preset packages here. No Standard, Pro, or Enterprise tiers to squeeze you into. We start from scratch every time — your customers, your market, your numbers — and design the exact strategy that fits. That's the difference between campaigns that perform and ones that drain your budget.</p>
+      <a href="#book" class="btn bg" style="margin-top:22px">Start With a Free Session →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ PAGE 7 — REVIEWS ════════════ -->
+<section id="reviews">
+  <div class="rv" style="text-align:center;margin-bottom:60px">
+    <div class="stag ctag">Client Stories</div>
+    <h2 class="sh">The Proof Isn't Just<br><span>in the Numbers.</span></h2>
+    <p class="sp" style="text-align:center;margin:0 auto">Our clients come back. They refer people. Their businesses grow. Here's what they say.</p>
+  </div>
+
+  <div class="rv-grid rv">
+    <div class="rc-feature">
+      <div class="rcf-quote">
+        "The ads brought <strong>buyers</strong> — not traffic. People who were ready to pay. I couldn't believe how fast it all happened. GlobeLinkz changed the trajectory of my business completely."
+      </div>
+      <div class="rcf-by">
+        <div class="rcf-name">Client · West Africa</div>
+        <div class="rcf-src">Campaign: ₦200K → ₦20M</div>
+        <div class="rcf-stars">★★★★★</div>
+      </div>
+    </div>
+
+    <div class="rc">
+      <div class="rq">"</div>
+      <div class="stars">★★★★★</div>
+      <p class="rt">"I HAD MY FIRST SALE. I couldn't believe how fast it worked. The strategy started producing almost immediately. These people genuinely know what they're doing."</p>
+      <div class="rby"><div class="rav">A</div><div><div class="rname">Aldahish</div><div class="rsrc">Verified · Fiverr · March 2025</div></div></div>
+    </div>
+    <div class="rc">
+      <div class="rq">"</div>
+      <div class="stars">★★★★★</div>
+      <p class="rt">"Professional, thorough, and completely committed. They treated my business like their own — not just another brief to get through."</p>
+      <div class="rby"><div class="rav">F</div><div><div class="rname">Fiverr Client</div><div class="rsrc">Verified · Fiverr · March 2025</div></div></div>
+    </div>
+    <div class="rc">
+      <div class="rq">"</div>
+      <div class="stars">★★★★★</div>
+      <p class="rt">"Extraordinary work on TikTok — not just the execution, but they taught me why it works. It's actively making my business more money."</p>
+      <div class="rby"><div class="rav">T</div><div><div class="rname">Business Owner</div><div class="rsrc">Verified · Fiverr · Jan 2025</div></div></div>
+    </div>
+    <div class="rc">
+      <div class="rq">"</div>
+      <div class="stars">★★★★★</div>
+      <p class="rt">"Great communication and very patient throughout. The results came faster than I expected. I'll be back — and I'll be sending people their way."</p>
+      <div class="rby"><div class="rav">O</div><div><div class="rname">Omwela</div><div class="rsrc">Verified · Fiverr · March 2025</div></div></div>
+    </div>
+    <div class="rc">
+      <div class="rq">"</div>
+      <div class="stars">★★★★★</div>
+      <p class="rt">"Dedication, professionalism, and real strategic depth. His knowledge is at a different level. Anyone serious about growing should work with GlobeLinkz."</p>
+      <div class="rby"><div class="rav">H</div><div><div class="rname">Hanan China G.</div><div class="rsrc">Verified · LinkedIn · Oct 2024</div></div></div>
+    </div>
+    <div class="rc">
+      <div class="rq">"</div>
+      <div class="stars">★★★★★</div>
+      <p class="rt">"Fast, reliable, and deeply committed. Multiple successful projects delivered. I send people to GlobeLinkz without a second thought."</p>
+      <div class="rby"><div class="rav">A</div><div><div class="rname">Akinloye Akinfala</div><div class="rsrc">Verified · LinkedIn · Oct 2024</div></div></div>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-top:60px" class="rv">
+    <a href="#book" class="btn bg blg">I Want Results Like These →</a>
+  </div>
+</section>
+
+<!-- ════════════ PAGE 8 — BOOK ════════════ -->
+<section id="book">
+  <div class="book-glow"></div>
+  <div class="book-inner">
+
+    <div class="rv2">
+      <div class="stag">Free Consultation</div>
+      <h2 class="sh">Let's Look at Your<br>Business and <span>Build Something That Works.</span></h2>
+
+      <p class="sp">Right now your customers are online. They're browsing, searching, ready to buy. The only question is whether they find you or someone else. This conversation is how we make sure it's you.</p>
+
+      <div class="book-warn">
+        <strong>⚠️ If your sales aren't where they should be</strong> — this session is the right call. Every week without a working strategy is a week your competitors consolidate the ground that belongs to you.
+      </div>
+
+      <div class="wyg">
+        <div class="wyg-h">What the free session covers</div>
+        <ul class="wyg-l">
+          <li>An honest look at why your current marketing isn't producing</li>
+          <li>The platforms and approach that will actually work for your business</li>
+          <li>A strategy outline built around your specific goals and budget</li>
+          <li>Direct, practical advice — no fluff, no pressure, no pitch</li>
+          <li>A clear plan you can act on — whether you work with us or not</li>
+        </ul>
+      </div>
+
+      <a href="https://api.whatsapp.com/send?phone=2347036825350" class="btn bo" style="margin-top:30px">💬 Prefer WhatsApp? Message Us Directly</a>
+    </div>
+
+    <div class="form-box rv3">
+      <div class="ft">Book Free Session</div>
+      <div class="fs">60 seconds. No card. No spam. Ever.</div>
+
+      <form id="bookForm" onsubmit="handleBook(event)">
+        <div class="fg"><label>Your Name *</label><input type="text" placeholder="Full name" required></div>
+        <div class="fg"><label>WhatsApp / Phone *</label><input type="tel" placeholder="+1 / +44 / +234 …" required></div>
+        <div class="fg"><label>Email *</label><input type="email" placeholder="you@yourbusiness.com" required></div>
+        <div class="fg">
+          <label>Business Type *</label>
+          <select required>
+            <option value="" disabled selected>Select…</option>
+            <option>E-commerce / Online Store</option>
+            <option>Physical Products / Retail</option>
+            <option>Service Business</option>
+            <option>Restaurant / Food Business</option>
+            <option>Real Estate</option>
+            <option>Fashion / Beauty / Wellness</option>
+            <option>Tech / Software / App</option>
+            <option>Education / Coaching</option>
+            <option>Healthcare / Medical</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="fg"><label>Where are you based?</label><input type="text" placeholder="City, Country"></div>
+        <div class="fg"><label>What's holding your business back right now?</label><textarea placeholder="Be honest — this is just between us…"></textarea></div>
+        <button type="submit" class="fsub" id="fBtn">Claim My Free Strategy Session →</button>
+      </form>
+
+      <div class="fnote">Completely free · No card · No pressure</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════ PAGE 9 — FINAL CTA ════════════ -->
+<section id="final">
+  <div class="final-bg">
+    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1400&q=80&fit=crop" alt="Business team in meeting">
+  </div>
+  <div class="final-inner">
+    <div class="stag rv" style="justify-content:center">The Decision Is Yours</div>
+    <h2 class="sh rv" style="font-size:clamp(46px,7vw,100px);max-width:860px;margin:0 auto 20px;text-align:center">
+      Your Competitors<br>Are Moving.<br><span>Are You?</span>
+    </h2>
+    <p class="sp rv" style="font-size:18px;text-align:center;margin:0 auto 46px;max-width:580px">
+      The customers in your market will buy from someone. The only question is who they find first. The free session costs nothing. Staying still costs far more.
+    </p>
+    <div class="final-btns rv">
+      <a href="#book" class="btn bg blg">Book My Free Session Now →</a>
+      <a href="https://api.whatsapp.com/send?phone=2347036825350" class="btn bo blg">💬 WhatsApp Us Instead</a>
+    </div>
+    <p class="fnudge rv" style="margin-top:24px">
+      🔒 We work with a <span>limited number of clients at a time</span> to make sure every one gets the attention they deserve.
+    </p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fg-grid">
+    <div class="fl">
+      <a href="#hero" class="logo">Globe<b>Linkz</b></a>
+      <p class="fl-desc">A full-service digital growth agency working with businesses globally. Paid ads, funnels, conversion websites, and strategies built around one thing — your revenue.</p>
+      <div class="fl-soc">
+        <a href="https://www.facebook.com/Globelinkz" class="fs-btn">f</a>
+        <a href="https://www.instagram.com/globelinkz/" class="fs-btn">ig</a>
+        <a href="https://ng.linkedin.com/company/globelinkz" class="fs-btn">in</a>
+      </div>
+    </div>
+    <div class="fc">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services">Paid Advertising</a></li>
+        <li><a href="#services">Facebook & Instagram Ads</a></li>
+        <li><a href="#services">TikTok & Google Ads</a></li>
+        <li><a href="#services">Sales Funnels</a></li>
+        <li><a href="#services">Web Design</a></li>
+        <li><a href="#services">SEO</a></li>
+        <li><a href="#services">Brand Strategy</a></li>
+      </ul>
+    </div>
+    <div class="fc">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#proof">Results</a></li>
+        <li><a href="#reviews">Client Stories</a></li>
+        <li><a href="https://globelinkz.com/blog">Blog</a></li>
+        <li><a href="#book">Free Strategy Session</a></li>
+        <li><a href="https://api.whatsapp.com/send?phone=2347036825350">WhatsApp</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="fbot">
+    <p>© 2025 GlobeLinkz. All rights reserved. Working with businesses globally.</p>
+    <div class="fbl"><a href="#">Privacy Policy</a><a href="#">Terms</a></div>
+  </div>
+</footer>
+
+<script>
+// ── Scroll reveal ──────────────────────────
+const io = new IntersectionObserver(entries => {
+  entries.forEach((e,i) => {
+    if(e.isIntersecting) setTimeout(()=>e.target.classList.add('in'), i*60);
+  });
+},{threshold:.07});
+document.querySelectorAll('.rv,.rv2,.rv3').forEach(el=>io.observe(el));
+
+// ── Pain mosaic stagger ────────────────────
+document.querySelectorAll('.pb').forEach((c,i)=>{
+  c.style.opacity='0'; c.style.transform='translateY(30px)';
+  c.style.transition=`opacity .7s ${i*.07}s ease, transform .7s ${i*.07}s ease`;
+  new IntersectionObserver(en=>{
+    en.forEach(e=>{ if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';}});
+  },{threshold:.08}).observe(c);
+});
+
+// ── Build bar chart ────────────────────────
+function buildBarChart(){
+  const container = document.getElementById('bc1');
+  if(!container) return;
+  const data = [
+    {lbl:'No Strategy',val:12,cls:'bar-bad'},
+    {lbl:'Boosted Post',val:28,cls:'bar-bad'},
+    {lbl:'Basic Ads',val:45,cls:'bar-bad'},
+    {lbl:'With GlobeLinkz',val:100,cls:'bar-good'}
+  ];
+  const max = 100;
+  data.forEach(d=>{
+    const wrap = document.createElement('div');
+    wrap.className='bar-wrap';
+    wrap.innerHTML=`
+      <span class="bar-val">${d.lbl==='With GlobeLinkz'?'100x':d.val+'%'}</span>
+      <div class="bar ${d.cls}" style="height:${(d.val/max)*110}px"></div>
+      <span class="bar-lbl">${d.lbl}</span>`;
+    container.appendChild(wrap);
+  });
+}
+buildBarChart();
+
+// ── Nav scroll ────────────────────────────
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').classList.toggle('sc',window.scrollY>50);
+});
+
+// ── Form submit ───────────────────────────
+function handleBook(e){
+  e.preventDefault();
+  const btn=document.getElementById('fBtn');
+  btn.textContent='✓ Booked! We\'ll reach out on WhatsApp shortly.';
+  btn.style.background='var(--blue)'; btn.style.color='var(--w)'; btn.disabled=true;
+  setTimeout(()=>{
+    window.open('https://api.whatsapp.com/send?phone=2347036825350&text=Hi%20GlobeLinkz!%20I%20just%20booked%20a%20free%20strategy%20session%20on%20your%20website.%20Looking%20forward%20to%20speaking!','_blank');
+  },1800);
+}
+</script>
+</body>
+</html>
