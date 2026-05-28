@@ -1,67 +1,37 @@
-import Hero from '@/sections/hero'
-// import WhyUs from '@/sections/whyus'
-import Reviews from '@/sections/review'
-import OurCompetence from '@/sections/services'
-import React from 'react'
-import { Client } from '@/lib/utils'
-import { gql } from 'graphql-request'
-import { ReviewData } from '@/dacomp/dataareviewclient'
-import { StaffData } from '@/sections/ourteam'
-import AboutUsSection from '@/sections/about-us-section'
-import StruggleSection from '@/sections/StruggleSection'
+import { JsonLd } from "@/components/common/JsonLd";
+import { Footer } from "@/components/layout/Footer";
+import { Navbar } from "@/components/layout/Navbar";
+import { WhatsAppFloat } from "@/components/layout/WhatsAppFloat";
+import { BeforeAfterSection } from "@/components/sections/BeforeAfterSection";
+import { BookingSection } from "@/components/sections/BookingSection";
+import { FinalCtaSection } from "@/components/sections/FinalCtaSection";
+import { HeroSection } from "@/components/sections/HeroSection";
+import { HowItWorksSection } from "@/components/sections/HowItWorksSection";
+import { PainSection } from "@/components/sections/PainSection";
+import { ProofSection } from "@/components/sections/ProofSection";
+import { ReviewsSection } from "@/components/sections/ReviewsSection";
+import { ServicesSection } from "@/components/sections/ServicesSection";
+import { TickerSection } from "@/components/sections/TickerSection";
 
-const REVIEW_QUERY = gql`
-  {
-    reviewCollection {
-      items {
-        rating
-        content
-        dateOfReview
-        reviewVerificationLink
-        reviewPlatform
-        subject
-      }
-    }
-  }
-`
-
-const STAFF_QUERY = gql`
-  {
-    staffCollection(order: hierarchy_ASC) {
-      items {
-        lastName
-        firstName
-        middleName
-        qualification
-        portrait {
-          url
-        }
-        role
-        teamRole
-        customerReview
-      }
-    }
-  }
-`
-
-export const revalidate = 3600
-
-export default async function Home() {
-  const [reviewData, teamMembers] = await Promise.all([
-    Client.request<ReviewData>(REVIEW_QUERY),
-    Client.request<StaffData>(STAFF_QUERY)
-  ])
-
+export default function HomePage() {
   return (
-    <div className="flex flex-col items-center overflow-hidden tracking-wide w-full">
-      <Hero />
-      <AboutUsSection />
-      <StruggleSection />
-      <OurCompetence />
-      {/* <WhyUs /> */}
-      <div className="hidden">about us</div>
-      <div className="hidden">blog post</div>
-      <Reviews reviewData={reviewData} staffData={teamMembers} />
-    </div>
-  )
+    <>
+      <JsonLd />
+      <WhatsAppFloat />
+      <Navbar />
+      <main>
+        <HeroSection />
+        <TickerSection />
+        <PainSection />
+        <ProofSection />
+        <BeforeAfterSection />
+        <ServicesSection />
+        <HowItWorksSection />
+        <ReviewsSection />
+        <BookingSection />
+        <FinalCtaSection />
+      </main>
+      <Footer />
+    </>
+  );
 }

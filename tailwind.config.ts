@@ -1,92 +1,79 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from 'tailwindcss';
+import defaultTheme from 'tailwindcss/defaultTheme';
 
-export default {
+const config = {
   darkMode: ['class'],
   content: [
-    './src/**/*.{js,ts,jsx,tsx}',
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}'
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
-      fontFamily: {
-        inter: ['Inter', 'sans-serif']
-      },
       colors: {
-        'brand-neon': '#00F33C',
-        'brand-green': '#006633',
-        'brand-blue': '#007AAD',
-        'brand-navy': '#15265D',
-        background: 'hsl(var(--background))',
-        foreground: 'hsl(var(--foreground))',
-        card: {
-          DEFAULT: 'hsl(var(--card))',
-          foreground: 'hsl(var(--card-foreground))'
+        // Brand colors from GlobeLinkz
+        brand: {
+          green: '#7DC12A',
+          'green-light': '#9AD93A',
+          navy: '#0A1E42',
+          blue: '#1457A0',
+          dark: '#040810',
+          'dark-2': '#070D1C',
+          card: '#0A1525',
+          white: '#FFFFFF',
+          'white-off': '#C8DCEF',
+          gray: '#6E88A2',
+          red: '#E84040',
         },
-        popover: {
-          DEFAULT: 'hsl(var(--popover))',
-          foreground: 'hsl(var(--popover-foreground))'
-        },
-        primary: {
-          DEFAULT: 'hsl(var(--primary))',
-          foreground: 'hsl(var(--primary-foreground))'
-        },
-        secondary: {
-          DEFAULT: 'hsl(var(--secondary))',
-          foreground: 'hsl(var(--secondary-foreground))'
-        },
-        muted: {
-          DEFAULT: 'hsl(var(--muted))',
-          foreground: 'hsl(var(--muted-foreground))'
-        },
-        accent: {
-          DEFAULT: 'hsl(var(--accent))',
-          foreground: 'hsl(var(--accent-foreground))'
-        },
-        destructive: {
-          DEFAULT: 'hsl(var(--destructive))',
-          foreground: 'hsl(var(--destructive-foreground))'
-        },
-        border: 'hsl(var(--border))',
-        input: 'hsl(var(--input))',
-        ring: 'hsl(var(--ring))',
-        chart: {
-          '1': 'hsl(var(--chart-1))',
-          '2': 'hsl(var(--chart-2))',
-          '3': 'hsl(var(--chart-3))',
-          '4': 'hsl(var(--chart-4))',
-          '5': 'hsl(var(--chart-5))'
-        }
       },
-      borderRadius: {
-        lg: 'var(--radius)',
-        md: 'calc(var(--radius) - 2px)',
-        sm: 'calc(var(--radius) - 4px)'
+      fontFamily: {
+        heading: ['Bebas Neue', ...defaultTheme.fontFamily.sans],
+        body: ['Epilogue', ...defaultTheme.fontFamily.sans],
+      },
+      fontSize: {
+        'clamp-xl': 'clamp(56px, 6vw, 88px)',
+        'clamp-lg': 'clamp(42px, 5.5vw, 72px)',
+        'clamp-md': 'clamp(46px, 7vw, 100px)',
       },
       keyframes: {
-        'accordion-down': {
-          from: {
-            height: '0'
-          },
-          to: {
-            height: 'var(--radix-accordion-content-height)'
-          }
+        pulse: {
+          '0%, 100%': { boxShadow: '0 0 0 0 rgba(125, 193, 42, 0.7)' },
+          '70%': { boxShadow: '0 0 0 8px rgba(125, 193, 42, 0)' },
         },
-        'accordion-up': {
-          from: {
-            height: 'var(--radix-accordion-content-height)'
-          },
-          to: {
-            height: '0'
-          }
-        }
+        ticker: {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(-50%)' },
+        },
+        reveal: {
+          from: { opacity: '0', transform: 'translateY(32px)' },
+          to: { opacity: '1', transform: 'translateY(0)' },
+        },
+        'reveal-left': {
+          from: { opacity: '0', transform: 'translateX(-24px)' },
+          to: { opacity: '1', transform: 'translateX(0)' },
+        },
+        'reveal-right': {
+          from: { opacity: '0', transform: 'translateX(24px)' },
+          to: { opacity: '1', transform: 'translateX(0)' },
+        },
       },
       animation: {
-        'accordion-down': 'accordion-down 0.2s ease-out',
-        'accordion-up': 'accordion-up 0.2s ease-out'
-      }
-    }
+        'pulse-dot': 'pulse 2s infinite',
+        'ticker': 'ticker 26s linear infinite',
+        'reveal': 'reveal 0.75s ease forwards',
+        'reveal-left': 'reveal-left 0.75s ease forwards',
+        'reveal-right': 'reveal-right 0.75s ease forwards',
+      },
+      backdropBlur: {
+        md: '18px',
+        lg: '14px',
+      },
+      backgroundImage: {
+        'gradient-brand': 'linear-gradient(180deg, #7DC12A, #4a9010)',
+      },
+    },
   },
-  plugins: [require('tailwindcss-animate')]
-} satisfies Config
+  plugins: [require('tailwindcss-animate')],
+} satisfies Config;
+
+export default config;
